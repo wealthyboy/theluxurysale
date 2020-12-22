@@ -37,21 +37,21 @@
         <div class="col-12 text-center">
             <h4 class="text-uppercase  section-title heading-border ls-20 border-0">Top Brands For Him</h4>
         </div>
-        <div class="col-md-4 col-6 pr-1 text-center">
+        <div class="col-md-4 mt-1 col-6 pr-1 text-center">
             <div class="ba">
                 <a class="portfolio-interior" href="https://theluxurysale.com/products/men-designers-dolce-gabbana">
                     <img src="https://theluxurysale.com/uploads/Xr6Wo69A3iPq2jMgucPPRW49lRSf4uEbFnKyB3GL.jpeg" alt=" Item" />
                 </a>
             </div>
         </div>
-        <div class="col-md-4 col-6 pr-1 text-center">
+        <div class="col-md-4 mt-1 col-6 pr-1 text-center">
             <div class="ba">
                 <a class="portfolio-interior" href="https://theluxurysale.com/products/men-designers-fendi">
                     <img src="https://theluxurysale.com/uploads/xCeE3jPS7XTIHRGJpmzg8IlYM34n2LFVVHyNSdio.jpeg" alt=" Item" />
                 </a>
             </div>
         </div>
-        <div class="col-md-4 col-6 pr-1 text-center">
+        <div class="col-md-4 mt-1 col-6 pr-1 text-center">
             <div class="ba">
                 <a class="portfolio-interior" href="https://theluxurysale.com/products/men-designers-louis-vuitton">
                     <img src="https://theluxurysale.com/uploads/KJHrnOpj95lMsycOlp0eTS1tnQeoAE9JfBjpnkbD.jpeg" alt=" Item" />
