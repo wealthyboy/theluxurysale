@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {    
-        
+        dd(true);
         $site_status =Live::first();
         $banners =  Banner::banners()->get();
         $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
