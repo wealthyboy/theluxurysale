@@ -25,20 +25,19 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {    
-        dd(true);
         $site_status =Live::first();
-        $banners =  Banner::banners()->get();
         $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
-        $reviews  = Review::orderBy('created_at','DESC')->take(4)->get();
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
         $page_title = 'The Luxury sale - Verified Authentic ';
+        dd(true);
+
             
         if ( empty($site_status->make_live) ) {
-            return view('index',compact('banners','page_title','reviews','products','posts'));
+            return view('index',compact('page_title','products','posts'));
         } else {
             //Show site if admin is logged in
             if ( auth()->check()  && auth()->user()->isAdmin()){
-                return view('index',compact('banners','page_title','reviews','products','posts'));
+                return view('index',compact('page_title','products','posts'));
             }
             return view('underconstruction.index');
         }
