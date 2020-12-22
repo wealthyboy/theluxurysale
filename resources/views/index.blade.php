@@ -67,8 +67,8 @@
         </div>
         <div class="col-md-4 col-6   mt-1  pr-1 text-center">
             <div class="ba">
-                <a class="portfolio-interior" href="https://theluxurysale.com/products/men?sort_by=&brands[]=HERMES">
-                    <img src="https://theluxurysale.com/uploads/JYbyeWcUj9K1AKHiasduLr3uNiXbvkzJqI51mdBI.jpeg" alt=" Item" />
+                <a class="portfolio-interior" href="https://theluxurysale.com/products/men?sort_by=&brands[]=VERSACE">
+                    <img src="https://theluxurysale.com/uploads/TzM3skAlO1vhXVGWSBwa9gTyf257N8kkBnrGWGnc.jpg" alt=" Item" />
                 </a>
             </div>
         </div>
