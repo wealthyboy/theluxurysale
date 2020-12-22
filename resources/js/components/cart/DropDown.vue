@@ -40,7 +40,7 @@
             </div>
             <div class="cart-sidebar-content d-flex justify-content-center"  v-if="!carts.length">
                 <div class="text-center pb-3">
-                    <img  width="100" height="100" src="/images/utilities/empty_product.svg" /> 
+                    <img  width="100" height="100" src="/images/utilities/empty-cart.svg" /> 
                     <p class="bold">Your cart is empty</p>
                 </div>
             </div>

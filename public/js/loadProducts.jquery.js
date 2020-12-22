@@ -69,44 +69,48 @@
       displayHtml = function (data,clear_html=false){  
         let col  = null; 
         let html = ''; 
-        for (var i in data ) {
-              col = data[i].category_attributes >= 1 ? 'col-md-3' : 'col-md-4';
-              name =  data[i].product_name
-              
-              html  +='<div  class="col-6   '+ col +'">'
-              html +='<div class="product-default inner-quickview inner-icon">'
-              html +='<figure>'
-              html +='<a href="'+ data[i].link +'">'
-              html +='<img src="'+ data[i].image_to_show_m +'" alt="'+ data[i].name +'" /></a>'
-              html +='<div class="btn-icon-group">'    
-              html +='</div>'
-              html +='</figure>'
-              html +='<div class="product-details  text-center">'
-              html +='<div class="mx-auto">'
-              if(data[i].colors.length){
-                html +='<div  class="justify-content-center d-flex mb-1">'
-                  for(c in data[i].colors){
-                    html +='<div  style="border:1px solid #222; height: 12px; width: 12px; border-radius: 50%; background-color: '+ data[i].colors[c].color_code +';" class="mr-1"></div>'
-                  }
-                  html +='</div>'
-              }
-              if(data[i].brand_name){
-                html +='<div  class="product-brand bold">'+ data[i].brand_name +'</div>'
-              }
-              
-            
-              html +='<div class="color--primary"><a href="'+ data[i].link +'">'+ name +'</a></div>'
-              html +='</div>'
-
-              html +='<div class="price-box mx-auto mt-1">'
-                if(data[i].default_discounted_price){
-                  html +='<span class="old-price bold text-danger"> '+data[i].currency+''+data[i].converted_price +' </span>'
-                  html +='<span class="product-price bold ">'+ data[i].currency+''+data[i].default_discounted_price +' </span>'
-                }else{
-                  html +='<span class="product-price bold ">'+ data[i].currency+''+data[i].converted_price +' </span>'
+        if ( data.length  == 0 ){
+          html = '<div class="col-12 d-flex justify-content-center"><div class="text-center pb-3"><img  width="200" height="200" src="/images/utilities/search.svg" /><p class="bold">No products found</p></div></div>'
+        } else {
+          for (var i in data ) {
+                col = data[i].category_attributes >= 1 ? 'col-md-3' : 'col-md-4';
+                name =  data[i].product_name
+                
+                html  +='<div  class="col-6   '+ col +'">'
+                html +='<div class="product-default inner-quickview inner-icon">'
+                html +='<figure>'
+                html +='<a href="'+ data[i].link +'">'
+                html +='<img src="'+ data[i].image_to_show_m +'" alt="'+ data[i].name +'" /></a>'
+                html +='<div class="btn-icon-group">'    
+                html +='</div>'
+                html +='</figure>'
+                html +='<div class="product-details  text-center">'
+                html +='<div class="mx-auto">'
+                if(data[i].colors.length){
+                  html +='<div  class="justify-content-center d-flex mb-1">'
+                    for(c in data[i].colors){
+                      html +='<div  style="border:1px solid #222; height: 12px; width: 12px; border-radius: 50%; background-color: '+ data[i].colors[c].color_code +';" class="mr-1"></div>'
+                    }
+                    html +='</div>'
                 }
-              html +='</div></div></div> </div>'
-          }
+                if(data[i].brand_name){
+                  html +='<div  class="product-brand bold">'+ data[i].brand_name +'</div>'
+                }
+                
+              
+                html +='<div class="color--primary"><a href="'+ data[i].link +'">'+ name +'</a></div>'
+                html +='</div>'
+
+                html +='<div class="price-box mx-auto mt-1">'
+                  if(data[i].default_discounted_price){
+                    html +='<span class="old-price bold text-danger"> '+data[i].currency+''+data[i].converted_price +' </span>'
+                    html +='<span class="product-price bold ">'+ data[i].currency+''+data[i].default_discounted_price +' </span>'
+                  }else{
+                    html +='<span class="product-price bold ">'+ data[i].currency+''+data[i].converted_price +' </span>'
+                  }
+                html +='</div></div></div> </div>'
+            }
+        }
           if (clear_html){
             $("#"+settings.target).html('').append(html);  
             return     
