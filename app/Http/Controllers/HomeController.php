@@ -29,7 +29,7 @@ class HomeController extends Controller
         $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
         $page_title = 'The Luxury sale - Verified Authentic ';
-        dd(true);
+        dd($products);
 
             
         if ( empty($site_status->make_live) ) {
