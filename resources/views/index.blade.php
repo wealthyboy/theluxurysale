@@ -58,14 +58,21 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-6 col-6  pr-1 text-center">
+        <div class="col-md-4 col-6   mt-1  pr-1 text-center">
             <div class="ba">
                 <a class="portfolio-interior" href="https://theluxurysale.com/products/men?sort_by=&brands[]=HERMES">
                     <img src="https://theluxurysale.com/uploads/JYbyeWcUj9K1AKHiasduLr3uNiXbvkzJqI51mdBI.jpeg" alt=" Item" />
                 </a>
             </div>
         </div>
-        <div class="col-md-6 col-12 mt-1  pr-1  text-center">
+        <div class="col-md-4 col-6   mt-1  pr-1 text-center">
+            <div class="ba">
+                <a class="portfolio-interior" href="https://theluxurysale.com/products/men?sort_by=&brands[]=HERMES">
+                    <img src="https://theluxurysale.com/uploads/JYbyeWcUj9K1AKHiasduLr3uNiXbvkzJqI51mdBI.jpeg" alt=" Item" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 col-12 mt-1  pr-1  text-center">
             <div class="ba">
                 <a class="portfolio-interior" href="">
                     <img src="https://theluxurysale.com/uploads/gqe7UtUU4uRbmcW2lll3Pt1HNZ45QIS9USeCHp9Y.jpeg" alt=" Item" />
@@ -84,7 +91,14 @@
         <div class="col-12 text-center">
             <h4 class="text-uppercase  section-title heading-border ls-20 border-0">Top Brands For Her</h4>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-6">
+            <div class="ba">
+                <a class="image-link" href="https://theluxurysale.com/products/women-designers-dolce-gabbana">
+                    <img src="https://theluxurysale.com/uploads/dGUxgOILV0VDSs8HyEIP8kZvuktbIBY6MfyQTuzY.jpeg" alt=" Item" />
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6">
             <div class="ba">
                 <a class="image-link" href="https://theluxurysale.com/products/women-designers-dolce-gabbana">
                     <img src="https://theluxurysale.com/uploads/dGUxgOILV0VDSs8HyEIP8kZvuktbIBY6MfyQTuzY.jpeg" alt=" Item" />
