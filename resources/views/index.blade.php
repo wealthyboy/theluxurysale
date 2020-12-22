@@ -87,18 +87,18 @@
 
 <div class="container-fliud">
     
-    <div class="row  mt-1">
+    <div class="row  mt-1 no-gutters">
         <div class="col-12 text-center">
             <h4 class="text-uppercase  section-title heading-border ls-20 border-0">Top Brands For Her</h4>
         </div>
-        <div class="col-md-6 col-6">
+        <div class="col-md-6 col-6 pr-1 ">
             <div class="ba">
                 <a class="image-link" href="https://theluxurysale.com/products/women-designers-dolce-gabbana">
                     <img src="https://theluxurysale.com/uploads/dGUxgOILV0VDSs8HyEIP8kZvuktbIBY6MfyQTuzY.jpeg" alt=" Item" />
                 </a>
             </div>
         </div>
-        <div class="col-md-6 col-6">
+        <div class="col-md-6 pl-1  col-6">
             <div class="ba">
                 <a class="image-link" href="https://theluxurysale.com/products/women-designers-giuseppe-zanotti">
                     <img src="https://theluxurysale.com/uploads/A3M5nCTvyrqC98FuiLYnKjnVBcj2qRo9iSLWgGAz.jpg" alt=" Item" />
