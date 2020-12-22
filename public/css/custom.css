@@ -148,6 +148,7 @@ input {
 
 .header-middle{
   padding: 0px;
+  margin-top: -7px;
 }
 
 .logo{
@@ -218,9 +219,9 @@ input {
 }
 
 
-.main.main-page{margin-top:128px;}
+.main.main-page{margin-top:110px;}
 
-.sticky-header{margin-top: -10px;}
+.sticky-header{margin-top: -20px;}
 
 .dropdown-cart-products {
   height: 300px;
