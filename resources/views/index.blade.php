@@ -72,10 +72,10 @@
                 </a>
             </div>
         </div>
-        <div class="col-md-4 col-12 mt-1  pr-1  text-center">
+        <div class="col-md-4 col-6 mt-1  pr-1  text-center">
             <div class="ba">
-                <a class="portfolio-interior" href="">
-                    <img src="https://theluxurysale.com/uploads/gqe7UtUU4uRbmcW2lll3Pt1HNZ45QIS9USeCHp9Y.jpeg" alt=" Item" />
+                <a class="portfolio-interior" href="https://theluxurysale.com/products/men?sort_by=&brands[]=OFF-WHITE">
+                    <img src="https://theluxurysale.com/uploads/gqe7UtUU4uRbmcW2lll3Pt1HNZ45QIS9USeCHp9Y.jpeg" alt=" Buy off-white" />
                 </a>
             </div>
         </div>
