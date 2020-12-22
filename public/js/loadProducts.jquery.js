@@ -72,6 +72,7 @@
         for (var i in data ) {
               col = data[i].category_attributes >= 1 ? 'col-md-3' : 'col-md-4';
               name =  data[i].product_name
+              
               html  +='<div  class="col-6   '+ col +'">'
               html +='<div class="product-default inner-quickview inner-icon">'
               html +='<figure>'

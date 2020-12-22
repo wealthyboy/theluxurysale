@@ -172,6 +172,10 @@ input {
   background-color: #fff;
 }
 
+.header-icon svg,.dropdown-arrow  svg {
+  width: 30px;
+}
+
 
 .dropdown-arrow::after{
   content: "";
