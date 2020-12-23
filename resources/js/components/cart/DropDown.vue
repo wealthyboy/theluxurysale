@@ -33,6 +33,9 @@
                     <span>Total</span>
                     <span class="cart-total-price float-right">{{ meta.currency }}{{ meta.sub_total | priceFormat }}</span>
                 </div><!-- End .dropdown-cart-total -->
+                <div class="dropdown-cart-action">
+                    <a href="/cart" class="btn btn-outline-secondary color--primary btn-block">View Cart</a>
+                </div><!-- End .dropdown-cart-total -->
 
                 <div class="dropdown-cart-action">
                     <a href="/checkout" class="btn btn-dark btn-block">Checkout</a>
