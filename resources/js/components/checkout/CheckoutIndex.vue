@@ -377,7 +377,7 @@ export default {
             this.payment_is_processing =true
             this.payment_method ='card'
             var handler = PaystackPop.setup({
-                key: 'pk_test_beb79684037af06bda8c943372456c1f0e10c71d',//'pk_test_9da85e18cb810c930df5ec111edf9a2b0c4ac949',//'pk_live_8260bf35964c9d1f60fe6b2adfb96994117c1b16',
+                key: 'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_test_beb79684037af06bda8c943372456c1f0e10c71d',
                 email: context.meta.user.email,
                 amount: context.amount * 100,
                 currency: "NGN",

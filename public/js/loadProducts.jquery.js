@@ -70,7 +70,7 @@
         let col  = null; 
         let html = ''; 
         if ( data.length  == 0 ){
-          html = '<div class="col-12 d-flex justify-content-center"><div class="text-center pb-3"><img  width="150" height="150" src="/images/utilities/search.svg" /><p class="bold">No products found</p></div></div>'
+          html = '<div class="col-12 d-flex justify-content-center"><div class="text-center pb-3"><img  width="100" height="100" src="/images/utilities/search.svg" /><p class="bold">No products found</p></div></div>'
         } else {
           for (var i in data ) {
                 col = data[i].category_attributes >= 1 ? 'col-md-3' : 'col-md-4';
