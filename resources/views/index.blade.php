@@ -16,6 +16,19 @@
         
     </div><!-- End .container -->
 </div>
+<div class="container-fliud">
+    
+    <div class="row  mt-2 no-gutters">
+       
+        <div class="col-md-12 mt-1 col-12 pr-1 text-center">
+            <div class="ba">
+                <a class="" href="https://theluxurysale.com/products/men-designers-dolce-gabbana">
+                    <img src="https://theluxurysale.com/uploads/SY82eva89oE5S93QfYJ6U6RILp6Q3U6hrUX6R3tP.jpg" alt=" Item" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="owl-carousel main-banner-slider owl-theme">
     <div class="item">
         <a href="https://theluxurysale.com/products/men"><img src="https://theluxurysale.com/uploads/AYKY9fbLirBHJaO18jQIeqrVND5yGEqH9BC4enre.jpeg" /></a>
