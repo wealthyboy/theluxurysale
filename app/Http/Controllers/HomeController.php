@@ -16,6 +16,7 @@ use App\Currency;
 use App\SystemSetting;
 use App\Http\Helper;
 use App\Attribute;
+use App\OrderedProduct;
 
 class HomeController extends Controller
 {
@@ -30,7 +31,7 @@ class HomeController extends Controller
         $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
         $page_title = 'The Luxury sale - Verified Authentic ';
-       
+        OrderedProduct::truncate();
         return view('index',compact('page_title','products','posts'));
 
 
