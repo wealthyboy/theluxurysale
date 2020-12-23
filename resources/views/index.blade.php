@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-md-12  col-12 ">
             <div class="ba">
-                <a class="portfolio-interior" href="https://theluxurysale.com/products/men-designers-dolce-gabbana">
+                <a class="portfolio-interior" href="https://theluxurysale.com/products/15-off">
                     <img src="https://theluxurysale.com/uploads/SY82eva89oE5S93QfYJ6U6RILp6Q3U6hrUX6R3tP.jpg" alt=" Item" />
                 </a>
             </div>
@@ -163,34 +163,6 @@
 </div><!-- End .container -->
 
 
-<div class="container-fliud">
-    <div class="row  mt-2 mb-5 no-gutters">
-        <div class="col-12 text-center">
-            <h4 class="text-uppercase  section-title heading-border ls-20 border-0">Gifts</h4>
-        </div>
-        <div class="col-md-4 col-12 pr-1 text-center">
-            <div class="">
-                <a class="portfolio-interior" href="https://theluxurysale.com/products/interiors">
-                    <img src="https://theluxurysale.com/uploads/l9LBea1FHe3nvg8eyK92E2uDMAaEbih8sIH1wMNA.jpeg" alt=" Item" />
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4 col-12 pr-1 text-center">
-            <div class="">
-                <a class="portfolio-interior" href="https://theluxurysale.com/products/women">
-                    <img src="https://theluxurysale.com/uploads/4SgrtEpQATKCE2uflv6ALZb1YPWKFVgytjRw2Zey.jpg" alt=" Item" />
-                </a>
-            </div>
-        </div>
-        <div class="col-md-4 col-12 pr-1 text-center">
-            <div class="">
-                <a class="portfolio-interior" href="https://theluxurysale.com/products/interiors">
-                    <img src="https://theluxurysale.com/uploads/cjGUak7iCb8e8qhjQdahTRed3veOQGf0Q5hoxk72.jpeg" alt=" Item" />
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
