@@ -246,6 +246,12 @@ input {
   font-family: Polaris-Book,sans-serif;
 }
 
+.ba img {
+  width: 100%;
+}
+
+
+
 select.form-control:not([size]):not([multiple]) {
   height: 5.3rem;
   padding: 1rem;
