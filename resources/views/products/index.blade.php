@@ -84,7 +84,6 @@
                 @if(!empty($products->hasMorePages()))
                 <a href="{{ $products->nextPageUrl() }}" id="load_more" class="btn loadmore btn-loadmore load_more mt-4 mb-2">
                    <span class="spinner-grow spinner-grow-md d-none"></span>
-
                    Load More...
                 </a>
                 @endif
