@@ -56,18 +56,7 @@
 		
 
 		<header class="header">
-			<div class="header-top">
-				<div class="container">
-					<div class="header-right">
-						<span class="separator"></span>
-						<div class="social-icons">
-							<a href="{{ $system_settings->facebook_link }}" class="social-icon social-facebook icon-facebook" target="_blank"></a>
-							<a href="{{ $system_settings->twitter_link }}" class="social-icon social-twitter icon-twitter" target="_blank"></a>
-							<a href="{{ $system_settings->instagram_link }}" class="social-icon social-instagram icon-instagram" target="_blank"></a>
-						</div><!-- End .social-icons -->
-					</div><!-- End .header-right -->
-				</div><!-- End .container -->
-			</div><!-- End .header-top -->
+			
 
 			<div class="header-middle">
 				<div class="container">
