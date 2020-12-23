@@ -278,9 +278,13 @@ select.form-control:not([size]):not([multiple]) {
 .btn-outline-secondary:hover, .btn-outline-secondary.focus {
   border-color: #000000;
   background-color: #000000;
-  color: #fff;
+  color: #fff !important;
   box-shadow: none;
 }
+
+
+
+
 
 
 /*
