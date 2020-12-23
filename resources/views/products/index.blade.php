@@ -35,6 +35,11 @@
         
        @if ( isset($category) &&  isset($category_attributes) && $category_attributes->count() )
             <div class="col-lg-9 main-content">
+                <div class="product-overlay d-none">
+                    <div class="loading">
+                        <div class="loader"></div>
+                    </div>
+                </div>
        @else
             <div class="col-lg-12 main-content">
         @endif
