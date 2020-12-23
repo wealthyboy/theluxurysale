@@ -17,8 +17,8 @@
     </div><!-- End .container -->
 </div>
 <div class="container-fliud">
-    <div class="row  mt-2 no-gutters">
-        <div class="col-md-12 mt-1 col-12 pr-1 text-center">
+    <div class="row">
+        <div class="col-md-12  col-12 ">
             <div class="ba">
                 <a class="portfolio-interior" href="https://theluxurysale.com/products/men-designers-dolce-gabbana">
                     <img src="https://theluxurysale.com/uploads/SY82eva89oE5S93QfYJ6U6RILp6Q3U6hrUX6R3tP.jpg" alt=" Item" />
