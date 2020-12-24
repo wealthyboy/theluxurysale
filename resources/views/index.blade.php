@@ -16,7 +16,7 @@
         
     </div><!-- End .container -->
 </div>
-<div class="container-fliud mt-1">
+<div class="container-fliud mb-1">
     <div class="row">
         <div class="col-md-12  col-12 ">
             <div class="ba">
