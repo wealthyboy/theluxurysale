@@ -45,7 +45,7 @@
 <div class="container-fliud">
     <div class="row  mt-2 no-gutters">
         <div class="col-12 text-center">
-            <h2 class="text-uppercase  section-title heading-border ls-20 border-0">Top Brands For Him</h2>
+            <h2 class="text-uppercase   heading-border ls-20 border-0">Top Brands For Him</h2>
         </div>
         <div class="col-md-4 mt-1 col-6 pr-1 text-center">
             <div class="ba">
@@ -99,7 +99,7 @@
     
     <div class="row  mt-1 no-gutters">
         <div class="col-12 text-center">
-            <h2 class="text-uppercase  section-title heading-border ls-20 border-0">Top Brands For Her</h2>
+            <h2 class="text-uppercase   heading-border ls-20 border-0">Top Brands For Her</h2>
         </div>
         <div class="col-md-6 col-6 pr-1 ">
             <div class="ba">
@@ -126,7 +126,7 @@
 
     <div class="row mt-5 mb-0 pt-5 pb-5 bg--gray">
         <div class="col-12 text-center mb-1">
-            <h2 class="text-uppercase  section-title heading-border ls-20 border-0">PREMIUM OFFERS</h2>
+            <h2 class="text-uppercase   heading-border ls-20 border-0">PREMIUM OFFERS</h2>
         </div>
         <div class="col-6 pr-1 text-center">
             <div class="banner-box">
