@@ -213,7 +213,7 @@
 
 			<div class="footer-bottom text-center">
 				<div class="container d-flex justify-content-center align-items-center flex-wrap">
-					<p class="footer-copyright py-3 pr-4 mb-0">© THELUXURYSALE. 2020. All Rights Reserved</p>
+					<p class="footer-copyright py-3 pr-4 mb-0">© THELUXURYSALE. {{ date('Y') }}. All Rights Reserved</p>
 					@if ( auth()->check() && auth()->user()->isAdmin() )
 					  <p class="footer-copyright py-3 pr-4 mb-0"><a target="_blank" href="/admin" >Go to Admin</a></p>
 					@endif
