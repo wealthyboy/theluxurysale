@@ -240,7 +240,7 @@
 							    @foreach (  $category->children as $children)
 
 								<li>
-								<a href="/products/{{ $category->slug }}" class="category-heading">{{ $children->name }} </a>
+								   <a href="/products/{{ $children->slug }}" class="category-heading">{{ str_contains($children->name,'No') ? '' :  $children->name}} </a>
 								   @if ($children->children->count())
 										<ul>
 										    @foreach (  $children->children as $children)
