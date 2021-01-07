@@ -105,5 +105,12 @@ class WebHookController extends Controller
         
     }
 
+
+    public function gitHub()
+    {
+        $output =  shell_exec('sh /home/forge/theluxurysale.com/deploy.sh');
+        Log::info($output);
+    }
+
    
 }
