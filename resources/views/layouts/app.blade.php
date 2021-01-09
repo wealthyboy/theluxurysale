@@ -186,7 +186,7 @@
 								    <div class="widget">
 									    <h2 class="widget-title">FOLLOW US</h2>
 									    <div class="social-icons">
-											<a href="{{ $system_settings->facebook_link }" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
+											<a href="{{ $system_settings->facebook_link }}" class="social-icon" target="_blank"><i class="icon-facebook"></i></a>
 											<a href="{{  $system_settings->twitter_link }}" class="social-icon" target="_blank"><i class="icon-twitter"></i></a>
 											<a href="{{  $system_settings->instagram_link }}" class="social-icon" target="_blank"><i class="icon-instagram"></i></a>
 										</div><!-- End .social-icons -->
