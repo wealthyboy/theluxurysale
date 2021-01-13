@@ -21,7 +21,7 @@
         <div class="col-md-12  col-12 ">
             <div class="ba">
                 <a class="portfolio-interior" href="https://theluxurysale.com/products/brand-of-the-week">
-                    <img src="https://theluxurysale.com/uploads/nyhYobKcfd4GekLFopYntBHhDCQj3cC3X6C1hwBQ.gif" alt="12 percent off" />
+                    <img src="https://theluxurysale.com/uploads/H4XRixYFY4GWDcWq5zGDsIJP3wARY1bgM05H2X6O.jpg" alt="12 percent off" />
                 </a>
             </div>
         </div>
