@@ -37,9 +37,12 @@ class HomeController extends Controller
             dd("Website under maintanance");
             return view('index',compact('page_title','products','posts','banners','sliders')); 
         } else {
+            dd("Website under maintanance true");
 
             //Show site if admin is logged in
-            
+            if ( auth()->check()  && auth()->user()->isAdmin()){
+                return view('index',compact('page_title','products','posts','banners','sliders')); 
+            }
             return view('underconstruction.index');
         }
     }
