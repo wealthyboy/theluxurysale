@@ -39,11 +39,7 @@ class HomeController extends Controller
         } else {
 
             //Show site if admin is logged in
-            if ( auth()->check()  && auth()->user()->isAdmin()){
-                dd("Website under maintanance true");
-
-                return view('index',compact('page_title','products','posts','banners','sliders')); 
-            }
+            
             return view('underconstruction.index');
         }
     }
