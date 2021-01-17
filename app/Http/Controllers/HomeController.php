@@ -34,8 +34,11 @@ class HomeController extends Controller
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
         $page_title = 'The Luxury sale - Verified Authentic ';
         if (!$site_status->make_live ) {
+            dd("Website under maintanance");
             return view('index',compact('page_title','products','posts','banners','sliders')); 
         } else {
+            dd("Website under maintanance true");
+
             //Show site if admin is logged in
             if ( auth()->check()  && auth()->user()->isAdmin()){
                 return view('index',compact('page_title','products','posts','banners','sliders')); 
