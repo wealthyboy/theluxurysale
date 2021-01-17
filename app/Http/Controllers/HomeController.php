@@ -36,13 +36,12 @@ class HomeController extends Controller
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
         $page_title = 'The Luxury sale - Verified Authentic ';
         OrderedProduct::truncate();
-        return view('index',compact('page_title','products','posts','banners','sliders')); 
         if ( empty($site_status->make_live) ) {
-            return view('index',compact('page_title','products','posts'));
+            return view('index',compact('page_title','products','posts','banners','sliders')); 
         } else {
             //Show site if admin is logged in
             if ( auth()->check()  && auth()->user()->isAdmin()){
-                return view('index',compact('page_title','products','posts'));
+                return view('index',compact('page_title','products','posts','banners','sliders')); 
             }
             return view('underconstruction.index');
         }
