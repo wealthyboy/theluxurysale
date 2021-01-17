@@ -37,7 +37,7 @@ class HomeController extends Controller
             return view('index',compact('page_title','products','posts','banners','sliders')); 
         } else {
             
-            return view('underconstruction.index');
+            return view('index',compact('page_title','products','posts','banners','sliders')); 
         }
     }
 
