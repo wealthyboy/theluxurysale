@@ -28,7 +28,7 @@
 
 @if ($banners->count())
 
-<div class="container-fliud mb-1">
+<div class="container-fliud mb-1 mt-1">
     <div class="row">
         @foreach($banners as $banner)
         <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }}  {{ $banner->title }} p-0 text-center">
