@@ -124,6 +124,22 @@ class Helper{
          
     }
 
+    public static function sm_col_width(){
+        return [
+            'col-12',
+            'col-10',
+            'col-9',
+            'col-8',
+            'col-7',
+            'col-6',
+            'col-5',
+            'col-4',
+            'col-3',
+            'col-2',
+            'col-1',
+        ];
+    }
+
     public static function col_width(){
         return [
             'col-lg-12',

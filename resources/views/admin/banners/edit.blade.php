@@ -50,6 +50,35 @@
                         </div>
                     </div>
 
+                     
+
+                    <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">Sm Col Width</label>
+                        <div class="col-sm-10">
+                           <select name="sm_col_width" required="required" class="form-control select2" style="width: 100%;">
+                              <option value="" >--choose one--</option>
+                                 @foreach ( $sm_cols  as $col ) 
+                                    @if( $col  === $banner->sm_col_width)
+                                        <option value="{{ $col }}" Selected>{{ $col }}</option>
+                                    @else
+                                        <option value="{{ $col }}">{{ $col }}</option>
+                                    @endif
+                                 @endforeach 
+                           </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type" class="col-sm-2 control-label">Type</label>
+                        <div class="col-sm-10">
+                           <select name="type" required="required" class="form-control select2" style="width: 100%;">
+                              <option value="" selected="selected">--choose one--</option>
+                                <option {{ $banner->type == 'slider' ? 'selected' : ''  }} value="slider">Slider</option>
+                                <option  {{ $banner->type == 'banner' ? 'selected' : ''  }}  value="banner">Banner</option> 
+                           </select>
+                        </div>
+                    </div>
+
 
                          <div class="row">
                             <div class="">

@@ -37,7 +37,8 @@ class BannersController extends Controller
     public function create()
     {   
         $cols = Helper::col_width();
-        return view('admin.banners.create',compact('cols'));
+        $sm_cols = Helper::sm_col_width();
+        return view('admin.banners.create',compact('cols','sm_cols'));
     }
 
     /**
@@ -57,6 +58,10 @@ class BannersController extends Controller
         $banner->title = $request->title;
         $banner->link  = $request->link;
         $banner->col   = $request->col_width;
+        $banner->sm_col_width   = $request->sm_col_width;
+        $banner->md_col_width  = $request->md_col_width;
+        $banner->type   = $request->type;
+
         $banner->image   = $request->image;
         $banner->sort_order = $request->sort_order;
         $banner->save();
@@ -85,7 +90,10 @@ class BannersController extends Controller
     {   
         $banner = Banner::find($id);
         $cols = Helper::col_width();
-    	return view('admin.banners.edit',compact('banner','cols'));
+        $sm_cols = Helper::sm_col_width();
+
+
+    	return view('admin.banners.edit',compact('sm_cols','banner','cols'));
     	 
     }
 
@@ -110,6 +118,9 @@ class BannersController extends Controller
         $banner->sort_order = $request->sort_order;
         $banner->col   = $request->col_width;
         $banner->image   = $request->image;
+        $banner->sm_col_width   = $request->sm_col_width;
+        $banner->md_col_width  = $request->md_col_width;
+        $banner->type   = $request->type;
 
         $banner->save();
         // $flash = app( 'App\Http\flash' );
