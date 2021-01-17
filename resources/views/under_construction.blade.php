@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>{{ Config('app.name') }} </title>
+        <title>{{ Config('app.name') }} | Site is on maintainance mode</title>
         <meta name="author" content="AchuWorld">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="csrf-token" content="{{ csrf_token() }}">
