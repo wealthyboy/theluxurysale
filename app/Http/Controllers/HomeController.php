@@ -36,8 +36,11 @@ class HomeController extends Controller
         if (!$site_status->make_live ) {
             return view('index',compact('page_title','products','posts','banners','sliders')); 
         } else {
-            
-            return view('index',compact('page_title','products','posts','banners','sliders')); 
+            //Show site if admin is logged in
+            if ( auth()->check()  && auth()->user()->isAdmin()){
+                return view('index',compact('page_title','products','posts','banners','sliders')); 
+            }
+            return view('under_construction');
         }
     }
 
