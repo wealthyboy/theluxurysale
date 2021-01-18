@@ -22,7 +22,7 @@
     <div class="row no-gutters">
         <div data-title="{{ $first_banner->title }}" class="{{ $first_banner->col }} {{ $first_banner->sm_col_width }} {{ $first_banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $first_banner->title }} text-center">
             <div class="ba">
-                <a class="portfolio-interior" href="{{ $banner->link }}">
+                <a class="portfolio-interior" href="{{ $first_banner->link }}">
                     <img src="{{ $first_banner->image }}" alt="{{ $first_banner->title }}" />
                 </a>
             </div>
