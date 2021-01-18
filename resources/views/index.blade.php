@@ -29,9 +29,9 @@
 @if ($banners->count())
 
 <div class="container-fliud mb-1 mt-1">
-    <div class="row">
+    <div class="row no-gutters">
         @foreach($banners as $banner)
-        <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }}  {{ $banner->title }} p-0 text-center">
+        <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-center">
                 <div class="ba">
                     <a class="portfolio-interior" href="{{ $banner->link }}">
                         <img src="{{ $banner->image }}" alt="{{ $banner->title }}" />
