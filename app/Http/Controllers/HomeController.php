@@ -29,7 +29,7 @@ class HomeController extends Controller
     {    
         $site_status =Live::first();
         $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
-        $banners = Banner::where('type','banner')->orderBy('sort_order','asc')->get();
+        $banners = Banner::where('type','banner')->where('sort_order','!=',1)->orderBy('sort_order','asc')->get();
         $first_banner = Banner::where(['type'=>'banner' , 'sort_order' =>1])->first();
 
         $sliders = Banner::where('type','slider')->orderBy('sort_order','asc')->get();
