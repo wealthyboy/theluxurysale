@@ -8,7 +8,7 @@
             
             <div class="col-12">
                 <h5 class="d-inline-block text-uppercase mb-0"><b><i class="fas fa-money-check"></i>
-                    USE TLSXMAS and get 10% off when you shop over 600k</b>
+                    USE TLS10 and get 10% off when you shop over 600k</b>
                 </h5>
             </div>
 
