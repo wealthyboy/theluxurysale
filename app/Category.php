@@ -46,6 +46,14 @@ class Category extends Model
     }
 
 
+    public function link()
+    {
+        return $this->image_custom_link ? $this->image_custom_link : '/products/'. $this->slug;
+    }
+
+
+
+
     public function isCategoryHaveMultipleChildren()
     {   
         $names = [];

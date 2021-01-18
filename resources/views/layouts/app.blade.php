@@ -95,7 +95,7 @@
                             @foreach( $global_categories   as  $category)
 
                                 <li>
-                                   <a href="/products/{{ $category->slug }}">{{ $category->name }}</a>
+                                   <a href="{{ $category->link() }}">{{ $category->name }}</a>
                                    @if ($category->isCategoryHaveMultipleChildren())
 
                                     <div class="megamenu megamenu-fixed-width">
@@ -104,11 +104,11 @@
 											    <div class="row">
 													@foreach (  $category->children as $children)
 													<div class="col-lg-2">
-														<a href="/products/{{ $children->slug }}" class="category-heading">{{ str_contains($children->name,'No') ? '' :  $children->name}} </a>
+														<a href="{{ $children->link() }}" class="category-heading">{{ str_contains($children->name,'No') ? '' :  $children->name}} </a>
 														@if ($children->children->count())
 															<ul class="submenu">
 																@foreach (  $children->children as $children)
-																	<li><a href="/products/{{ $children->slug }}">{{ $children->name }}</a></li>
+																	<li><a href="{{ $children->link() }}">{{ $children->name }}</a></li>
 																@endforeach
 															</ul>
 														@endif
@@ -234,17 +234,17 @@
 				<ul class="mobile-menu">
 				@foreach( $global_categories   as  $category)
 				    <li>
-						<a href="/products/{{ $category->slug }}">{{ $category->name }}</a>
+						<a href="{{ $category->link() }}">{{ $category->name }}</a>
 						@if ($category->isCategoryHaveMultipleChildren())
 							<ul>
 							    @foreach (  $category->children as $children)
 
 								<li>
-								   <a href="/products/{{ $children->slug }}" class="category-heading">{{ str_contains($children->name,'No') ? '' :  $children->name}} </a>
+								   <a href="{{ $children->link() }}" class="category-heading">{{ str_contains($children->name,'No') ? '' :  $children->name}} </a>
 								   @if ($children->children->count())
 										<ul>
 										    @foreach (  $children->children as $children)
-                                                <li><a href="/products/{{ $category->slug }}">{{ $children->name }}</a></li>
+                                                <li><a href="{{ $children->link() }}">{{ $children->name }}</a></li>
                                             @endforeach
 										</ul>
 									@endif
