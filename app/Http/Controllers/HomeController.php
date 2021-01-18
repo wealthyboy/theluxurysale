@@ -30,15 +30,17 @@ class HomeController extends Controller
         $site_status =Live::first();
         $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
         $banners = Banner::where('type','banner')->orderBy('sort_order','asc')->get();
+        $first_banner = Banner::where(['type'=>'banner' , 'sort_order' =>1])->first();
+
         $sliders = Banner::where('type','slider')->orderBy('sort_order','asc')->get();
         $posts  =   Information::orderBy('created_at','DESC')->where('blog',true)->take(3)->get();
         $page_title = 'The Luxury sale - Verified Authentic ';
         if (!$site_status->make_live ) {
-            return view('index',compact('page_title','products','posts','banners','sliders')); 
+            return view('index',compact('page_title','products','first_banner','posts','banners','sliders')); 
         } else {
             //Show site if admin is logged in
             if ( auth()->check()  && auth()->user()->isAdmin()){
-                return view('index',compact('page_title','products','posts','banners','sliders')); 
+                return view('index',compact('page_title','products','first_banner','posts','banners','sliders')); 
             }
             return view('under_construction');
         }

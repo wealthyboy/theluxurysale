@@ -16,6 +16,22 @@
         
     </div><!-- End .container -->
 </div>
+
+@if ($first_banner->count())
+<div class="container-fliud mb-1 mt-1">
+    <div class="row no-gutters">
+        <div data-title="{{ $first_banner->title }}" class="{{ $first_banner->col }} {{ $first_banner->sm_col_width }} {{ $first_banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $first_banner->title }} text-center">
+            <div class="ba">
+                <a class="portfolio-interior" href="{{ $banner->link }}">
+                    <img src="{{ $first_banner->image }}" alt="{{ $first_banner->title }}" />
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
+
+
 @if ($sliders->count())
 <div class="owl-carousel main-banner-slider owl-theme">
     @foreach($sliders as $slider)
@@ -27,7 +43,6 @@
 @endif
 
 @if ($banners->count())
-
 <div class="container-fliud mb-1 mt-1">
     <div class="row no-gutters">
         @foreach($banners as $banner)
