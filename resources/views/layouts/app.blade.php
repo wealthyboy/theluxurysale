@@ -200,7 +200,7 @@
 											    <img src="/img/visa-card-ohram.png"  class="payment-visa" alt="make payment with mastercard">
 											</div>
 											<div class="vv ml-3">
-											    <img src="https://www.theluxurysale.com/uploads/FPPVD3wLv0beoQtpi3N9H5s9acRv0yf3blevt2U8.png" class="payment-verve" alt="make payment with mastercard">
+											    <img src="https://theluxurysale.com/uploads/FPPVD3wLv0beoQtpi3N9H5s9acRv0yf3blevt2U8.png" class="payment-verve" alt="make payment with mastercard">
 											</div>
 										</div><!-- End .social-icons -->
 									</div>
