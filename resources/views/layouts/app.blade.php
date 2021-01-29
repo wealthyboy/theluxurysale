@@ -291,7 +291,6 @@
 	</div>
     <div class="watsapp pt-3">
 		<a class="chat-on-watsapp" target="_blank" href="https://wa.me/2349043111111">
-		  <i class="fab fa-whatsapp fa-2x float-right mr-2"></i></a>
 	</div>
 
 	<a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
