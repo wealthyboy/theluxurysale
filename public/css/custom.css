@@ -298,12 +298,12 @@ select.form-control:not([size]):not([multiple]) {
 
 .chat-on-watsapp {
   display: block;
-  width: 200px;
+  width: 40px;
   height: 50px;
   background-color: #075E54;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 10px;
+  right: 5px;
   color: white !important;
   font-weight: bold;
   font-size: 1.35rem;
