@@ -111,7 +111,7 @@
 																	@foreach (  $childs->children->take(12) as $children)
 																		<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
 																	@endforeach
-																	<li ><a  class="bold text-danger" href="/view/{{ $childs->link() }}">View All</a></li>
+																	<li ><a  class="bold text-danger" href="/view/{{ $childs->slug }}">View All</a></li>
 																@else
 																    @foreach (  $childs->children as $children)
 																	   <li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
