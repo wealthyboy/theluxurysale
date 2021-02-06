@@ -3,14 +3,14 @@
 @section('content')
 <div class="top-notice text-white bg--gray">
     <div class="container text-center">
-        <h5 class="d-inline-block mb-0"><b>Take advantage of our latest offers </b></h5>
+        <h5 class="d-inline-block mb-0"><b>Take advantage of our latest offers </b> <a href="https://theluxurysale.com/products/men-accessories">Click here</a></h5>
     </div><!-- End .container -->
 </div>
 
 
 
 
-<div class="container-fluid mb-3">
+<div class="container-fluid mb-3 mt-5">
     <div  class="row">
         <div class="col-lg-9 main-content">
              <ul class="all-categories">
