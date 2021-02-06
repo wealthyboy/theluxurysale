@@ -107,9 +107,17 @@
 														<a href="{{ $childs->link() }}" class="category-heading">{{ str_contains($childs->name,'No') ? '' :  $childs->name}} </a>
 														@if ($childs->children->count())
 															<ul class="submenu">
-																@foreach (  $childs->children->take(10) as $children)
-																	<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
-																@endforeach
+															    @if ($childs->children->count() > 12)
+																	@foreach (  $childs->children->take(12) as $children)
+																		<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
+																	@endforeach
+																	<li><a href="">View All</a></li>
+																@else
+																    @foreach (  $childs->children as $children)
+																	   <li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
+															      	@endforeach
+																@endif
+																
 															</ul>
 														@endif
 													</div><!-- End .col-lg-4 -->
