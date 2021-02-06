@@ -108,7 +108,7 @@
 														@if ($children->children->count())
 															<ul class="submenu">
 																@foreach (  $children->children as $children)
-																	<li><a href="{{ $children->link() }}">{{ $children->name }} {{ $children->children->count() }}</a></li>
+																	<li><a href="{{ $children->link() }}">{{ $children->name }} {{ $children->count()}}</a></li>
 																@endforeach
 															</ul>
 														@endif
