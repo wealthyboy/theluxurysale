@@ -14,7 +14,7 @@
     <div  class="row">
         <div class="col-lg-9 main-content">
              <ul class="all-categories">
-                @foreach (  $childs->children as $children)
+                @foreach (  $category->children as $children)
 					<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
 				@endforeach
              </ul>
