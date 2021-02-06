@@ -3,7 +3,7 @@
 @section('content')
 <div class="top-notice text-white bg--gray">
     <div class="container text-center">
-        <h5 class="d-inline-block mb-0"><b>Take advantage of our latest offers </b> <a href="https://theluxurysale.com/products/men-accessories">Click here</a></h5>
+        <h5 class="d-inline-block mb-0"><b>Take advantage of our latest offers  <a href="https://theluxurysale.com/products/men-accessories">Click here</a></b> </h5>
     </div><!-- End .container -->
 </div>
 
