@@ -104,7 +104,7 @@
 											    <div class="row">
 													@foreach (  $category->children as $childs)
 													<div class="col-lg-2">
-														<a href="{{ $children->link() }}" class="category-heading">{{ str_contains($childs->name,'No') ? '' :  $childs->name}} </a>
+														<a href="{{ $childs->link() }}" class="category-heading">{{ str_contains($childs->name,'No') ? '' :  $childs->name}} </a>
 														@if ($childs->children->count())
 															<ul class="submenu">
 																@foreach (  $children->children as $children)
