@@ -318,6 +318,16 @@ select.form-control:not([size]):not([multiple]) {
 .banner-box a{ display: block;}
 .banner-box a img{ width: 100%;}
 
+.all-categories{
+  display: flex;
+  flex-wrap: row wrap;
+
+}
+
+.all-categories li{
+}
+
+
 
 /* Styling Checkbox Starts */
 .checkbox-label {
