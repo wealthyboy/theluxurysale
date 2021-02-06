@@ -320,7 +320,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .all-categories{
   display: flex;
-  flex-wrap: row wrap;
+  flex-flow: row wrap;
 
 }
 
