@@ -15,8 +15,7 @@ class ViewAllCategoryController extends Controller
      */
     public function index(Request $request,Category $category)
     {    
-        dd($category);
-        return view('view_all_categories.index',compact('$categories'));
+        return view('view_all_categories.index',compact('category'));
     }
 
     /**
