@@ -12,11 +12,12 @@
 
 <div class="container-fluid mb-3">
     <div  class="row">
-        
-      
-        <div class="col-lg-3 main-content">
-            
-
+        <div class="col-lg-9 main-content">
+             <ul class="all-categories">
+                @foreach (  $childs->children as $children)
+					<li><a href="{{ $children->link() }}">{{ $children->name }} </a></li>
+				@endforeach
+             </ul>
         </div><!-- End .col-lg-9 -->
 
         
