@@ -17,7 +17,7 @@
     </div><!-- End .container -->
 </div>
 
-@if ($first_banner->count())
+@if (null !== $first_banner && $first_banner->count())
 <div class="container-fliud mb-1 mt-1">
     <div class="row no-gutters">
         <div data-title="{{ $first_banner->title }}" class="{{ $first_banner->col }} {{ $first_banner->sm_col_width }} {{ $first_banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $first_banner->title }} text-center">
