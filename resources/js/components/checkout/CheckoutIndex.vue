@@ -390,7 +390,10 @@ export default {
                     customer: {
                         email: context.meta.user.email,
                         name: context.meta.user.name,
+                        customer_id: context.meta.user.id,
+
                     },
+
                     callback: function (data) {
                         if (data.status == 'successful'){
                             context.paymentIsComplete =true
