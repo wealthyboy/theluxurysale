@@ -2405,7 +2405,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.payment_is_processing = true;
       this.payment_method = 'card';
       FlutterwaveCheckout({
-        public_key: "FLWPUBK-831a4ffb090cb13d3669b99f88061101-X",
+        public_key: "FLWPUBK_TEST-dcd3315c964f59ff4c04fa1b0eea9595-X",
         tx_ref: "rave-" + Math.floor(Math.random() * 1000000000 + 1),
         amount: context.amount,
         currency: "NGN",
