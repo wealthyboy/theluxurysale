@@ -403,7 +403,6 @@ export default {
                         context.checkingout = false
                         context.payment_is_processing =false
                     },
-                    Lagos2012
 
                     
                 });

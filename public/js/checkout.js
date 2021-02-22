@@ -2430,8 +2430,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           context.order_text = 'Place Order';
           context.checkingout = false;
           context.payment_is_processing = false;
-        },
-        Lagos2012: Lagos2012
+        }
       }); // var handler = PaystackPop.setup({
       //     key: 'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_test_beb79684037af06bda8c943372456c1f0e10c71d',
       //     email: context.meta.user.email,
