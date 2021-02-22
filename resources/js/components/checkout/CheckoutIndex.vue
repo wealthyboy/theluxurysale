@@ -390,8 +390,8 @@ export default {
                     customer: {
                         email: context.meta.user.email,
                         name: context.meta.user.name,
-                        customer_id: context.meta.user.id,
-
+                        id: context.meta.user.id,
+                        coupon: null,
                     },
 
                     callback: function (data) {
