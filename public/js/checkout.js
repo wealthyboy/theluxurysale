@@ -2412,25 +2412,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         country: "NG",
         payment_options: "card, ussd",
         meta: {
-          display_name: context.meta.user.name,
           customer_id: context.meta.user.id,
-          coupon: context.coupon,
-          shipping_id: context.shipping_id,
-          shipping_price: context.shipping_price,
-          cart: cartIds,
-          total: context.amount
+          coupon: context.coupon
         },
         customer: {
           email: context.meta.user.email,
-          phone_number: "08102909304",
-          name: "yemi desola",
-          display_name: context.meta.user.name,
-          customer_id: context.meta.user.id,
-          coupon: context.coupon,
-          shipping_id: context.shipping_id,
-          shipping_price: context.shipping_price,
-          cart: cartIds,
-          total: context.amount
+          name: context.meta.user.name
         },
         callback: function callback(data) {
           if (data.status == 'successful') {
@@ -2443,7 +2430,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           context.order_text = 'Place Order';
           context.checkingout = false;
           context.payment_is_processing = false;
-        }
+        },
+        Lagos2012: Lagos2012
       }); // var handler = PaystackPop.setup({
       //     key: 'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_test_beb79684037af06bda8c943372456c1f0e10c71d',
       //     email: context.meta.user.email,
