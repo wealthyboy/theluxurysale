@@ -2418,7 +2418,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         customer: {
           email: context.meta.user.email,
           name: context.meta.user.name,
-          customer_id: context.meta.user.id
+          id: context.meta.user.id,
+          coupon: null
         },
         callback: function callback(data) {
           if (data.status == 'successful') {
