@@ -384,25 +384,12 @@ export default {
                     country: "NG",
                     payment_options: "card, ussd",
                     meta: {
-                        display_name: context.meta.user.name,
                         customer_id: context.meta.user.id,
                         coupon: context.coupon,
-                        shipping_id: context.shipping_id,
-                        shipping_price: context.shipping_price,
-                        cart: cartIds,
-                        total:context.amount,
                     },
                     customer: {
                         email: context.meta.user.email,
-                        phone_number: "08102909304",
-                        name: "yemi desola",
-                        display_name: context.meta.user.name,
-                        customer_id: context.meta.user.id,
-                        coupon: context.coupon,
-                        shipping_id: context.shipping_id,
-                        shipping_price: context.shipping_price,
-                        cart: cartIds,
-                        total:context.amount,
+                        name: context.meta.user.name,
                     },
                     callback: function (data) {
                         if (data.status == 'successful'){
@@ -416,6 +403,7 @@ export default {
                         context.checkingout = false
                         context.payment_is_processing =false
                     },
+                    Lagos2012
 
                     
                 });
