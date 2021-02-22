@@ -382,33 +382,38 @@ export default {
   
                 FlutterwaveCheckout({
                     public_key: "FLWPUBK-831a4ffb090cb13d3669b99f88061101-X",
-                    tx_ref: "hooli-tx-1920bbtyt",
-                    amount: 54600,
+                    tx_ref: "rave-"+ Math.floor((Math.random() * 1000000000) + 1), 
+                    amount: context.amount * 100,
                     currency: "NGN",
                     country: "NG",
-                    payment_options: "card, mobilemoneyghana, ussd",
-                    redirect_url: // specified redirect URL
-                        "https://callbacks.piedpiper.com/flutterwave.aspx?ismobile=34",
+                    payment_options: "card, ussd",
                     meta: {
-                        consumer_id: 23,
-                        consumer_mac: "92a3-912ba-1192a",
+                        display_name: context.meta.user.name,
+                        customer_id: context.meta.user.id,
+                        coupon: context.coupon,
+                        shipping_id: context.shipping_id,
+                        shipping_price: context.shipping_price,
+                        cart: cartIds,
+                        total:context.amount,
                     },
                     customer: {
-                        email: "user@gmail.com",
+                        email: context.meta.user.email,
                         phone_number: "08102909304",
                         name: "yemi desola",
                     },
                     callback: function (data) {
-                        console.log(data);
+                        if (data.status == 'successful'){
+                            context.paymentIsComplete =true
+                        } else {
+                            context.order_text =  'Place Order'
+                        }
                     },
                     onclose: function() {
-                        // close modal
+                        context.order_text =  'Place Order'
+                        context.checkingout = false
+                        context.payment_is_processing =false
                     },
-                    customizations: {
-                        title: "My store",
-                        description: "Payment for items in cart",
-                        logo: "https://assets.piedpiper.com/logo.png",
-                    },
+                    
                 });
             // var handler = PaystackPop.setup({
             //     key: 'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_test_beb79684037af06bda8c943372456c1f0e10c71d',
