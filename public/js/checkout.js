@@ -2423,7 +2423,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         customer: {
           email: context.meta.user.email,
           phone_number: "08102909304",
-          name: "yemi desola"
+          name: "yemi desola",
+          display_name: context.meta.user.name,
+          customer_id: context.meta.user.id,
+          coupon: context.coupon,
+          shipping_id: context.shipping_id,
+          shipping_price: context.shipping_price,
+          cart: cartIds,
+          total: context.amount
         },
         callback: function callback(data) {
           if (data.status == 'successful') {
