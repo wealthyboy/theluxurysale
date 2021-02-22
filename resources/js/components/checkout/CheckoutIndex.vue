@@ -339,7 +339,7 @@ export default {
         }),
         loadScript(callback) {
             const script = document.createElement('script')
-            script.src = 'https://js.paystack.co/v1/inline.js'
+            script.src = 'https://checkout.flutterwave.com/v3.js'
             document.getElementsByTagName('head')[0].appendChild(script)
             if (script.readyState) {  // IE
                 script.onreadystatechange = () => {
@@ -376,40 +376,74 @@ export default {
             this.order_text =  'Please wait. We are almost done......'
             this.payment_is_processing =true
             this.payment_method ='card'
-            var handler = PaystackPop.setup({
-                key: 'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_test_beb79684037af06bda8c943372456c1f0e10c71d',
-                email: context.meta.user.email,
-                amount: context.amount * 100,
-                currency: "NGN",
-                first_name: context.meta.user.name,
-                metadata: {
-                    custom_fields: [
-                        {
-                           display_name: context.meta.user.name,
-                           customer_id: context.meta.user.id,
-                           coupon: context.coupon,
-                           shipping_id: context.shipping_id,
-                           shipping_price: context.shipping_price,
-                           cart: cartIds,
-                           total:context.amount,
-                        }
-                    ] 
-                },
-                callback: function(response){
-                    if (response.status == 'success'){
-                           context.paymentIsComplete =true
-                    } else {
-                        this.error = "We could not complete your payment"
-                        context.order_text =  'Place Order'
-                    }
-                },
-                onClose: function(){
-                    context.order_text =  'Place Order'
-                    context.checkingout = false
-                    context.payment_is_processing =false
-                }
-            })
-            handler.openIframe();
+
+
+            
+  
+                FlutterwaveCheckout({
+                    public_key: "FLWPUBK-831a4ffb090cb13d3669b99f88061101-X",
+                    tx_ref: "hooli-tx-1920bbtyt",
+                    amount: 54600,
+                    currency: "NGN",
+                    country: "NG",
+                    payment_options: "card, mobilemoneyghana, ussd",
+                    redirect_url: // specified redirect URL
+                        "https://callbacks.piedpiper.com/flutterwave.aspx?ismobile=34",
+                    meta: {
+                        consumer_id: 23,
+                        consumer_mac: "92a3-912ba-1192a",
+                    },
+                    customer: {
+                        email: "user@gmail.com",
+                        phone_number: "08102909304",
+                        name: "yemi desola",
+                    },
+                    callback: function (data) {
+                        console.log(data);
+                    },
+                    onclose: function() {
+                        // close modal
+                    },
+                    customizations: {
+                        title: "My store",
+                        description: "Payment for items in cart",
+                        logo: "https://assets.piedpiper.com/logo.png",
+                    },
+                });
+            // var handler = PaystackPop.setup({
+            //     key: 'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_test_beb79684037af06bda8c943372456c1f0e10c71d',
+            //     email: context.meta.user.email,
+            //     amount: context.amount * 100,
+            //     currency: "NGN",
+            //     first_name: context.meta.user.name,
+            //     metadata: {
+            //         custom_fields: [
+            //             {
+            //                display_name: context.meta.user.name,
+            //                customer_id: context.meta.user.id,
+            //                coupon: context.coupon,
+            //                shipping_id: context.shipping_id,
+            //                shipping_price: context.shipping_price,
+            //                cart: cartIds,
+            //                total:context.amount,
+            //             }
+            //         ] 
+            //     },
+            //     callback: function(response){
+            //         if (response.status == 'success'){
+            //                context.paymentIsComplete =true
+            //         } else {
+            //             this.error = "We could not complete your payment"
+            //             context.order_text =  'Place Order'
+            //         }
+            //     },
+            //     onClose: function(){
+            //         context.order_text =  'Place Order'
+            //         context.checkingout = false
+            //         context.payment_is_processing =false
+            //     }
+            // })
+            // handler.openIframe();
         },
         payAsAdmin: function(){
             if (!this.addresses.length){
