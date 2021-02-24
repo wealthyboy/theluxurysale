@@ -93,13 +93,13 @@ class WebHookController extends Controller
             }
 
             //delete cart
-            if ( $input['coupon'] ) {
-                $code = trim($input['coupon']);
-                $coupon =  Voucher::where('code', $input['coupon'])->first();
-                if(null !== $coupon && $coupon->type == 'specific'){
-                    $coupon->update(['valid'=>false]);
-                }
-            }
+            // if ( isset($input['coupon'] ) {
+            //     $code = trim($input['coupon']);
+            //     $coupon =  Voucher::where('code', $input['coupon'])->first();
+            //     if(null !== $coupon && $coupon->type == 'specific'){
+            //         $coupon->update(['valid'=>false]);
+            //     }
+            // }
 
         } catch (\Throwable $th) {
             Log::info($th);
