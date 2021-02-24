@@ -42,6 +42,9 @@ class WebHookController extends Controller
             
             $carts    = Cart::where('user_id', $user->id)->where('remember_token','!=',null)->get();
 
+            \Log::info($carts);
+            return;
+
             $currency =  Currency::where('iso_code3',$request->data['currency'])->first();
         
             $order->user_id = $user->id;
