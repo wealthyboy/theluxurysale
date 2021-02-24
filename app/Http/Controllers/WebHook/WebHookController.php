@@ -70,10 +70,10 @@ class WebHookController extends Controller
                 OrderedProduct::Insert($insert);
                 $product_variation = ProductVariation::find($cart->product_variation_id);
                 Log::info($product_variation);
-                // $qty  = $product_variation->quantity - $cart->quantity;
-                // $product_variation->quantity =  $qty < 1 ? 0 : $qty;
-                // $product_variation->save();
-                // //Delete all the cart
+                $qty  = $product_variation->quantity - $cart->quantity;
+                $product_variation->quantity =  $qty < 1 ? 0 : $qty;
+                $product_variation->save();
+                //Delete all the cart
                 $cart->remember_token = null;
                 $cart->status = '';
                 $cart->save();
@@ -93,13 +93,13 @@ class WebHookController extends Controller
             }
 
             //delete cart
-            // if ( isset($input['coupon'] ) {
-            //     $code = trim($input['coupon']);
-            //     $coupon =  Voucher::where('code', $input['coupon'])->first();
-            //     if(null !== $coupon && $coupon->type == 'specific'){
-            //         $coupon->update(['valid'=>false]);
-            //     }
-            // }
+            if ( isset($input['coupon'] )) {
+                $code = trim($input['coupon']);
+                $coupon =  Voucher::where('code', $input['coupon'])->first();
+                if(null !== $coupon && $coupon->type == 'specific'){
+                    $coupon->update(['valid'=>false]);
+                }
+            }
 
         } catch (\Throwable $th) {
             Log::info($th);
