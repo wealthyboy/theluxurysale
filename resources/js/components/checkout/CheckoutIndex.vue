@@ -391,7 +391,7 @@ export default {
                         email: context.meta.user.email,
                         name: context.meta.user.name,
                         id: context.meta.user.id,
-                        coupon: null,
+                        coupon: "of9foo4",
                     },
 
                     callback: function (data) {
