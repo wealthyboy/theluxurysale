@@ -35,9 +35,17 @@ class WebHookController extends Controller
         //     return;
         // } 
 
-        \Log::info($request->all());
-        return;
 
+        try {
+            $input =  $request->data['customer'];
+            $user  =  User::where('email',$input['email'])->first();
+            \Log::info($user);
+
+            return;
+
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
 
         try {
             $input    =  $request->data['metadata']['custom_fields'][0];
