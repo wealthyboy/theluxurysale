@@ -40,7 +40,7 @@ class WebHookController extends Controller
             $input =  $request->data['customer'];
             $user  =  User::where('email',$input['email'])->first();
             
-            $carts    = Cart::where(['user_id'=> $user->id, 'remember_token' ])->get();
+            $carts    = Cart::where('user_id', $user->id)->where('remember_token','!=',null)->get();
 
             $currency =  Currency::where('iso_code3',$request->data['currency'])->first();
         
