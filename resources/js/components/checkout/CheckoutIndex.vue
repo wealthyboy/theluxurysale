@@ -397,6 +397,7 @@ export default {
                     callback: function (data) {
                         if (data.status == 'successful'){
                             context.paymentIsComplete =true
+                            console.log(context.coupon)
                         } else {
                             context.order_text =  'Place Order'
                         }
