@@ -50,7 +50,7 @@ class WebHookController extends Controller
         
             $order->user_id = $user->id;
             $order->address_id     =  optional($user->active_address)->id;
-            $order->coupon         =  null;
+            $order->coupon         =  $input['phone_number']; //This will get the coupon code from the the webhook No other way for now
             $order->status         = 'Processing';
             $order->shipping_id    =  null;
             $order->shipping_price =  null;
