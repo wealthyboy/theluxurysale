@@ -35,6 +35,9 @@ class WebHookController extends Controller
         //     return;
         // } 
 
+        \Log::info($request->all());
+
+
 
         try {
             $input =  $request->data['customer'];
