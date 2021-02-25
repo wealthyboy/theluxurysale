@@ -40,10 +40,10 @@ class WebHookController extends Controller
             $input =  $request->data['customer'];
             $user  =  User::where('email',$input['email'])->first();
             
-            $carts    = Cart::where('user_id', $user->id)->where('remember_token','!=',null)->get();
-
-
+            $carts    =  Cart::where('user_id', $user->id)->where('remember_token','!=',null)->get();
             $currency =  Currency::where('iso_code3',$request->data['currency'])->first();
+
+            $total = Cart::user_sum_items_in_cart($user->id);
         
             $order->user_id = $user->id;
             $order->address_id     =  optional($user->active_address)->id;
@@ -54,7 +54,7 @@ class WebHookController extends Controller
             $order->currency       =  optional($currency)->symbol;
             $order->invoice        =  "INV-".date('Y')."-".rand(10000,39999);
             $order->payment_type   =  $request->data['payment_type'];
-            $order->total          =  100;
+            $order->total          =  $total;
             $order->ip             =  $request->data['ip'];
             $order->save();
             foreach ( $carts   as $cart){
@@ -68,11 +68,10 @@ class WebHookController extends Controller
                     'created_at'=>\Carbon\Carbon::now()
                 ];
                 OrderedProduct::Insert($insert);
-                $product_variation = ProductVariation::find($cart->product_variation_id);
-                Log::info($product_variation);
-                $qty  = $product_variation->quantity - $cart->quantity;
-                $product_variation->quantity =  $qty < 1 ? 0 : $qty;
-                $product_variation->save();
+                // $product_variation = ProductVariation::find($cart->product_variation_id);
+                // $qty  = $product_variation->quantity - $cart->quantity;
+                // $product_variation->quantity =  $qty < 1 ? 0 : $qty;
+                // $product_variation->save();
                 //Delete all the cart
                 $cart->remember_token = null;
                 $cart->status = '';

@@ -23,7 +23,7 @@
             </section>
             <!--End Content-->
         </div>
-        <div  v-if="!pageIsLoading" class="container   mt-1">
+        <div  v-if="!pageIsLoading && !paymentIsComplete" class="container   mt-1">
             <div  class="row d-none justify-content-center">
                 <ul class="checkout-progress-bar">
                     <li :class="{'active': !addresses.length}">

@@ -84,6 +84,17 @@ class Cart extends Model
        return 	static::ConvertCurrencyRate($total = $total[0]->items_total);
 	}
 
+
+	public static function user_sum_items_in_cart($id) {   
+		$total = \DB::table('carts')
+		                ->select(\DB::raw('SUM(carts.total) as items_total'))
+						->where('user_id',$id)
+		                ->where('remember_token','!=',null)
+						->get();
+		return 	static::ConvertCurrencyRate($total = $total[0]->items_total);
+	 }
+ 
+
 	public static function cart_number() { 
 		$cookie=\Cookie::get('cart');
 		$number_products_in_cart = \DB::table('carts')->select('carts.*')->where('remember_token',$cookie)->count();
