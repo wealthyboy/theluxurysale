@@ -503,7 +503,6 @@ export default {
                 coupon:this.coupon,
             }).then((response) => {
                 this.submiting =false
-                this.coupon = ''
                 this.voucher.push(response.data)
                 if (this.shipping_price){
                     this.amount =  parseInt(this.shipping_price) + parseInt(response.data.sub_total);

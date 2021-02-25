@@ -2531,7 +2531,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         coupon: this.coupon
       }).then(function (response) {
         _this2.submiting = false;
-        _this2.coupon = '';
 
         _this2.voucher.push(response.data);
 
