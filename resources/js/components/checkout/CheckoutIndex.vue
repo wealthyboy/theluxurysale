@@ -368,9 +368,7 @@ export default {
             if ( this.$root.settings.shipping_is_free == 0   && !this.shipping_price ){
                 this.error = "Please select your shipping method"
                 return false;
-            } else {
-               this.amount =  this.meta.sub_total
-            }
+            } 
 
             let form = document.getElementById('checkout-form-2')
             this.order_text =  'Please wait. We are almost done......'
