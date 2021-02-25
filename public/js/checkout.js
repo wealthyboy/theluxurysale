@@ -2402,7 +2402,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.order_text = 'Please wait. We are almost done......';
       this.payment_is_processing = true;
       this.payment_method = 'card';
-      console.log(context.coupon);
+      console.log(this.coupon);
       FlutterwaveCheckout({
         public_key: "FLWPUBK_TEST-dcd3315c964f59ff4c04fa1b0eea9595-X",
         tx_ref: "rave-" + Math.floor(Math.random() * 1000000000 + 1),
