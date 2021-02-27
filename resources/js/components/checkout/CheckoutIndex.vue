@@ -178,13 +178,13 @@
                             <p class="form-field-wrapper   col-sm-12 mb-3">
                                 
                                 <template v-if="$root.settings.shipping_is_free == 0 && amount > 1">
-                                    <button @click="payWithPaystack" :class="{'disabled': payment_is_processing}"   type="button" class="btn btn-round btn-lg btn-block btn--primary bold  l-f1  btn--full" name="checkout_place_order" id="place_order" value="Place order" data-value="Place Order">
+                                    <button @click="makePayemnt" :class="{'disabled': payment_is_processing}"   type="button" class="btn btn-round btn-lg btn-block btn--primary bold  l-f1  btn--full" name="checkout_place_order" id="place_order" value="Place order" data-value="Place Order">
                                         <span v-if="checkingout" class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
                                         {{ order_text }}
                                     </button>
                                 </template >
                                 <template v-else>
-                                    <button @click="payWithPaystack" type="button" :class="{'disabled': payment_is_processing}" class="btn   bold  btn--primary btn-round btn-lg btn-block" name="checkout_place_order" id="p lace_order" value="Place order" data-value="Place Order">
+                                    <button @click="makePayemnt" type="button" :class="{'disabled': payment_is_processing}" class="btn   bold  btn--primary btn-round btn-lg btn-block" name="checkout_place_order" id="p lace_order" value="Place order" data-value="Place Order">
                                         <span v-if="checkingout" class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span>
                                         {{ order_text }}
                                     </button>
@@ -354,12 +354,9 @@ export default {
                 }
             }
         },
-        payWithPaystack: function(){
+        makePayemnt: function(){
             let context = this
-            var cartIds = [];
-            this.carts.forEach(function(cart,key){
-                cartIds.push(cart.id)
-            }) 
+             
             if ( !this.addresses.length ){
                 this.error = "You need to save your address before placing your order"
                 return false;
@@ -369,6 +366,10 @@ export default {
                 this.error = "Please select your shipping method"
                 return false;
             } 
+
+            if (!this.coupon){
+                this.amount = this.meta.sub_total 
+            }
 
             let form = document.getElementById('checkout-form-2')
             this.order_text =  'Please wait. We are almost done......'
@@ -408,40 +409,7 @@ export default {
 
                     
                 });
-            // var handler = PaystackPop.setup({
-            //     key: 'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_live_19b3af74ee88ee86f47dfe4d990ebaa1540fcfc9',//'pk_test_beb79684037af06bda8c943372456c1f0e10c71d',
-            //     email: context.meta.user.email,
-            //     amount: context.amount * 100,
-            //     currency: "NGN",
-            //     first_name: context.meta.user.name,
-            //     metadata: {
-            //         custom_fields: [
-            //             {
-            //                display_name: context.meta.user.name,
-            //                customer_id: context.meta.user.id,
-            //                coupon: context.coupon,
-            //                shipping_id: context.shipping_id,
-            //                shipping_price: context.shipping_price,
-            //                cart: cartIds,
-            //                total:context.amount,
-            //             }
-            //         ] 
-            //     },
-            //     callback: function(response){
-            //         if (response.status == 'success'){
-            //                context.paymentIsComplete =true
-            //         } else {
-            //             this.error = "We could not complete your payment"
-            //             context.order_text =  'Place Order'
-            //         }
-            //     },
-            //     onClose: function(){
-            //         context.order_text =  'Place Order'
-            //         context.checkingout = false
-            //         context.payment_is_processing =false
-            //     }
-            // })
-            // handler.openIframe();
+            
         },
         payAsAdmin: function(){
             if (!this.addresses.length){
