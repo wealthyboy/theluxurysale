@@ -163,8 +163,6 @@
                            
                         </div>
                         <div class="row ml-1 no-gutters mb-2 mt-2">
-                            
-
                             <div class="col-11">
                                 <button @click.prevent="addToCart"  :class="canAddToCart"  type="button" name="add-to-cart" value="add_to_cart" class="l-f1  pt-4 pb-4  btn btn--primary  btn-lg btn-block">
                                     {{ cartText }}
@@ -189,16 +187,23 @@
                                     </span>
                                 </a>                            
                             </div>
+
+
+                            <div class="col-12">
+                                <i class="fas fa-phone"></i> <div> Call +234 9043111111 to order</div>
+                            </div>
                         </div>
+
+
                     </div><!-- End .product-filters-container -->
 
-                    <!-- <div class="grey-9 mb-3 clearfix">
+                    <div class="grey-9 mb-3 clearfix">
                         <div class="">
                             <div class="text-info"><span>Delivery Options</span></div>
                             <small class=""><span>International Delivery available</span></small></br>
                             <small class="ml-4"><span>STANDARD DELIVERY</span> : <span class=""> 1-7 working days</span></small>
                         </div>
-                    </div> -->
+                    </div>
 
 
                     <div class="product-single-tabs">
@@ -206,18 +211,14 @@
                             <li class="nav-item pl-2">
                                 <a class="nav-link active" id="product-tab-desc" data-toggle="tab" href="#product-desc-content" role="tab" aria-controls="product-desc-content" aria-selected="true">Description</a>
                             </li>
-                           
                             <li class="nav-item">
                                 <a class="nav-link" id="Warranty_Return" data-toggle="tab" href="#Warranty-Return" role="tab" aria-controls="Warranty-Return" aria-selected="false"> Warranty & Return</a>
                             </li>
-
                         </ul>
                         <div class="tab-content bg--gray">
                             <div class="tab-pane fade show active pl-2" id="product-desc-content" role="tabpanel" aria-labelledby="product-tab-desc">
                                 <div v-html="product.description" class="product-desc-content  pl-2 pb-2 color--primary"></div><!-- End .product-desc-content -->
                             </div><!-- End .tab-pane -->
-
-                            
 
                             <div class="tab-pane fade fade" id="Warranty-Return" role="tabpanel" aria-labelledby="Warranty-Return">
                                 <div class="product-desc-content pl-4 pb-2 color--primary">
