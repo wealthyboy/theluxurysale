@@ -190,20 +190,23 @@
 
 
                             <div class="col-12">
-                                <i class="fas fa-phone"></i> <div> Call +234 9043111111 to order</div>
+                                <span class="" style="">
+                                   <i class="fas fa-phone"></i> 
+                                </span>
+                                <span> Call +234 9043111111 to order</span>
                             </div>
                         </div>
 
 
                     </div><!-- End .product-filters-container -->
 
-                    <div class="grey-9 mb-3 clearfix">
+                    <!-- <div class="grey-9 mb-3 clearfix">
                         <div class="">
                             <div class="text-info"><span>Delivery Options</span></div>
-                            <small class=""><span>International Delivery available</span></small></br>
-                            <small class="ml-4"><span>STANDARD DELIVERY</span> : <span class=""> 1-7 working days</span></small>
+                            <small class=""><span>Delivery available</span></small></br>
+                            <small class="ml-4"><span>STANDARD DELIVERY</span> : <span class=""> 1-3 working days</span></small>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <div class="product-single-tabs">
