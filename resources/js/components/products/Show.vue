@@ -189,11 +189,11 @@
                             </div>
 
 
-                            <div class="col-12">
+                            <div class="col-12 mt-3 text-center">
                                 <span class="" style="">
-                                   <i class="fas fa-phone"></i> 
+                                   <i class="fas fa-2x fa-phone"></i> 
                                 </span>
-                                <span> Call +234 9043111111 to order</span>
+                                <span class="bold color--gray"> Call +234 9043111111 to order</span>
                             </div>
                         </div>
 
