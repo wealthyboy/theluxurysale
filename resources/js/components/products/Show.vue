@@ -173,7 +173,7 @@
                             <div v-if="$root.loggedIn" class="col-1 mt-1">
                                 <a   v-if="!wishlistText" @click.prevent="addToWishList" href="#"  class="mt-4" title="Add to Wishlist">
                                     <span class="fa-stack">
-                                        <i :class="{ 'color--light': is_wishlist}" class="fas fa-circle fa-stack-2x"></i>
+                                        <i  :class="{ 'color--light': is_wishlist}" class="fas fa-circle fa-stack-2x"></i>
                                         <i  :class="{ 'color--primary' : is_wishlist}" class="fas fa-heart  fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a> 
@@ -354,7 +354,6 @@ export default {
         this.discounted_price =  this.product.default_discounted_price
         this.is_wishlist =  this.product.is_wishlist
         this.variant_images = this.product.variants
-        console.log(this.product)
     
     },
     methods: {
@@ -529,6 +528,7 @@ export default {
                 product_variation_id:this.product_variation_id,
             }).then((response)=>{
                 this.wishlistText = false
+            
                 if(this.wishlist.some(wishlist => wishlist.product_variation.id === this.product_variation_id)){
                     this.is_wishlist = true
                     return;
