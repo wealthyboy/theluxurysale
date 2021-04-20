@@ -216,14 +216,14 @@ class RegisterController extends Controller
 			return $user;
 		}
 
-		try {
-			$this->newsletter->subscribe(
-				config('services.mailchimp.list'),
-				$data['email']
-			);
-		} catch (UserAlreadySubscribedException $e) {
-			//dd($e->getMessage());
-		}
+		// try {
+		// 	$this->newsletter->subscribe(
+		// 		config('services.mailchimp.list'),
+		// 		$data['email']
+		// 	);
+		// } catch (UserAlreadySubscribedException $e) {
+		// 	//dd($e->getMessage());
+		// }
 
 		Newsletter::create([
 			'email'=> $data['email']
