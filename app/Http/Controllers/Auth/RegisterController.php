@@ -51,7 +51,7 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct(Request $request,NewsletterContract $newsletter)
+    public function __construct(Request $request)
     {   
 	    //check to SEE IF WE ARE IN ADMIN
         if ( strpos($request->url() ,'admin') !== false ) { 
@@ -59,7 +59,7 @@ class RegisterController extends Controller
 		} else{
 			$this->middleware('guest');
 		}
-		$this->newsletter = $newsletter;
+		//$this->newsletter = $newsletter;
 
     }
 	

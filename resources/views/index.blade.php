@@ -1,19 +1,15 @@
 @extends('layouts.app')
  
 @section('content')
-
 <div class="top-notice text-white bg--gray">
     <div class="container-fluid text-center">
         <div class="row">
-            
             <div class="col-12">
                 <h5 class="d-inline-block text-uppercase mb-0"><b><i class="fas fa-money-check"></i>
                     USE TLS10 and get 10% off when you shop over 600k</b>
                 </h5>
             </div>
-
         </div>
-        
     </div><!-- End .container -->
 </div>
 
@@ -58,12 +54,17 @@
 </div>
 @endif
 
-
+<div>
+	<register-modal   />
+</div>
     
    
 @endsection
 @section('page-scripts')
 @stop
 @section('inline-scripts')
+$(window).on('load', function() {
+    $("#register-modal").modal('show')
+})
 @stop
 

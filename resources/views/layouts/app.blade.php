@@ -58,7 +58,8 @@
     
 	<div id="app" class="page-wrapper">
 		
-
+        <!-- Bootstrap Modal for sign up -->
+    
 		<header class="header  fixed-top">
 			<div class="header-middle ">
 				<div class="container">
@@ -279,6 +280,12 @@
 			</div><!-- End .social-icons -->
 		</div><!-- End .mobile-menu-wrapper -->
 	</div><!-- End .mobile-menu-container -->
+   
+    <!-- Bootstrap Modal for sign up -->
+    <div>
+	   <register-modal />
+	</div>
+
 
 	
 
@@ -292,7 +299,6 @@
 
 	<!-- Plugins JS File -->
 	<script src="/js/app.js?version={{ str_random(6) }}" type="text/javascript"></script>
-	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 	<!-- Main JS File -->
 	<script src="/js/main.min.js?version={{ str_random(6) }}"></script>
 	<script src="{{ asset('js/loadProducts.jquery.js') }}"></script> 
@@ -300,6 +306,9 @@
     @yield('page-scripts')
     <script type="text/javascript">
         @yield('inline-scripts')
+
+		
+
     </script>
 </body>
 </html>
