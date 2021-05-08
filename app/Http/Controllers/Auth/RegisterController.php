@@ -241,7 +241,7 @@ class RegisterController extends Controller
 		$coupon = new Voucher();
 		$coupon->code     =  'TLSWELCOME0'.$user->id; 
 		$coupon->user_id  = $user->id;
-		$coupon->amount   = 1000;
+		$coupon->amount   = 5;
 		$coupon->type     = 'specific user';
 		$coupon->expires  = now()->addMonths(6);
 		$coupon->status = 1;
