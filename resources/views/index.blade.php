@@ -54,9 +54,11 @@
 </div>
 @endif
 
+@if (!auth()->check())
 <div>
 	<register-modal   />
 </div>
+@endif
     
    
 @endsection
