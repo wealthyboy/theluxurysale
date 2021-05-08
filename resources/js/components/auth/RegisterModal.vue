@@ -31,11 +31,14 @@
               >
                 <!--<p class="large">Great to have you back!</p>-->
                 <div class="row  billing-fields__field-wrapper">
-                  <span v-if="errors.general">
-                    <strong class="text-danger">{{
-                      formatError(errors.general)
-                    }}</strong>
-                  </span>
+                  <p>
+                    <span v-if="errors.general">
+                      <strong class="text-danger">{{
+                        formatError(errors.general)
+                      }}</strong>
+                    </span>
+                  </p>
+
                   <div class="form-field-wrapper p-2 col-6">
                     <label for="first_name">First name</label>
                     <input

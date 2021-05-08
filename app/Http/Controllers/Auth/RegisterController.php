@@ -246,13 +246,13 @@ class RegisterController extends Controller
 		$coupon->expires  = now()->addMonths(6);
 		$coupon->status = 1;
 		$coupon->save();
-        try {
+       // try {
 			//code...
 			\Notification::route('mail', $user->email)
             ->notify(new WelcomeNotification($user));
-		} catch (\Throwable $th) {
+		//} catch (\Throwable $th) {
 			//throw $th;
-		}
+		//}
 		
 		return $user;
     }
