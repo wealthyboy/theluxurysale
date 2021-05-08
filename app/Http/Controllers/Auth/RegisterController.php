@@ -13,6 +13,8 @@ use App\State;
 use App\Permission;
 use App\Activity;
 use App\Newsletter;
+use App\Notifications\WelcomeNotification;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -236,6 +238,17 @@ class RegisterController extends Controller
 		$user->type  = 'subscriber';
 		$user->password=bcrypt($data['password']);
 		$user->save();
+		$coupon = new Voucher();
+		$coupon->code     =  'TLSWELCOME0'.$user->id; 
+		$coupon->user_id  = optional(\Auth::user())->id;
+		$coupon->amount   = $request->discount;
+		$coupon->type     = 'specific user';
+		$coupon->expires  = now()->addMonths(6);
+		$coupon->status = 1;
+
+		\Notification::route('mail', $user->email)
+            ->notify(new WelcomeNotification($user));
+
 		return $user;
     }
 	
