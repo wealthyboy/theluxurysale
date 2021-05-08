@@ -240,7 +240,7 @@ class RegisterController extends Controller
 		$user->save();
 		$coupon = new Voucher();
 		$coupon->code     =  'TLSWELCOME0'.$user->id; 
-		$coupon->user_id  = optional(\Auth::user())->id;
+		$coupon->user_id  = $user->id;
 		$coupon->amount   = $request->discount;
 		$coupon->type     = 'specific user';
 		$coupon->expires  = now()->addMonths(6);
