@@ -472,7 +472,6 @@ class ProductController extends Controller
     public function update(Request $request,$id) 
     { 
 
-        //dd($request->add_to_product_attributes);
         $this->validate($request,[
             "category_id"  => "required|array",
             'product_name'=>[
@@ -525,7 +524,6 @@ class ProductController extends Controller
 
         if( !empty($request->meta_fields) ){
             foreach($request->meta_fields as $parent_id  => $value){
-                $categories = Category::find($request->category_id);
                 foreach ($categories as $category) {
                     $category->attributes()->syncWithoutDetaching($parent_id);
                     foreach($category->parent_attributes as $attribute){
@@ -699,7 +697,6 @@ class ProductController extends Controller
                                  * 
                                  * Sync the the attributes and categories
                                  */
-                                $categories = Category::find($request->category_id);
                                 foreach ($categories as $category) {
                                     $category->attributes()->syncWithoutDetaching($parent_id);
                                     foreach($category->parent_attributes as $attribute){

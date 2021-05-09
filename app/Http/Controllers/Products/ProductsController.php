@@ -41,7 +41,7 @@ class ProductsController extends Controller
         $category_attributes = $category->attribute_parents()->has('children')->get();
         
             $products = Product::whereHas('categories',function(Builder  $builder) use ($category){
-                $builder->where('categories.name',$category->name);
+                $builder->where('categories.slug',$category->slug);
             })->filter($request,$this->getFilters($category_attributes))->latest()->paginate($this->settings->products_items_per_page);
             $products->appends(request()->all());
             if($request->ajax()) {
