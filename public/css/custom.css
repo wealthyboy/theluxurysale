@@ -222,6 +222,13 @@ input {
   color: #000;
 }
 
+.modal.show  {
+  display:flex!important;
+  flex-direction:column;
+  justify-content:center;
+  align-content:center;
+  align-items: flex-start;
+}
 
 .main.main-page{margin-top:110px;}
 
