@@ -10,7 +10,7 @@
                             <div class="error-page text-center">
                                 <h1>Thank you for shopping with us</h1>
                                 <p class="large">Your order has been received .</p>
-                                <p class="large"></p>
+                                <p class="large">Buying from THELUXURYSALE means supporting charity</p>
                                 
                                 <a href="/" class="btn btn--primary space-t--2">Continue</a>
                                 <a href="/orders" class="btn btn--primary space-t--2">View order history</a>
