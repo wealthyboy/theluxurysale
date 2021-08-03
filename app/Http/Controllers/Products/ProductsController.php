@@ -99,7 +99,6 @@ class ProductsController extends Controller
 			return redirect('/errors');
         }
         $breadcrumb = 'Search Results for  ' .$filtered_array['q'] ; 
-
 		if($request->has('q')){
 			$filtered_array = array_filter($filtered_array);
                 $query = Product::whereHas('categories', function( $query ) use ( $filtered_array ){

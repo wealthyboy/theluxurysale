@@ -337,7 +337,7 @@ export default {
         }),
         loadScript(callback) {
             const script = document.createElement('script')
-            script.src = 'https://checkout.flutterwave.com/v3.js'
+            script.src = 'https://js.paystack.co/v1/inline.js'
             document.getElementsByTagName('head')[0].appendChild(script)
             if (script.readyState) {  // IE
                 script.onreadystatechange = () => {
@@ -369,44 +369,49 @@ export default {
                 this.amount = this.meta.sub_total 
             }
 
-            let form = document.getElementById('checkout-form-2')
-            this.order_text =  'Please wait. We are almost done......'
-            this.payment_is_processing =true
-            this.payment_method ='card'
-                FlutterwaveCheckout({
-                    public_key: "FLWPUBK-831a4ffb090cb13d3669b99f88061101-X",//"FLWPUBK_TEST-dcd3315c964f59ff4c04fa1b0eea9595-X",
-                    tx_ref: "rave-"+ Math.floor((Math.random() * 1000000000) + 1), 
-                    amount: context.amount,
-                    currency: "NGN",
-                    country: "NG",
-                    payment_options: "card, ussd",
-                    meta: {
-                        customer_id: context.meta.user.id,
-                        coupon: context.coupon,
-                    },
-                    customer: {
-                        email: context.meta.user.email,
-                        name: context.meta.user.name,
-                        id: context.meta.user.id, 
-                        phone_number: context.coupon
-                    },
 
-                    callback: function (data) {
-                        if (data.status == 'successful'){
-                            context.paymentIsComplete =true
-                            console.log(context.coupon)
-                        } else {
-                            context.order_text =  'Place Order'
-                        }
+            let form = document.getElementById("checkout-form-2");
+            this.order_text = "Please wait. We are almost done......";
+            this.payment_is_processing = true;
+            this.payment_method = "card";
+            var handler = PaystackPop.setup({
+                key: "pk_test_beb79684037af06bda8c943372456c1f0e10c71d", //'pk_live_c4f922bc8d4448065ad7bd3b0a545627fb2a084f',//'pk_test_844112398c9a22ef5ca147e85860de0b55a14e7c',
+                email: context.meta.user.email,
+                amount: context.amount * 100,
+                currency: "NGN",
+                first_name: context.meta.user.name,
+                metadata: {
+                custom_fields: [
+                    {
+                    display_name: context.meta.user.name,
+                    customer_id: context.meta.user.id,
+                    coupon: context.coupon_code,
+                    shipping_id: context.shipping_id,
+                    shipping_price: context.shipping_price,
+                    cart: cartIds,
+                    total: context.amount,
+                    delivery_option: context.delivery_option,
+                    delivery_note: context.delivery_note,
                     },
-                    onclose: function() {
-                        context.order_text =  'Place Order'
-                        context.checkingout = false
-                        context.payment_is_processing =false
-                    },
+                ],
+                },
+                callback: function (response) {
+                if (response.status == "success") {
+                    context.paymentIsComplete = true;
+                } else {
+                    this.error = "We could not complete your payment";
+                    context.order_text = "Place Order";
+                }
+                },
+                onClose: function () {
+                context.order_text = "Place Order";
+                context.checkingout = false;
+                context.payment_is_processing = false;
+                },
+            });
+            handler.openIframe();
 
-                    
-                });
+        
             
         },
         payAsAdmin: function(){
