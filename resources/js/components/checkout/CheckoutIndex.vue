@@ -354,6 +354,12 @@ export default {
         },
         makePayemnt: function(){
             let context = this
+
+            if(this.meta.sub_total <1){return;}
+            var cartIds = [];
+            this.carts.forEach(function (cart, key) {
+                cartIds.push(cart.id);
+            });
              
             if ( !this.addresses.length ){
                 this.error = "You need to save your address before placing your order"
