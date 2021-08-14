@@ -38,14 +38,17 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="theluxurysale - Online sales of your best brands,buy gucci,versace. ">
     <meta name="twitter:description" content="Online sales of your best brands,buy gucci,versace. ">
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-J67D2PM4C7"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-182664155-1"></script>
+	
+
 	
     <script>
-	    window.dataLayer = window.dataLayer || [];
+			
+		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
-		gtag('config', 'G-J67D2PM4C7');
+		gtag('config', 'UA-182664155-1');
 		Window.user = {
 			user: {!! auth()->check() ? auth()->user() : 0000 !!},
 			loggedIn: {!! auth()->check() ? 1 : 0 !!},
