@@ -69,7 +69,7 @@ class ProductVariation extends Model
 	}
     
     public function product(){
-        return $this->belongsTo('App\Product');
+        return $this->belongsTo('App\Product')->where('products.allow',1);
     }
 
     public function product_variation_values()

@@ -40,15 +40,13 @@
     <meta name="twitter:description" content="Online sales of your best brands,buy gucci,versace. ">
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-182664155-1"></script>
 	
-
-	
     <script>
-			
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-
 		gtag('config', 'UA-182664155-1');
+
+
 		Window.user = {
 			user: {!! auth()->check() ? auth()->user() : 0000 !!},
 			loggedIn: {!! auth()->check() ? 1 : 0 !!},
@@ -56,6 +54,7 @@
 			token: '{!! csrf_token() !!}'
 		}
 	</script>
+
 </head>
 <body class="">
     

@@ -151,10 +151,10 @@
                                     <div :id="'productV-' +key" class="d-flex mb-1 justify-content-center">
                                         <div  @click="getAttribute($event,key)" :data-name="key" @mouseenter="showColor(children)" @mouseleave="removeColor" :class="[ index== 0 ? 'active-attribute  ' : '', activeObject]" v-if="key == 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children" :style="{ 'background-color': children }" style="height: 30px; width: 30px; border-radius: 50%; cursor: pointer;" class="mr-1 first-attribute"></div>
                                         <template v-if="attributesData.length">
-                                            <div  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"  style="height: 35px; width: auto; border-radius: 5%; cursor: pointer;" class="mr-1 border pr-3  pl-3 o-a pt-1 other-attribute">{{ children }} </div>
+                                            <div   @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pr-3  pl-3 o-a pt-1 product-variation-box  other-attribute">{{ children }} </div>
                                         </template>
                                         <template v-else>
-                                            <div  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"  style="height: 35px; width: auto; border-radius: 5%; cursor: pointer;" class="mr-1  pr-3 pl-3 pt-1  border other-attribute">{{ children }} </div>
+                                            <div    @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1  pr-3 pl-3 pt-1  product-variation-box  border other-attribute">{{ children }} </div>
                                         </template>
                                     </div>
                                 </div>
@@ -173,8 +173,8 @@
                             <div v-if="$root.loggedIn" class="col-1 mt-1">
                                 <a   v-if="!wishlistText" @click.prevent="addToWishList" href="#"  class="mt-4" title="Add to Wishlist">
                                     <span class="fa-stack">
-                                        <i  :class="{ 'color--light': is_wishlist}" class="fas fa-circle fa-stack-2x"></i>
-                                        <i  :class="{ 'color--primary' : is_wishlist}" class="fas fa-heart  fa-stack-1x fa-inverse"></i>
+                                        <i  :class="{ 'color--light': is_wishlist }" class="fas fa-circle fa-stack-2x"></i>
+                                        <i  :class="{ 'color--primary' : is_wishlist }" class="fas fa-heart  fa-stack-1x fa-inverse"></i>
                                     </span>
                                 </a> 
                                <span  style="" v-if="wishlistText"  class="spinner-border spinner-border-sm  ml-3" role="status" aria-hidden="true"></span>
@@ -187,8 +187,6 @@
                                     </span>
                                 </a>                            
                             </div>
-
-
                             <div class="col-12 mt-3 text-center">
                                 <span class="" style="">
                                    <i class="fas fa-2x fa-phone"></i> 
@@ -200,13 +198,7 @@
 
                     </div><!-- End .product-filters-container -->
 
-                    <!-- <div class="grey-9 mb-3 clearfix">
-                        <div class="">
-                            <div class="text-info"><span>Delivery Options</span></div>
-                            <small class=""><span>Delivery available</span></small></br>
-                            <small class="ml-4"><span>STANDARD DELIVERY</span> : <span class=""> 1-3 working days</span></small>
-                        </div>
-                    </div> -->
+                    
 
 
                     <div class="product-single-tabs">
@@ -304,6 +296,15 @@ export default {
             fadeIn: false,
             product_slug: this.product.slug,
             wishlistText: false,
+            styles: {
+                pointerEvents: "none",
+                textDecoration: "line-through",
+                backgroundColor: "#999",
+                color: "#fff",
+                backgroundImage: "url(/img/outofstock.svg)",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+            },
             allowedFileTypes: ['image/jpeg','image/png','image/gif'],
             form:{
                 description: null,
@@ -311,7 +312,8 @@ export default {
                 product_id:this.product.id ,
                 image: null
             },
-            submiting:false
+            submiting:false,
+
         }
     },
     computed: {
@@ -333,12 +335,13 @@ export default {
             return this.cText
         },
         canAddToCart: function() {
-            return [this.canNotAddToCart ? 'disabled' : '' ];
+            return [ this.quantity == null ? 'disabled' : '' ];
         },
         loggedIn: function(){
             return [this.user ? true: false]
         },
-       
+        
+
         
     },
     mounted(){
@@ -349,12 +352,33 @@ export default {
         this.product_variation_id = this.product.default_variation_id
         this.percentage_off = this.product.default_percentage_off
         this.quantity = this.product.qty
-        this.cText= this.product.qty  < 1 ? 'Out of Stock' :" Add To Cart"
-        this.price =  this.product.converted_price
+        this.cText= this.product.qty  < 1 ? 'Item is sold out' :" Add To Cart";
+        this.price =  this.product.converted_price;
         this.discounted_price =  this.product.default_discounted_price
         this.is_wishlist =  this.product.is_wishlist
         this.variant_images = this.product.variants
+
+        //let other_attribute = document.querySelectorAll(".other-attribute");
+        //let first_attribute = document.querySelector(".active-attribute");
+
     
+
+        // if (other_attribute.length) {
+        //     other_attribute.forEach((element) => {
+        //         try {
+        //         let st = this.stock[0][
+        //             first_attribute.dataset.value + "_" + element.dataset.value
+        //         ];
+        //         if (st.quantity === 0) {
+        //             Object.assign(
+        //             document.getElementById(element.dataset.value).style,
+        //             this.styles
+        //             );
+        //         } else {
+        //         }
+        //         } catch (error) {}
+        //     });
+        // }
     },
     methods: {
         getStarRating(e,rating){
@@ -395,9 +419,9 @@ export default {
         getAttribute: function(evt,key) {
             let attr = null,attrs,fA,oA,oAv,ooA,f = false,af= false,cA;
                 attr = document.querySelector('.active-attribute') 
-                fA = document.querySelectorAll('.first-attribute') 
-                oA = document.querySelectorAll('.other-attribute')
-                oAv = document.querySelector('.o-a')
+                fA   = document.querySelectorAll('.first-attribute') 
+                oA   = document.querySelectorAll('.other-attribute')
+                oAv  = document.querySelector('.o-a')
         
                 if (evt.target.classList.contains('first-attribute')){
                     fA.forEach(function(elm,key){
@@ -405,7 +429,9 @@ export default {
                     })
                     af=true
                     evt.target.classList.add('active-attribute')
-                } 
+                }
+                
+                
                 if (evt.target.classList.contains('other-attribute')){
                     oA.forEach(function(elm,key){
                         elm.classList.remove('active-other-attribute')  
@@ -445,6 +471,7 @@ export default {
                 }
 
                 let vTs = s[0][variation]
+                
 
              
                 if (key == 'Colors'){
@@ -458,7 +485,7 @@ export default {
                 this.discounted_price = vTs.discounted_price ||  vTs.default_discounted_price 
                 this.product_variation_id = vTs.id 
                 this.canNotAddToCart = false
-                this.cText = "Add To Cart" 
+                vTs.quantity ? this.cText = "Add To Cart" : "Item is sold out";
             } catch (error) {
                 this.canNotAddToCart = true
                 this.cText = "Sold Out"

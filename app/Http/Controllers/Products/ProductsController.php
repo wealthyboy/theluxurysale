@@ -40,7 +40,7 @@ class ProductsController extends Controller
         $page_title = implode(" ",explode('-',$category->slug));
         $category_attributes = $category->attribute_parents()->has('children')->get();
         
-            $products = Product::whereHas('categories',function(Builder  $builder) use ($category){
+            $products = Product::where('products.allow',true)->whereHas('categories',function(Builder  $builder) use ($category){
                 $builder->where('categories.slug',$category->slug);
             })->filter($request,$this->getFilters($category_attributes))->latest()->paginate($this->settings->products_items_per_page);
             $products->appends(request()->all());
@@ -101,7 +101,7 @@ class ProductsController extends Controller
         $breadcrumb = 'Search Results for  ' .$filtered_array['q'] ; 
 		if($request->has('q')){
 			$filtered_array = array_filter($filtered_array);
-                $query = Product::whereHas('categories', function( $query ) use ( $filtered_array ){
+                $query = Product::where('products.allow',1)->whereHas('categories', function( $query ) use ( $filtered_array ){
                     $query->where('categories.name','like','%' .$filtered_array['q'] . '%')
                         ->orWhere('products.product_name', 'like', '%' .$filtered_array['q'] . '%')
                         ->orWhere('products.sku', 'like', '%' .$filtered_array['q'] . '%');
