@@ -49,7 +49,7 @@
                       name="first_name"
                       @input="removeError($event)"
                       @blur="vInput($event)"
-                      :class="{'has-danger': errors.first_name}"
+                      :class="{ 'has-danger': errors.first_name }"
                       value=""
                     />
                     <span v-if="errors.first_name">
@@ -68,7 +68,7 @@
                       name="last_name"
                       @input="removeError($event)"
                       @blur="vInput($event)"
-                      :class="{'has-danger': errors.last_name}"
+                      :class="{ 'has-danger': errors.last_name }"
                       value=""
                     />
                     <span v-if="errors.last_name">
@@ -90,7 +90,7 @@
                       name="email"
                       @input="removeError($event)"
                       @blur="vInput($event)"
-                      :class="{'has-danger': errors.email}"
+                      :class="{ 'has-danger': errors.email }"
                       value=""
                     />
                     <span v-if="errors.email">
@@ -109,7 +109,7 @@
                       name="phone_number"
                       @input="removeError($event)"
                       @blur="vInput($event)"
-                      :class="{'has-danger': errors.phone_number}"
+                      :class="{ 'has-danger': errors.phone_number }"
                       value=""
                     />
                     <span v-if="errors.phone_number">
@@ -129,7 +129,7 @@
                       class="form-control required"
                       @input="removeError($event)"
                       @blur="vInput($event)"
-                      :class="{'has-danger': errors.password}"
+                      :class="{ 'has-danger': errors.password }"
                       value=""
                     />
                     <span v-if="errors.password">
@@ -149,7 +149,7 @@
                       name="password_confirmation"
                       @input="removeError($event)"
                       @blur="vInput($event)"
-                      :class="{'has-danger': errors.password_confirmation}"
+                      :class="{ 'has-danger': errors.password_confirmation }"
                       value=""
                     />
                     <span v-if="errors.password_confirmation">
@@ -181,7 +181,7 @@
                   >
                     <button
                       type="submit"
-                      id="login_form_button"
+                      id="register_form_button"
                       data-loading="Loading"
                       class="btn bold btn--lg btn--primary"
                       name="login"
@@ -227,7 +227,7 @@
   <!--loginModal-->
 </template>
 <script>
-import {mapGetters, mapActions} from "vuex";
+import { mapGetters, mapActions } from "vuex";
 import LoginModal from "./LoginModal.vue";
 
 export default {
@@ -258,7 +258,7 @@ export default {
     console.log(true);
     let input = document.querySelectorAll(".required");
     if (typeof input !== "undefined") {
-      this.clearErrors({context: this, input: input});
+      this.clearErrors({ context: this, input: input });
     }
   },
   methods: {
@@ -274,18 +274,18 @@ export default {
     removeError(e) {
       let input = document.querySelectorAll(".required");
       if (typeof input !== "undefined") {
-        this.clearErrors({context: this, input: input});
+        this.clearErrors({ context: this, input: input });
       }
     },
     vInput(e) {
       let input = document.querySelectorAll(".required");
       if (typeof input !== "undefined") {
-        this.checkInput({context: this, email: this.form.email, input: e});
+        this.checkInput({ context: this, email: this.form.email, input: e });
       }
     },
     submit: function() {
       let input = document.querySelectorAll(".required");
-      this.validateForm({context: this, input: input});
+      this.validateForm({ context: this, input: input });
       if (Object.keys(this.errors).length !== 0) {
         this.error = "Please check for errors";
         return false;

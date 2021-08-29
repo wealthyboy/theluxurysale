@@ -17,13 +17,13 @@
                             
                             <!--<p class="large">Great to have you back!</p>-->
                             <p class="">
-                                <label for="username">Email address</label>
-                                <input v-model="email"  id="email" type="email" class="form-control" name="email" value="" required autofocus>
+                                <label for="login-email">Email address</label>
+                                <input v-model="email"  id="login-email" type="email" class="form-control" name="email" value="" required autofocus>
                                 <p class="text-danger bold" v-if="errors.length"> Email/Password not found</p>
                             </p>
                             <p class="">
-                                <label for="password">Password</label>
-                                <input v-model="password"  id="password" type="password" class="form-control" name="password" required>
+                                <label for="login-password">Password</label>
+                                <input v-model="password"  id="login-password" type="password" class="form-control" name="password" required>
                             </p>
                            <div class="d-flex justify-content-between">
                                 <p class="form-group">

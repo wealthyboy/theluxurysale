@@ -380,7 +380,6 @@ export default {
                                 element.dataset.value
                             ];
                         }
-                        
                     if (st.quantity === 0 || !st.quantity) {
                         Object.assign(
                           document.getElementById(element.dataset.value).style,
