@@ -145,16 +145,16 @@
                             <!--Product Variations Form-->
                         <div class="row">
                             <!--Select Size-->
-                            <div v-if="Object.keys(attributes).length !== 0"  class="col-12 mt-2 text-center">
+                            <div v-if="Object.keys(attributes).length !== 0"  class="col-12 variations mt-2 text-center">
                                 <div   v-for="map, key in attributes" :key="key" class="">
                                     <label class="d-block">{{ key }}:  <span v-if="key == 'Colors' ">{{ color }}</span></label>
                                     <div :id="'productV-' +key" class="d-flex mb-1 justify-content-center">
                                         <div  @click="getAttribute($event,key)" :data-name="key" @mouseenter="showColor(children)" @mouseleave="removeColor" :class="[ index== 0 ? 'active-attribute  ' : '', activeObject]" v-if="key == 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children" :style="{ 'background-color': children }" style="height: 30px; width: 30px; border-radius: 50%; cursor: pointer;" class="mr-1 first-attribute"></div>
                                         <template v-if="attributesData.length">
-                                            <div   @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pr-3  pl-3 o-a pt-1 product-variation-box  other-attribute">{{ children }} </div>
+                                            <div  :id="children"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pr-3  pl-3 o-a pt-1 product-variation-box  other-attribute">{{ children }} </div>
                                         </template>
                                         <template v-else>
-                                            <div    @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1  pr-3 pl-3 pt-1  product-variation-box  border other-attribute">{{ children }} </div>
+                                            <div  :id="children"  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1  pr-3 pl-3 pt-1  product-variation-box  border other-attribute">{{ children }} </div>
                                         </template>
                                     </div>
                                 </div>
@@ -357,9 +357,41 @@ export default {
         this.discounted_price =  this.product.default_discounted_price
         this.is_wishlist =  this.product.is_wishlist
         this.variant_images = this.product.variants
+        this.markAsOutOfStock()
 
+        
     },
     methods: {
+        markAsOutOfStock(){
+            let other_attribute = document.querySelectorAll(".other-attribute");
+            let first_attribute = document.querySelector(".active-attribute");
+            let s = JSON.parse(this.product.stock) 
+            let st;
+
+            if (other_attribute.length) {
+                other_attribute.forEach((element) => {
+                    try {
+                        if (first_attribute) {
+                            st = this.stock[0][
+                                first_attribute.dataset.value + "_" + element.dataset.value
+                            ];
+                        } else {
+                            st = s[0][
+                                element.dataset.value
+                            ];
+                        }
+                        
+                    if (st.quantity === 0 || !st.quantity) {
+                        Object.assign(
+                          document.getElementById(element.dataset.value).style,
+                          this.styles
+                        );
+                    } else {
+                    }
+                    } catch (error) {}
+                });
+            }
+        },
         getStarRating(e,rating){
             this.form.rating = rating
             this.noRating = false
@@ -421,7 +453,6 @@ export default {
 
             try { 
                 let i = JSON.parse(this.product.inventory) 
-                console.log(this.product.inventory) 
                 let s = JSON.parse(this.product.stock)  
                 let variation;                
                 if ( typeof i[0].length === 'undefined' ) {
