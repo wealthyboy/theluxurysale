@@ -358,27 +358,6 @@ export default {
         this.is_wishlist =  this.product.is_wishlist
         this.variant_images = this.product.variants
 
-        //let other_attribute = document.querySelectorAll(".other-attribute");
-        //let first_attribute = document.querySelector(".active-attribute");
-
-    
-
-        // if (other_attribute.length) {
-        //     other_attribute.forEach((element) => {
-        //         try {
-        //         let st = this.stock[0][
-        //             first_attribute.dataset.value + "_" + element.dataset.value
-        //         ];
-        //         if (st.quantity === 0) {
-        //             Object.assign(
-        //             document.getElementById(element.dataset.value).style,
-        //             this.styles
-        //             );
-        //         } else {
-        //         }
-        //         } catch (error) {}
-        //     });
-        // }
     },
     methods: {
         getStarRating(e,rating){
