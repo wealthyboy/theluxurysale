@@ -70,9 +70,9 @@ class ProductController extends Controller
     }
 
 
-    public function printInvoice($id){
-        $product = ProductVariation::find($id);
-        return view('admin.products.invoice',compact('product') );
+    public function printSku($id){
+        $product = Product::find($id);
+        return view('admin.products.sku',compact('product') );
     }
     
 

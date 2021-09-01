@@ -104,7 +104,11 @@
                                            {{ $system_settings->default_currency->symbol }}{{ $product->display_price() }}
                                         </span> 
                                     </td>
-                                    <td class="td-actions ">                     
+                                    <td class="td-actions "> 
+                                       
+                                        <a href="/admin/products/sku/{{$product->id}}" rel="tooltip"   target="_blank" class="btn btn-success btn-simple" data-original-title="" title="Print Sku">
+                                            <i class="material-icons">print</i>
+                                        </a>                    
                                         <a href="{{ route('products.edit',['product'=>$product->id] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
                                             <i class="material-icons">edit</i>
                                             Edit

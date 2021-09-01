@@ -64,8 +64,9 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
     Route::get('delete/upload','Admin\Uploads\UploadsController@destroy');
 
 
-    Route::get('/products/invoice/{id}','Admin\Product\ProductController@printInvoice')->name('print_sku');
-    Route::get('/products/barcode/{product}','Admin\Product\ProductController@barcode')->name('barcode');
+    Route::get('products/sku/{id}','Admin\Product\ProductController@printSku')->name('admin.products.sku');
+
+    Route::get('products/barcode/{product}','Admin\Product\ProductController@barcode')->name('barcode');
     Route::post('load-attributes','Admin\Product\ProductController@loadAttr');
     Route::get('products/{id}/variation', 'Admin\Variation\ProductVariationController@index')->name('variations');
     Route::get('get-related-attributes',  'Admin\Product\ProductController@index')->name('variations');
