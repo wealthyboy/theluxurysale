@@ -176,6 +176,10 @@ input {
   width: 27px;
 }
 
+.header-icon:not(:last-child){
+  margin-right: 1.2rem;
+}
+
 
 .dropdown-arrow::after{
   content: "";
