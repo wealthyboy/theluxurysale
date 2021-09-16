@@ -42,15 +42,15 @@ class CurrencyByIp
                         if (!$country){
                             if (in_array( $position->countryName,array_values(Helper::EU()))){
                                 $country = Currency::where('country', 'Europe')->first();
-                                $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$country->country, 'symbol' => $country->symbol ];  
+                                $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$country->country, 'symbol' => $country->symbol, 'iso' =>  $country->iso_code3];  
                             } else {
                                 $country = Currency::where('country', 'United States')->first();
-                                $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$country->country, 'symbol' => $country->symbol ];
+                                $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$country->country, 'symbol' => $country->symbol,  'iso' =>  $country->iso_code3 ];
                             }
                         } elseif (null !== $country && $country->country == optional($settings->currency)->country){
-                            $rate = [ 'rate' => 1,'country' =>$position->countryName,  'code'=> $country->iso_code3, 'symbol' => $country->symbol ];
+                            $rate = [ 'rate' => 1,'country' =>$position->countryName,  'code'=> $country->iso_code3, 'symbol' => $country->symbol,  'iso' =>  $country->iso_code3 ];
                         } else {
-                            $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$position->countryName, 'code'=> $country->iso_code3, 'symbol' => $country->symbol ];
+                            $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$position->countryName, 'code'=> $country->iso_code3, 'symbol' => $country->symbol,  'iso' =>  $country->iso_code3 ];
                         }
                         $request->session()->put('rate', json_encode(collect($rate)));
                         $request->session()->put('userLocation',  json_encode($position));
@@ -66,16 +66,16 @@ class CurrencyByIp
                     if (null == $country){
                         if (in_array( $position->countryName,array_values(Helper::EU()))){
                             $country = Currency::where('country', 'Europe')->first();
-                            $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$country->name, 'symbol' => $country->symbol ];  
+                            $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$country->name, 'symbol' => $country->symbol,  'iso' =>  $country->iso_code3 ];  
                         } else {
                             $country = Currency::where('country', 'United States')->first();
-                            $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$country->name, 'symbol' => $country->symbol ];
+                            $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$country->name, 'symbol' => $country->symbol,  'iso' =>  $country->iso_code3 ];
                         }
                         
                     } elseif (null !== $country && $country->country == optional($settings->currency)->country){
-                        $rate = [ 'rate' => 1,'country' =>$position->countryName, 'code'=> $country->iso_code3,  'symbol' => $country->symbol ];
+                        $rate = [ 'rate' => 1,'country' =>$position->countryName, 'code'=> $country->iso_code3,  'symbol' => $country->symbol,  'iso' =>  $country->iso_code3 ];
                     } else {
-                        $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$position->countryName, 'code'=> $country->iso_code3,  'symbol' => $country->symbol ];
+                        $rate = [ 'rate' => optional($country->rate)->rate,'country' =>$position->countryName, 'code'=> $country->iso_code3,  'symbol' => $country->symbol,  'iso' =>  $country->iso_code3 ];
                     }
                     $request->session()->put('rate', json_encode(collect($rate)));
                     $request->session()->put('userLocation',  json_encode($position));
@@ -86,6 +86,7 @@ class CurrencyByIp
         } else {
             $request->session()->forget(['switch', 'rate']);            
         }
+
 
         
       

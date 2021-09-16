@@ -63,6 +63,33 @@
         <!-- Bootstrap Modal for sign up -->
     
 		<header class="header  fixed-top">
+		    <div class="header-top d-lg-none d-xs-block ">
+				<div class="container">
+					@if( $system_settings->allow_multi_currency )
+						<div class="header-left header-dropdowns">
+							<div class="header-dropdown ml-4">
+								<a href="#">{{ json_decode(session('rate'))->symbol ?? optional($system_settings->currency)->iso_code3 }}</a>
+								<div class="header-menu">
+									<ul>
+									    @foreach($currencies as $currency)
+											<li><a href="/currency/{{ $currency->id }}"> {{ $currency->symbol }} {{ $currency->iso_code3 }} </a></li>
+										@endforeach
+									</ul>
+								</div><!-- End .header-menu -->
+							</div><!-- End .header-dropown -->
+						</div><!-- End .header-left -->
+					@endif
+
+					<div class="header-right">
+						<span class="separator"></span>
+						<div class="social-icons">
+							<a href="{{ $system_settings->facebook_link }}" class="social-icon social-facebook icon-facebook" target="_blank"></a>
+							<a href="{{ $system_settings->twitter_link }}" class="social-icon social-twitter icon-twitter" target="_blank"></a>
+							<a href="{{ $system_settings->instagram_link }}" class="social-icon social-instagram icon-instagram" target="_blank"></a>
+						</div><!-- End .social-icons -->
+					</div><!-- End .header-right -->
+				</div><!-- End .container -->
+			</div>
 			<div class="header-middle ">
 				<div class="container">
 					<div class="header-left w-lg-max ml-auto ml-lg-0">
@@ -85,7 +112,21 @@
 							<img src="{{ $system_settings->logo_path() }}" alt="{{ Config('app.name') }} Logo">
 						</a>
 					</div><!-- End .header-center -->
-                    <nav-icon    />
+					@if( $system_settings->allow_multi_currency )
+						<div class="position-absolute currency-switch  d-none d-sm-block">
+							<div class="header-dropdown ml-4">
+								<a href="#"> {{ json_decode(session('rate'))->symbol ?? optional($system_settings->currency)->iso_code3 }}</a>
+								<div class="header-menu">
+									<ul>
+									    @foreach($currencies as $currency)
+											<li><a href="/currency/{{ $currency->id }}"> {{ $currency->symbol }} {{ $currency->iso_code3 }} </a></li>
+										@endforeach
+									</ul>
+								</div><!-- End .header-menu -->
+							</div><!-- End .header-dropown -->
+						</div><!-- End .header-left -->
+					@endif
+                    <nav-icon   />
 
 				</div><!-- End .container -->
 			</div><!-- End .header-middle -->

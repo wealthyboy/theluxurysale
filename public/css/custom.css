@@ -181,6 +181,11 @@ input {
 }
 
 
+.currency-switch {
+  right: 150px;
+}
+
+
 .dropdown-arrow::after{
   content: "";
 }
@@ -975,7 +980,7 @@ footer a:hover, footer a:focus {
     top: 46%;
   }
 
-  .main.main-page{margin-top:60px;}
+  .main.main-page{margin-top:82px;}
 
 }
 
