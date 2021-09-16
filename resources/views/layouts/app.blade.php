@@ -63,9 +63,10 @@
         <!-- Bootstrap Modal for sign up -->
     
 		<header class="header  fixed-top">
+		   @if( $system_settings->allow_multi_currency )
+
 		    <div class="header-top d-lg-none d-xs-block ">
 				<div class="container">
-					@if( $system_settings->allow_multi_currency )
 						<div class="header-left header-dropdowns">
 							<div class="header-dropdown ml-4">
 								<a href="#">{{ json_decode(session('rate'))->symbol ?? optional($system_settings->currency)->iso_code3 }}</a>
@@ -78,7 +79,6 @@
 								</div><!-- End .header-menu -->
 							</div><!-- End .header-dropown -->
 						</div><!-- End .header-left -->
-					@endif
 
 					<div class="header-right">
 						<span class="separator"></span>
@@ -90,6 +90,8 @@
 					</div><!-- End .header-right -->
 				</div><!-- End .container -->
 			</div>
+			@endif
+
 			<div class="header-middle ">
 				<div class="container">
 					<div class="header-left w-lg-max ml-auto ml-lg-0">

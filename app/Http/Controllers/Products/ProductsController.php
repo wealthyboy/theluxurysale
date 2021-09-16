@@ -52,6 +52,8 @@ class ProductsController extends Controller
             }
 
         $breadcrumb = $category->name; 
+
+        dd($products);
         return  view('products.index',compact(
             'category',
             'page_title',
