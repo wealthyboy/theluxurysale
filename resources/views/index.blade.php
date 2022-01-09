@@ -99,7 +99,7 @@ $(window).on('load', function() {
    let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
     if (isMobile) {
         console.log($('.Valentino').next())
-        $(".women").after($('.Valentino').clone());
+       // $(".women").after($('.Valentino').clone());
     }
 })
 @stop
