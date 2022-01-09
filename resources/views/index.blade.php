@@ -67,7 +67,7 @@
                         @if($banner->col != 'col-lg-12')
                         <div class="buttons">
                             <a href="{{ $banner->link }}" class="btn rounded  btn-block  bold btn-outline btn-lg">
-                                Shop Now e
+                                Shop Now 
                             </a>
                         </div>
                         @endif
