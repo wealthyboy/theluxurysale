@@ -42,8 +42,8 @@
             @endif
             @if($banner->use_text)
             <div class="col-md-6  d-none d-lg-block">
-                <div class="bg-panel-white re-order text-center d-flex justify-content-center align-items-center">
-                    <div>
+                <div class="bg-panel-white re-order text-center d-flex justify-content-center align-content-center ">
+                    <div class="align-items-center">
                         <h1 class="bold">{{ $banner->title }}</h1>
                         <p class="">
                             <?php echo  html_entity_decode($banner->description);  ?> 
@@ -60,7 +60,7 @@
             </div>
 
             <div class="col-md-6  d-block d-sm-none">
-                <div class="bg-panel-white bg-left-panel ml-5 mr-5">
+                <div class=" bg-left-panel ml-5 mr-5">
                     <h1 class="bold">{{ $banner->title }}</h1>
                     <p class="">
                         <?php echo  html_entity_decode($banner->description);  ?> 
