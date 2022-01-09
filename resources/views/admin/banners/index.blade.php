@@ -63,7 +63,7 @@
                                         <div class="img-container">
                                             @if($banner->image)
                                             <img src="{{ $banner->image }}" alt="...">
-                                            @else
+                                            @endif
                                         </div>
                                     </td>
                                     <td class="td-name">
