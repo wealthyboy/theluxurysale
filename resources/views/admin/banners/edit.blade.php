@@ -85,7 +85,7 @@
                         <div class="col-sm-10">
                                 <label class="control-label"> Enter description here</label>
                                 <textarea name="description" 
-                                id="description" class="form-control" rows="30">{{ old('description') }}</textarea>
+                                id="description" class="form-control" rows="30">{{ $banner->description  }}</textarea>
                         </div>
                     </div>
 
@@ -96,7 +96,7 @@
                             
                             <div class="togglebutton">
                             <label>
-                            <input name="use_text"  value="1" type="checkbox" >
+                            <input name="use_text"  {{ $banner->use_text ? 'checked' : "" }} value="1" type="checkbox" >
                                Use text
                             </label>
                             </div>
