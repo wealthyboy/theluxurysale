@@ -98,18 +98,8 @@ $(window).on('load', function() {
    $("#register-modal").modal('show')
    let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
     if (isMobile) {
-        let v = $('.Valentino');  
-        let w = $('.Women');   
- 
-        let p = v.clone();  
-        let c = v.next(); 
-        w.insertAfter(p)
-        
-        console.log(p)
-        console.log(c)
+        $(".women").after($('.Valentino').clone());
 
-
-       // v.next().insertAfter(p)
     }
 })
 @stop
