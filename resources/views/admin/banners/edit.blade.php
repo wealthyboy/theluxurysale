@@ -144,8 +144,15 @@
 
 @endsection
 
+
+@section('page-scripts')
+   <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+   <script src="{{ asset('backend/js/products.js') }}"></script>
+@stop
+
 @section('inline-scripts')
 $(document).ready(function() {
+
     let activateFileExplorer = 'a.activate-file';
     let delete_image = 'a.delete_image';
     var main_file = $("input#file_upload_input");
@@ -159,6 +166,11 @@ $(document).ready(function() {
         activator: delete_image,
         inputFile: main_file,
     });
+
+    CKEDITOR.replace('description',{
+        height: '400px'
+    })       
+   
 });
 @stop
 
