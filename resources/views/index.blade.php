@@ -26,7 +26,7 @@
 @endif
 
 @if ($banners->count())
-<div class="container-fliud mb-1 mt-1">
+<div class="container mb-1 mt-1">
     <div  class="row  no-gutters ">
 
         @foreach($banners as $banner)
