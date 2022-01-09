@@ -27,10 +27,9 @@
 
 @if ($banners->count())
 <div class="container-fliud mb-1 mt-1">
+    <div  class="row  no-gutters ">
 
         @foreach($banners as $banner)
-            <div  class="row  no-gutters ">
-
 
             @if(!$banner->use_text)
             <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-center">
@@ -63,7 +62,7 @@
             <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-left  d-block d-sm-none">
                 <div class=" bg-left-panel ml-5 mr-5">
                     <h1 class="bold">{{ $banner->title }}</h1>
-                    <p class="text-left ">
+                    <p class="">
                         <?php echo  html_entity_decode($banner->description);  ?> 
                         @if($banner->col != 'col-lg-12')
                         <div class="buttons">
@@ -76,9 +75,6 @@
                 </div>
             </div>
             @endif
-
-            </div>
-
 
         @endforeach
 
