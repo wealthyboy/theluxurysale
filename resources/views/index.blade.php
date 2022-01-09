@@ -101,7 +101,7 @@ $(window).on('load', function() {
         let v = $('.Valentino');   
         let p = v.clone();  
         let c = v.next(); 
-        c.prepend(p)
+        c.insertAfter(p)
         
         console.log(p)
         console.log(c)
