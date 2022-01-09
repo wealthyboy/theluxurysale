@@ -323,11 +323,7 @@ export default {
         }    
     },
     created() {
-        this.scriptLoaded = new Promise((resolve) => {
-            this.loadScript(() => {
-                resolve()
-            })
-        })
+        this.createS()
         this.getCart()
         this.getAddresses({ context: this  }).then(() => {  document.getElementById("full-bg").style.display = 'none'; this.pageIsLoading = false;   })
     },
@@ -335,6 +331,14 @@ export default {
         ...mapActions({
            getCart: "getCart"
         }),
+        createS(){
+            return  this.scriptLoaded.value = new Promise((resolve) => {
+                this.loadScript(() => {
+                   resolve();
+                });
+            });
+            
+        }
         loadScript(callback) {
             const script = document.createElement('script')
             script.src = 'https://js.paystack.co/v1/inline.js'

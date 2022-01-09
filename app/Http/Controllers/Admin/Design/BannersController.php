@@ -49,24 +49,23 @@ class BannersController extends Controller
      */
     public function store(Request $request,Banner $banner)
     {
-
         $this->validate ( $request, [
             'link' => 'required',
             'sort_order' => 'required',
-            'image'=>'required',
         ]);
+
         $banner->title = $request->title;
         $banner->link  = $request->link;
         $banner->col   = $request->col_width;
         $banner->sm_col_width   = $request->sm_col_width;
         $banner->md_col_width  = $request->md_col_width;
         $banner->type   = $request->type;
-
+        $banner->use_text   = $request->use_text;
+        $banner->description   = $request->description;
         $banner->image   = $request->image;
         $banner->sort_order = $request->sort_order;
         $banner->save();
         return redirect()->route('banners.index');
-    	
     }
 
     /**
@@ -91,10 +90,7 @@ class BannersController extends Controller
         $banner = Banner::find($id);
         $cols = Helper::col_width();
         $sm_cols = Helper::sm_col_width();
-
-
-    	return view('admin.banners.edit',compact('sm_cols','banner','cols'));
-    	 
+    	return view('admin.banners.edit',compact('sm_cols','banner','cols')); 
     }
 
     /**
@@ -114,17 +110,16 @@ class BannersController extends Controller
         ] );
         
         $banner->title = $request->title;
-        $banner->link = $request->link;
-        $banner->sort_order = $request->sort_order;
-        $banner->col   = $request->col_width;
-        $banner->image   = $request->image;
-        $banner->sm_col_width   = $request->sm_col_width;
+        $banner->link  = $request->link;
+        $banner->sort_order    = $request->sort_order;
+        $banner->col           = $request->col_width;
+        $banner->image         = $request->image;
+        $banner->sm_col_width  = $request->sm_col_width;
         $banner->md_col_width  = $request->md_col_width;
-        $banner->type   = $request->type;
-
+        $banner->type          = $request->type;
+        $banner->use_text      = $request->use_text;
+        $banner->description   = $request->description;
         $banner->save();
-        // $flash = app( 'App\Http\flash' );
-        // $flash->success( "Success", "Details Updated" );
         return redirect()->route('banners.index');
     	
     }

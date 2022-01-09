@@ -151,10 +151,10 @@
                                     <div :id="'productV-' +key" class="d-flex mb-1 justify-content-center">
                                         <div  @click="getAttribute($event,key)" :data-name="key" @mouseenter="showColor(children)" @mouseleave="removeColor" :class="[ index== 0 ? 'active-attribute  ' : '', activeObject]" v-if="key == 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children" :style="{ 'background-color': children }" style="height: 30px; width: 30px; border-radius: 50%; cursor: pointer;" class="mr-1 first-attribute"></div>
                                         <template v-if="attributesData.length">
-                                            <div  :id="children"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border pr-3  pl-3 o-a pt-1 product-variation-box  other-attribute">{{ children }} </div>
+                                            <div  :id="children"  @click="getAttribute($event,key)" :data-name="key" v-if="key != 'Colors' "     :class="[ index== 0 ? 'bold active-other-attribute' : 'border']" :data-value="children" v-for="(children,index) in attributesData" :key="children"   class="mr-1 border o-a  product-variation-box  other-attribute">{{ children }} </div>
                                         </template>
                                         <template v-else>
-                                            <div  :id="children"  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1  pr-3 pl-3 pt-1  product-variation-box  border other-attribute">{{ children }} </div>
+                                            <div  :id="children"  @click="getAttribute($event,key)"  :data-name="key"  :class="[ index== 0 ? 'bold active-other-attribute ' : '']" v-if="key != 'Colors' " :data-value="children" v-for="(children,index) in map" :key="children"   class="mr-1    product-variation-box  border other-attribute">{{ children }} </div>
                                         </template>
                                     </div>
                                 </div>

@@ -74,9 +74,33 @@
                         </div>
                     </div>
 
+                        <div class="form-group">
+                           <label class="col-sm-2 control-label">Description</label>
+                           <div class="col-sm-10">
+                                 <label class="control-label"> Enter description here</label>
+                                 <textarea name="description" 
+                                 id="description" class="form-control" rows="30">{{ old('description') }}</textarea>
+                           </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label"></label>
+
+                           <div class="col-md-6">
+                              
+                              <div class="togglebutton">
+                              <label>
+                              <input name="use_text"  value="1" type="checkbox" >
+                              Use text
+                              </label>
+                              </div>
+                           </div>
+                        </div>
+                     
+
             
-                         <div class="row">
-                           <div class="">
+                        <div class="row">
+                        <div class="">
                               <div id="m_image"  class="uploadloaded_image text-center mb-3">
                                  <div class="upload-text"> 
                                           <a class="activate-file" href="#">
@@ -110,6 +134,12 @@
 
 @endsection
 
+@section('page-scripts')
+   <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+   <script src="{{ asset('backend/js/products.js') }}"></script>
+@stop
+
+
 @section('inline-scripts')
    
    let activateFileExplorer = 'a.activate-file';
@@ -126,6 +156,12 @@
         inputFile: main_file,
 
     });
+
+    $(document).ready(function() {
+      CKEDITOR.replace('description',{
+         height: '400px'
+      })       
+   });
 
 
 @stop

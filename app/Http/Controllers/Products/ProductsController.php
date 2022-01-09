@@ -19,9 +19,6 @@ use App\Filters\ProductsFilter\AttributesFilter;
 
 
 
-
-
-
 class ProductsController extends Controller
 {
 
@@ -39,6 +36,7 @@ class ProductsController extends Controller
 
         $page_title = implode(" ",explode('-',$category->slug));
         $category_attributes = $category->attribute_parents()->has('children')->get();
+
         
             $products = Product::where('products.allow',true)->whereHas('categories',function(Builder  $builder) use ($category){
                 $builder->where('categories.slug',$category->slug);

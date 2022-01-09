@@ -13,43 +13,72 @@
     </div><!-- End .container -->
 </div>
 
-@if (null !== $first_banner && $first_banner->count())
-<div class="container-fliud mb-1 mt-1">
-    <div class="row no-gutters">
-        <div data-title="{{ $first_banner->title }}" class="{{ $first_banner->col }} {{ $first_banner->sm_col_width }} {{ $first_banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $first_banner->title }} text-center">
-            <div class="ba">
-                <a class="portfolio-interior" href="{{ $first_banner->link }}">
-                    <img src="{{ $first_banner->image }}" alt="{{ $first_banner->title }}" />
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-@endif
 
 
 @if ($sliders->count())
-<div class="owl-carousel main-banner-slider owl-theme">
-    @foreach($sliders as $slider)
-        <div class="item">
-            <a href="{{ $slider->link }}"><img src="{{ $slider->image }}" /></a>
-        </div>
-    @endforeach
-</div>
+    <div class="owl-carousel main-banner-slider owl-theme">
+        @foreach($sliders as $slider)
+            <div class="item">
+                <a href="{{ $slider->link }}"><img src="{{ $slider->image }}" /></a>
+            </div>
+        @endforeach
+    </div>
 @endif
 
 @if ($banners->count())
 <div class="container-fliud mb-1 mt-1">
-    <div class="row no-gutters">
+    <div  class="row  no-gutters ">
+
         @foreach($banners as $banner)
-        <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-center">
+
+            @if(!$banner->use_text)
+            <div data-title="{{ $banner->title }}" class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-center">
                 <div class="ba">
                     <a class="portfolio-interior" href="{{ $banner->link }}">
                         <img src="{{ $banner->image }}" alt="{{ $banner->title }}" />
                     </a>
                 </div>
             </div>
+            @endif
+            @if($banner->use_text)
+            <div class="col-md-6  d-none d-lg-block">
+                <div class="bg-panel-white re-order text-center d-flex justify-content-center align-items-center">
+                    <div>
+                        <h1 class="bold">{{ $banner->title }}</h1>
+                        <p class="">
+                            <?php echo  html_entity_decode($banner->description);  ?> 
+                            @if($banner->col != 'col-lg-12')
+                            <div class="buttons">
+                                <a href="{{ $banner->link }}" class="btn rounded   bold btn-outline btn-lg">
+                                    Shop Now 
+                                </a>
+                            </div>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6  d-block d-sm-none">
+                <div class="bg-panel-white bg-left-panel ml-5 mr-5">
+                    <h1 class="bold">{{ $banner->title }}</h1>
+                    <p class="">
+                        <?php echo  html_entity_decode($banner->description);  ?> 
+                        @if($banner->col != 'col-lg-12')
+                        <div class="buttons">
+                            <a href="{{ $banner->link }}" class="btn rounded  btn-block  bold btn-outline btn-lg">
+                                Shop Now e
+                            </a>
+                        </div>
+                        @endif
+                    </p>
+                </div>
+            </div>
+            @endif
+
         @endforeach
+
+        
     </div>
 </div>
 @endif
@@ -66,7 +95,7 @@
 @stop
 @section('inline-scripts')
 $(window).on('load', function() {
-    $("#register-modal").modal('show')
+   $("#register-modal").modal('show')
 })
 @stop
 

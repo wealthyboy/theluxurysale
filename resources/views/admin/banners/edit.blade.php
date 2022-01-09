@@ -78,6 +78,30 @@
                            </select>
                         </div>
                     </div>
+                    
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Description</label>
+                        <div class="col-sm-10">
+                                <label class="control-label"> Enter description here</label>
+                                <textarea name="description" 
+                                id="description" class="form-control" rows="30">{{ old('description') }}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+
+                        <div class="col-md-6">
+                            
+                            <div class="togglebutton">
+                            <label>
+                            <input name="use_text"  value="1" type="checkbox" >
+                               Use text
+                            </label>
+                            </div>
+                        </div>
+                    </div>
 
 
                          <div class="row">
