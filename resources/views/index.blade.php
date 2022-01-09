@@ -100,7 +100,13 @@ $(window).on('load', function() {
     if (isMobile) {
         let v = $('.Valentino');   
         let p = v.clone();  
-            v.next().insertAfter(p)
+        let c = v.next(); 
+        
+        console.log(p)
+        console.log(c)
+
+
+       // v.next().insertAfter(p)
     }
 })
 @stop
