@@ -42,7 +42,7 @@
             @endif
             @if($banner->use_text)
             <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-center  d-none d-lg-block">
-                <div class="bg-panel-white re-order  d-flex justify-content-center align-content-center ">
+                <div class="bg-panel-white re-order text-center d-flex justify-content-center align-content-center ">
                     <div class="align-items-center">
                         <h1 class="bold">{{ $banner->title }}</h1>
                         <p class="">
@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-center  d-block d-sm-none">
+            <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-left  d-block d-sm-none">
                 <div class=" bg-left-panel ml-5 mr-5">
                     <h1 class="bold">{{ $banner->title }}</h1>
                     <p class="">
