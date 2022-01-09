@@ -64,7 +64,7 @@
                     <h1 class="bold">{{ $banner->title }}</h1>
                     <p class="">
                         <?php echo  html_entity_decode($banner->description);  ?> 
-                        @if($banner->col != 'col-md-12')
+                        @if($banner->col !== 'col-md-12')
                         <div class="buttons">
                             <a href="{{ $banner->link }}" class="btn rounded  btn-block  bold btn-outline btn-lg">
                                 Shop Now 
