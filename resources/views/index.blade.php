@@ -45,14 +45,16 @@
                 <div class=" {{ $banner->col != 'col-md-12' ? 'bg-panel-white': ''}}   re-order text-center ">
                     <div class="">
                         <h1 class="bold text-center">{{ $banner->title }}</h1>
-                        <?php echo  html_entity_decode($banner->description);  ?> 
-                        @if($banner->col != 'col-md-12')
-                        <div class="buttons text-center">
-                            <a href="{{ $banner->link }}" class="btn rounded   bold btn-outline btn-lg">
-                                Shop Now 
-                            </a>
+                        <div class="{{ $banner->class }}">
+                            <?php echo  html_entity_decode($banner->description);  ?> 
+                            @if($banner->col != 'col-md-12')
+                            <div class="buttons text-center">
+                                <a href="{{ $banner->link }}" class="btn rounded   bold btn-outline btn-lg">
+                                    Shop Now 
+                                </a>
+                            </div>
+                            @endif
                         </div>
-                        @endif
                     </div>
                 </div>
             </div>
@@ -60,6 +62,8 @@
             <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-left  d-block d-sm-none mb-3">
                 <div class="bg-left-panel ml-5 mr-5">
                     <h1 class="bold">{{ $banner->title }}</h1>
+                    <div class="{{ $banner->class }}">
+
                     <?php echo  html_entity_decode($banner->description);  ?> 
                     @if($banner->col !== 'col-md-12')
                     <div class="buttons">
@@ -68,6 +72,7 @@
                         </a>
                     </div>
                     @endif
+                    </div>
                 </div>
             </div>
             @endif
