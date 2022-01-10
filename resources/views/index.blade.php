@@ -41,7 +41,7 @@
             </div>
             @endif
             @if($banner->use_text)
-            <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }}   d-none d-lg-block">
+            <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }}   d-none d-sm-block d-lg-block">
                 <div class=" {{ $banner->col != 'col-md-12' ? 'bg-panel-white': ''}}   re-order text-center ">
                     <div class="">
                         <h1 class="bold text-center">{{ $banner->title }}</h1>
