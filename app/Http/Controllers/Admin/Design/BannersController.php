@@ -65,6 +65,8 @@ class BannersController extends Controller
         $banner->description   = $request->description;
         $banner->image   = $request->image;
         $banner->sort_order = $request->sort_order;
+        $banner->mobile_sort_order = $request->mobile_sort_order;
+
         $banner->save();
         return redirect()->route('banners.index');
     }
@@ -122,6 +124,8 @@ class BannersController extends Controller
         $banner->type          = $request->type;
         $banner->use_text   = $request->use_text ? 1 : 0;
         $banner->description   = $request->description;
+        $banner->mobile_sort_order = $request->mobile_sort_order;
+
         $banner->save();
         return redirect()->route('banners.index');
     	

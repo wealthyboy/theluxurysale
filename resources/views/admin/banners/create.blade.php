@@ -15,19 +15,24 @@
                 <div class="card-content">
                   <h4 class="card-title">Banners</h4>
                   <form enctype="multipart/form-data" method="post" action="{{ route('banners.store') }}" class="form-horizontal">
-                  @csrf
-
-                  <div class="form-group">
-                     <label for="title" class="col-sm-2 control-label"> Title</label>
-                     <div class="col-sm-10">
-                           <input type="text" name="title" value="{{ !empty(  $banner->title )  ? $banner->title : old('title')   }}" class="form-control" id="title" placeholder="title">
-                        
+                     @csrf
+                     <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label"> Title</label>
+                        <div class="col-sm-10">
+                              <input type="text" name="title" value="{{ !empty(  $banner->title )  ? $banner->title : old('title')   }}" class="form-control" id="title" placeholder="title">
+                        </div>
                      </div>
-                  </div>
-                  <div class="form-group">
+                     <div class="form-group">
                         <label for="sort-order"  class="col-sm-2 control-label">Sort Order</label>
                         <div class="col-sm-10">
                            <input id="sort-order" required="required" type="number" name="sort_order" value="{{ !empty(  $banner->sort_order )  ? $banner->sort_order : old('sort_order')   }}" class="form-control" id="inputPassword3" placeholder="sort order">
+                        </div>
+                     </div>
+
+                     <div class="form-group">
+                        <label for="mobile-sort-order"  class="col-sm-2 control-label">Mobile Sort Order</label>
+                        <div class="col-sm-10">
+                           <input id="mobile-sort-order" required="required" type="number" name="mobile_sort_order" value="{{ !empty(  $banner->mobile_sort_order )  ? $banner->mobile_sort_order : old('mobile_sort_order')   }}" class="form-control" id="inputPassword3" placeholder="sort order">
                         </div>
                      </div>
 
@@ -54,7 +59,7 @@
                                  @endforeach 
                            </select>
                         </div>
-                    </div>
+                     </div>
 
                     <div class="form-group">
                         <label for="title" class="col-sm-2 control-label">Sm Width</label>
@@ -73,11 +78,8 @@
                         <div class="col-sm-10">
                            <select name="type" required="required" class="form-control select2" style="width: 100%;">
                               <option value="" selected="selected">--choose one--</option>
-                                 
                                  <option value="slider">Slider</option>
                                  <option value="banner">Banner</option>
-
-                                 
                            </select>
                         </div>
                     </div>

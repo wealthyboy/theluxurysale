@@ -29,6 +29,14 @@
                         </div>
                      </div>
 
+
+                     <div class="form-group">
+                        <label for="mobile-sort-order"  class="col-sm-2 control-label">Mobile Sort Order</label>
+                        <div class="col-sm-10">
+                           <input id="mobile-sort-order" required="required" type="number" name="mobile_sort_order" value="{{ !empty(  $banner->mobile_sort_order )  ? $banner->mobile_sort_order : old('mobile_sort_order')   }}" class="form-control" id="inputPassword3" placeholder="sort order">
+                        </div>
+                     </div>
+
                      <div class="form-group">
                         <label for="class"  class="col-sm-2 control-label">Class</label>
                         <div class="col-sm-10">
