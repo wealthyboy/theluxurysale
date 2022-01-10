@@ -4,31 +4,27 @@
 
 <div class="row">
         <div class="col-md-12">
-               <div class="text-right">
-        
-                    <a href="{{ route('banners.create') }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
-                        <i class="material-icons">add</i>
-                        Add Banner
-                    </a>
-
-                    <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-primary btn-simple btn-xs" onclick="confirm('Are you sure?') ? $('#form-banner').submit() : false;"><i class="fa fa-trash-o"></i>
-                    Delete
-                    </button>
-
-                </div>
+            <div class="text-right">
+                <a href="{{ route('banners.create') }}" rel="tooltip" title="Add New" class="btn btn-primary btn-simple btn-xs">
+                    <i class="material-icons">add</i>
+                    Add Banner
+                </a>
+                <button type="button" data-toggle="tooltip" title="Delete" class="btn btn-primary btn-simple btn-xs" onclick="confirm('Are you sure?') ? $('#form-banner').submit() : false;"><i class="fa fa-trash-o"></i>
+                   Delete
+                </button>
+            </div>
         </div>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header card-header-icon" data-background-color="rose">
                     <i class="fa fa-list-alt" aria-hidden="true"></i>
                 </div>
-                
                 <div class="card-content">
                     <h4 class="card-title">Banners</h4>
                     <form action="{{ route('banners.destroy',['banner' => 1]) }}" method="post" id="form-banner">
                       @csrf
                       @method('DELETE')
-                   <div class="table-responsive">
+                    <div class="table-responsive">
                         <table class="table table-shopping">
                             <thead>
                                 <tr>

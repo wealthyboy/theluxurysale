@@ -28,6 +28,8 @@
 	<link rel="stylesheet" href="/css/skins/skin-default.css">
     @yield('page-css')
     <link href="/css/custom.css?version={{ str_random(6) }}" rel="stylesheet" type="text/css" />
+	<link href="/css/banner.css?version={{ str_random(6) }}" rel="stylesheet" type="text/css" />
+
     <meta property="og:site_name" content="Ohram Co">
     <meta property="og:url" content="https://theluxurysale.com/">
     <meta property="og:title" content=" theluxurysale">
