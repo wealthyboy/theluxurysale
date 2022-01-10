@@ -45,16 +45,14 @@
                 <div class=" {{ $banner->col != 'col-md-12' ? 'bg-panel-white': ''}}   re-order text-center ">
                     <div class="">
                         <h1 class="bold text-center">{{ $banner->title }}</h1>
-                        <p class="">
-                            <?php echo  html_entity_decode($banner->description);  ?> 
-                            @if($banner->col != 'col-md-12')
-                            <div class="buttons text-center">
-                                <a href="{{ $banner->link }}" class="btn rounded   bold btn-outline btn-lg">
-                                    Shop Now 
-                                </a>
-                            </div>
-                            @endif
-                        </p>
+                        <?php echo  html_entity_decode($banner->description);  ?> 
+                        @if($banner->col != 'col-md-12')
+                        <div class="buttons text-center">
+                            <a href="{{ $banner->link }}" class="btn rounded   bold btn-outline btn-lg">
+                                Shop Now 
+                            </a>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
