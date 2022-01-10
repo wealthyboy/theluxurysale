@@ -59,7 +59,7 @@
                 </div>
             </div>
 
-            <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-left  d-block d-sm-none mb-3">
+            <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-left  d-block d-md-none d-lg-none d-lg-none mb-3">
                 <div class="bg-left-panel ml-5 mr-5">
                     <h1 class="bold">{{ $banner->title }}</h1>
                     <div class="{{ $banner->class }}">
@@ -99,7 +99,6 @@ $(window).on('load', function() {
    $("#register-modal").modal('show')
    let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
     if (isMobile) {
-        console.log($('.VALENTINO GARAVANI.text-left.d-block.d-sm-none').next())
        $(".women").after($('.VALENTINO.GARAVANI.text-left.d-block.d-sm-none').clone());
     }
 })
