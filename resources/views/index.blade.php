@@ -100,7 +100,7 @@ $(window).on('load', function() {
    let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
     if (isMobile) {
         console.log($('.VALENTINO GARAVANI.text-left.d-block.d-sm-none').next())
-       $(".women").after($('.VALENTINO GARAVANI.text-left.d-block.d-sm-none').clone());
+       $(".women").after($('.VALENTINO.GARAVANI.text-left.d-block.d-sm-none').clone());
     }
 })
 @stop
