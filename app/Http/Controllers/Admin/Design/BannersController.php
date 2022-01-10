@@ -59,6 +59,7 @@ class BannersController extends Controller
         $banner->col   = $request->col_width;
         $banner->sm_col_width   = $request->sm_col_width;
         $banner->md_col_width  = $request->md_col_width;
+        $banner->class         = $request->class;
         $banner->type   = $request->type;
         $banner->use_text   = $request->use_text ? 1 : 0;
         $banner->description   = $request->description;
@@ -114,6 +115,8 @@ class BannersController extends Controller
         $banner->sort_order    = $request->sort_order;
         $banner->col           = $request->col_width;
         $banner->image         = $request->image;
+        $banner->class         = $request->class;
+
         $banner->sm_col_width  = $request->sm_col_width;
         $banner->md_col_width  = $request->md_col_width;
         $banner->type          = $request->type;

@@ -6,30 +6,38 @@
 
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header card-header-icon" data-background-color="rose">
-                    <i class="fa fa-list-alt" aria-hidden="true"></i>
-                </div>
+               <div class="card-header card-header-icon" data-background-color="rose">
+                  <i class="fa fa-list-alt" aria-hidden="true"></i>
+               </div>
 
                 @include('errors.errors')
                 
                 <div class="card-content">
-                    <h4 class="card-title">Banners</h4>
-                    <form enctype="multipart/form-data" method="post" action="{{ route('banners.store') }}" class="form-horizontal">
-                    @csrf
+                  <h4 class="card-title">Banners</h4>
+                  <form enctype="multipart/form-data" method="post" action="{{ route('banners.store') }}" class="form-horizontal">
+                  @csrf
 
-                     <div class="form-group">
-                        <label for="title" class="col-sm-2 control-label"> Title</label>
-                        <div class="col-sm-10">
-                              <input type="text" name="title" value="{{ !empty(  $banner->title )  ? $banner->title : old('title')   }}" class="form-control" id="title" placeholder="title">
-                           
-                        </div>
+                  <div class="form-group">
+                     <label for="title" class="col-sm-2 control-label"> Title</label>
+                     <div class="col-sm-10">
+                           <input type="text" name="title" value="{{ !empty(  $banner->title )  ? $banner->title : old('title')   }}" class="form-control" id="title" placeholder="title">
+                        
                      </div>
-                     <div class="form-group">
+                  </div>
+                  <div class="form-group">
                         <label for="sort-order"  class="col-sm-2 control-label">Sort Order</label>
                         <div class="col-sm-10">
                            <input id="sort-order" required="required" type="number" name="sort_order" value="{{ !empty(  $banner->sort_order )  ? $banner->sort_order : old('sort_order')   }}" class="form-control" id="inputPassword3" placeholder="sort order">
                         </div>
                      </div>
+
+                     <div class="form-group">
+                        <label for="class"  class="col-sm-2 control-label">Class</label>
+                        <div class="col-sm-10">
+                           <input  type="number" name="class" value="{{ !empty(  $banner->class )  ? $banner->class : old('class')   }}" class="form-control" id="class" placeholder="class">
+                        </div>
+                     </div>
+
                      <div class="form-group">
                         <label for="link" class="col-sm-2 control-label">Link</label>
                         <div class="col-sm-10">

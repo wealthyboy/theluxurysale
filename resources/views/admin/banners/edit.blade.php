@@ -28,6 +28,14 @@
                            <input id="sort-order" required="required" type="number" name="sort_order" value="{{  $banner  ? $banner->sort_order : old('sort_order')   }}" class="form-control" id="inputPassword3" placeholder="sort order">
                         </div>
                      </div>
+
+                     <div class="form-group">
+                        <label for="class"  class="col-sm-2 control-label">Class</label>
+                        <div class="col-sm-10">
+                           <input   type="text" name="class" value="{{ !empty(  $banner->class )  ? $banner->class : old('class')   }}" class="form-control" id="class" placeholder="class">
+                        </div>
+                     </div>
+
                      <div class="form-group">
                         <label for="link" class="col-sm-2 control-label">Link</label>
                         <div class="col-sm-10">
