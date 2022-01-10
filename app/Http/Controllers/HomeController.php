@@ -31,10 +31,9 @@ class HomeController extends Controller
         $products = Product::where('featured',1)->orderBy('created_at','DESC')->take(8)->get();
 
         if($this->isMobile()){
-            dd(true);
-            $banners = Banner::where('type','banner')->where('sort_order','!=',1)->orderBy('sort_order','asc')->get();
+            $banners = Banner::where('type','banner')->where('mobile_sort_order','!=',1)->orderBy('mobile_sort_order','asc')->get();
         }else {
-            $banners = Banner::where('type','banner')->where('mobile_sort_order','!=',1)->orderBy('sort_order','asc')->get();
+            $banners = Banner::where('type','banner')->where('sort_order','!=',1)->orderBy('sort_order','asc')->get();
         }
         
         $first_banner = Banner::where(['type'=>'banner' , 'sort_order' =>1])->first();
