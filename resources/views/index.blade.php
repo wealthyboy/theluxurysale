@@ -44,7 +44,7 @@
             <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }}   d-none d-sm-block d-lg-block">
                 <div class=" {{ $banner->col != 'col-md-12' ? 'bg-panel-white': ''}}   re-order text-center ">
                     <div class="">
-                        <h1 class="bold text-center">{{ $banner->title }}</h1>
+                        <h1 class="bold text-center mt-2">{{ $banner->title }}</h1>
                         <div class="{{ $banner->class }}">
                             <?php echo  html_entity_decode($banner->description);  ?> 
                             @if($banner->col != 'col-md-12')
