@@ -59,9 +59,9 @@
                 </div>
             </div>
 
-            <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }} text-left  d-block d-md-none d-lg-none d-lg-none mb-3">
+            <div class="{{ $banner->col }} {{ $banner->sm_col_width }} {{ $banner->col == 'col-lg-3' ?  'col-6    p-0' : '' }} p-1 {{ $banner->title }}   d-block d-md-none d-lg-none d-lg-none ">
                 <div class="bg-left-panel ml-5 mr-5">
-                    <h1 class="bold">{{ $banner->title }}</h1>
+                    <h1 class="bold text-center">{{ $banner->title }}</h1>
                     <div class="{{ $banner->class }}">
 
                     <?php echo  html_entity_decode($banner->description);  ?> 
