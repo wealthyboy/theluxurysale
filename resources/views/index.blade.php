@@ -96,10 +96,7 @@
 @section('inline-scripts')
 $(window).on('load', function() {
    $("#register-modal").modal('show')
-   let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-    if (isMobile) {
-       $(".women").after($('.VALENTINO.GARAVANI.text-left.d-block.d-sm-none').clone());
-    }
+   
 })
 @stop
 
