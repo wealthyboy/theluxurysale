@@ -94,10 +94,10 @@
           html += '<div class="btn-icon-group">';
           html += "</div>";
           html += "</figure>";
-          html += '<div class="product-details  text-center">';
+          html += '<div class="product-details">';
           html += '<div class="mx-auto">';
           if (data[i].colors.length) {
-            html += '<div  class="justify-content-center d-flex mb-1">';
+            html += '<div  class=" mb-1">';
             for (c in data[i].colors) {
               html +=
                 '<div  style="border:1px solid #222; height: 12px; width: 12px; border-radius: 50%; background-color: ' +
@@ -121,7 +121,7 @@
             "</a></div>";
           html += "</div>";
 
-          html += '<div class="price-box mx-auto mt-1">';
+          html += '<div class="price-box  mt-1">';
           if (data[i].default_discounted_price) {
             html +=
               '<span class="old-price bold text-danger"> ' +
