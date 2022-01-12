@@ -338,7 +338,7 @@ export default {
                 });
             });
             
-        }
+        },
         loadScript(callback) {
             const script = document.createElement('script')
             script.src = 'https://js.paystack.co/v1/inline.js'
