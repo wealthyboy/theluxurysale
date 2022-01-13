@@ -82,7 +82,8 @@
 
             <div id="pagination" class="col-md-10 text-center mb-20 col-md-offset-1">
                 @if(!empty($products->hasMorePages()))
-                <a href="{{ $products->nextPageUrl() }}" id="load_more" class="btn loadmore btn-loadmore load_more mt-4 mb-2">
+                <div class="show-items-count">Showing items 1 to 50 of {{$products->total()}} products</div>
+                <a href="{{ $products->nextPageUrl() }}" id="load_more" class="btn loadmore btn-loadmore load_more  mb-2">
                    <span class="spinner-grow spinner-grow-md d-none"></span>
                    Load More...
                 </a>

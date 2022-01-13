@@ -41,12 +41,12 @@
         var url = json.next_page_url;
         var data = json.data;
         //  settings.total_no_of_products =json.total;
-        //  showNoOfProducts(data,json);
+        showNoOfProducts(data,json);
       } else {
         var data = obj.data;
         url = obj.next_page_url;
         //  settings.total_no_of_products =obj.total;
-        //  showNoOfProducts(data,obj);
+         showNoOfProducts(data,obj);
       }
 
       if (obj.next_page_url) {
@@ -67,6 +67,8 @@
         $(".show-items-count").text(
           "Showing items 1 to " + obj.to + " of " + obj.total + " total"
         );
+
+        console.log('test')
       }
     };
 

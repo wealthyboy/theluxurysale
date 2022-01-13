@@ -64,6 +64,7 @@
                     <h1 class="bold text-center mt-2">{{ $banner->title }}</h1>
                     <div class="{{ $banner->class }}">
                     <?php echo  html_entity_decode($banner->description);  ?> 
+                    
                     @if($banner->col !== 'col-md-12')
                     <div class="buttons">
                         <a href="{{ $banner->link }}" class="btn rounded  btn-block  bold btn-outline btn-lg">
