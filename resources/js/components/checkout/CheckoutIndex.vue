@@ -332,7 +332,7 @@ export default {
            getCart: "getCart"
         }),
         createS(){
-            return  this.scriptLoaded.value = new Promise((resolve) => {
+            return  this.scriptLoaded = new Promise((resolve) => {
                 this.loadScript(() => {
                    resolve();
                 });
