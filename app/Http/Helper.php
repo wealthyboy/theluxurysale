@@ -124,7 +124,8 @@ class Helper{
          
     }
 
-    public static function sm_col_width(){
+    public static function sm_col_width()
+    {
         return [
             'col-12',
             'col-10',
