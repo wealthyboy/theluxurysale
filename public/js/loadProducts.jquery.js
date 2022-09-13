@@ -142,7 +142,7 @@
                     } else {
                         html +=
                             '<span class="product-price  klk">' +
-                            data[i].currency + "" + data[i].converted_price + " </span>";
+                            data[i].currency + "" + formatNumber(data[i].converted_price) + " </span>";
                     }
                     html += "</div></div></div> </div>";
                 }
