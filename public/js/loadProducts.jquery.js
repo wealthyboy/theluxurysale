@@ -144,7 +144,7 @@
                             '<span class="product-price  ">' +
                             data[i].currency +
                             "" +
-                            formatNumber(data[i].converted_price) +
+                            data[i].converted_price +
                             +
                             " </span>";
                     }
