@@ -130,23 +130,19 @@
                         html +=
                             '<span class="old-price  text-danger"> ' +
                             data[i].currency +
-                            "" +
+                            +
                             formatNumber(data[i].converted_price) +
                             " </span>";
                         html +=
                             '<span class="product-price  ">' +
                             data[i].currency +
-                            "" +
+                            +
                             formatNumber(data[i].default_discounted_price) +
                             " </span>";
                     } else {
                         html +=
-                            '<span class="product-price  ">' +
-                            data[i].currency +
-                            "" +
-                            data[i].converted_price +
-                            +
-                            " </span>";
+                            '<span class="product-price  klk">' +
+                            data[i].currency + "" + data[i].converted_price + " </span>";
                     }
                     html += "</div></div></div> </div>";
                 }
