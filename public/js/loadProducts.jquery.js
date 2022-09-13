@@ -71,6 +71,10 @@
             }
         };
 
+        formatNumber = function(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        };
+
         displayHtml = function(data, clear_html = false) {
             let col = null;
             let html = "";
@@ -125,23 +129,24 @@
                     html += '<div class="price-box  mt-1">';
                     if (data[i].default_discounted_price) {
                         html +=
-                            '<span class="old-price bold text-danger"> ' +
+                            '<span class="old-price  text-danger"> ' +
                             data[i].currency +
                             "" +
-                            data[i].converted_price +
+                            formatNumber(data[i].converted_price) +
                             " </span>";
                         html +=
-                            '<span class="product-price bold ">' +
+                            '<span class="product-price  ">' +
                             data[i].currency +
                             "" +
-                            data[i].default_discounted_price +
+                            formatNumber(data[i].default_discounted_price) +
                             " </span>";
                     } else {
                         html +=
                             '<span class="product-price bold ">' +
                             data[i].currency +
                             "" +
-                            data[i].converted_price +
+                            formatNumber(data[i].converted_price) +
+                            +
                             " </span>";
                     }
                     html += "</div></div></div> </div>";
