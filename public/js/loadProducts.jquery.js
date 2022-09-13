@@ -67,12 +67,11 @@
                     "Showing items 1 to " + obj.to + " of " + obj.total + " total"
                 );
 
-                console.log('test')
             }
         };
 
-        formatNumber = function(x) {
-            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        formatNumber = function(number) {
+            return new Intl.NumberFormat().format(number)
         };
 
         displayHtml = function(data, clear_html = false) {
