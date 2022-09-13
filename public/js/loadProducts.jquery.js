@@ -142,7 +142,7 @@
                             " </span>";
                     } else {
                         html +=
-                            '<span class="product-price bold ">' +
+                            '<span class="product-price  ">' +
                             data[i].currency +
                             "" +
                             formatNumber(data[i].converted_price) +
