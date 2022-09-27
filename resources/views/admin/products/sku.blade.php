@@ -44,15 +44,26 @@ body{
               
               <div class="content" >
                 <strong>Name: </strong>   <span class="tx">&nbsp {{ $product->product_name }}</span><br/>
+                <strong>Price: </strong> <span class="tx">&nbsp 
+                   @if( $product->default_discounted_price)
+                        <span class="old-price tx">{{ $product->currency }}{{ number_format($product->converted_price)   }}</span> &nbsp;
+                        <span class="product-price tx">{{ $product->currency }}{{ number_format($product->default_discounted_price)  }}</span>
+                    @else
+                        <span class="product-price tx">{{ $product->currency }}{{ number_format($product->converted_price) }}</span>
+                    @endif
+                </span><br/>
+
                 <strong>Sku: </strong> <span class="tx">&nbsp {{ $product->sku  }} </span><br/>
                 <strong>Variation:  </strong><span class="tx">
                 
+                
+
                 @if (null !== $product->product_variation)
-                    @foreach( $product->product_variation_values  as $v)
-                        {{ $v->attribute->name .','}}
-                    @endforeach
+                  @foreach( $product->product_variation->product_variation_values  as $v)
+                      {{ $v->attribute->name .','}}
+                  @endforeach
                 @else
-                    -----
+                  -----
                 @endif
 
                 &nbsp;</span><br/>
