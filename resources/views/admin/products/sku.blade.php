@@ -56,10 +56,9 @@ body{
                 <strong>Sku: </strong> <span class="tx">&nbsp {{ $product->sku  }} </span><br/>
                 <strong>Variation:  </strong><span class="tx">
                 
-                
-
-                @if (!empty( $variants))
-                    {{ implode(',' array_values($variants))}}
+      
+                @if ( !empty($variants) )
+                    {{ implode(',', array_values($variants)) }}
                 @else
                   -----
                 @endif
