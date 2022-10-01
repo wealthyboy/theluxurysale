@@ -471,7 +471,7 @@ class ProductController extends Controller
         $product = Product::find($id);
         $variants = $product->variants;
         $product_attributes = Attribute::parents()->where('type','both')->orderBy('sort_order','asc')->get();
-        return view('admin.products.sku_variants',compact('variants','product','product_attributes'));
+        return view('admin.products.sku_variation',compact('variants','product','product_attributes'));
     }
 
     /**
