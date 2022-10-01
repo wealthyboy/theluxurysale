@@ -72,6 +72,8 @@ class ProductController extends Controller
 
     public function printSku($id){
         $product = Product::find($id);
+        dd(request()->query());
+
         return view('admin.products.sku',compact('product') );
     }
     
@@ -471,7 +473,6 @@ class ProductController extends Controller
         $product = Product::find($id);
         $variants = $product->variants;
         $product_attributes = Attribute::parents()->where('type','both')->orderBy('sort_order','asc')->get();
-        dd(request()->query());
         return view('admin.products.sku_variation',compact('variants','product','product_attributes'));
     }
 
