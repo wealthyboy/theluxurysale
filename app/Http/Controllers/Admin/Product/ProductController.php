@@ -463,6 +463,17 @@ class ProductController extends Controller
         return view('admin.products.edit',compact('metas','variants','product','meta_attributes','product_attributes','brands','categories'));
     }
 
+
+    public function showVariants($id)
+    {
+        $selected_meta  = [];
+        $metas  = [];    
+        $product = Product::find($id);
+        $variants = $product->variants;
+        $product_attributes = Attribute::parents()->where('type','both')->orderBy('sort_order','asc')->get();
+        return view('admin.products.sku_variants',compact('variants','product','product_attributes'));
+    }
+
     /**
      * Update the specified resource in storage.
      *

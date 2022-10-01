@@ -65,6 +65,8 @@ Route::group(['middleware' => 'admin','prefix' => 'admin'], function(){
 
 
     Route::get('products/sku/{id}','Admin\Product\ProductController@printSku')->name('admin.products.sku');
+    Route::get('products/variation/{id}', 'Admin\Product\ProductController@showVariants');
+
 
     Route::get('products/barcode/{product}','Admin\Product\ProductController@barcode')->name('barcode');
     Route::post('load-attributes','Admin\Product\ProductController@loadAttr');

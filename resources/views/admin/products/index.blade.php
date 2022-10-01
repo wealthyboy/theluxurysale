@@ -76,6 +76,8 @@
                                     <th>Name</th>
                                     <th>Status</th>
                                     <th>Price</th>
+                                    <th>Variation</th>
+
                                     <th class="disabled-sorting text-right">Actions</th>
                                 </tr>
                             </thead>
@@ -104,9 +106,42 @@
                                            {{ $system_settings->default_currency->symbol }}{{ $product->display_price() }}
                                         </span> 
                                     </td>
-                                    <td class="td-actions "> 
+                                    <td>
+                                        <div class="col-md-3 col-xs-6 col-sm-6">
+                                            <div class="form-group label-floating">
+                                                <label style="
+                                                        top: -28px;
+                                                        left: 0;
+                                                        font-size: 11px;
+                                                        line-height: 1.0714285718;" 
+                                                        class="control-label">{{ $product_attribute->name }} {{ optional($variantion_value)->id }} </label>
+                                                <select  
+                                                        name="{{ optional($variantion_value)->attribute_id  ? "edit_product_attributes[$variant->id][$variantion_value->id][$product_attribute->id]" : "add_to_product_attributes[$variant->id][$product_attribute->id]" }}" 
+                                                        class="form-control">
+                                                        @if (  optional($variantion_value)->name !== null)
+                                                        <option 
+                                                            value="">
+                                                            Choose one
+                                                        </option>
+                                                        @endif
+
+                                                        <option 
+                                                            value="{{ optional($variantion_value)->attribute_id  ?? '' }}" selected>
+                                                            {{ optional($variantion_value)->name  ?? 'Choose one' }}
+                                                        </option>
+                                                    @foreach($product_attribute->children as $pA)
+                                                    @if (in_array($pA->id,$variant->product_variation_values->pluck('attribute_id')->toarray() ))
+                                                        @continue;
+                                                    @endif
+                                                        <option   value="{{ $pA->id }}">&nbsp;&nbsp;&nbsp;{{ $pA->name }} </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div> 
+                                    </td>
+                                    <td class="td-actions"> 
                                        
-                                        <a href="/admin/products/sku/{{$product->id}}" rel="tooltip"   target="_blank" class="btn btn-success btn-simple" data-original-title="" title="Print Sku">
+                                        <a href="/admin/products/variation/{{$product->id}}" rel="tooltip"   target="_blank" class="btn btn-success btn-simple" data-original-title="" title="Print Sku">
                                             <i class="material-icons">print</i>
                                         </a>                    
                                         <a href="{{ route('products.edit',['product'=>$product->id] ) }}" rel="tooltip" title="Edit" class="btn btn-primary btn-simple btn-xs">
