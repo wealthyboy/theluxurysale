@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="" method="get">
+<form action="/admin/products/sku/{{$product->id}}" method="get">
     
     <div class="variable-products   {{ $product->product_type == 'simple' ? 'hide' : '' }}">
         @if ($product->variants->count())
@@ -52,11 +52,9 @@
                     </div>
                 </div>
                 <div class="col-md-3 col-xs-12 text-right col-sm-12">
-                    <a href="/admin/products/sku/{{$product->id}}" rel="tooltip"   target="_blank" class="btn btn-success btn-simple" data-original-title="" title="Print Sku">
+                    <button  rel="tooltip"   class="btn btn-success btn-simple" type="submit">
                     <i class="material-icons">print</i>
-                    </a> 
-                    <a href="/admin/variation/delete/{{ $variant->id }}"  data-toggle="tooltip" title="remove panel" class="delete-panel"><i class="fa fa-trash-o"></i> Delete</a> |
-                    <a href="#"   title="open/close panel" class="open-close-panel"><i class="fa fa-plus"></i> Expand</a> 
+                    </button> 
                 </div>
 
             @endforeach
