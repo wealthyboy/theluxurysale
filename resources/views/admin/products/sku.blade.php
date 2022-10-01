@@ -58,10 +58,8 @@ body{
                 
                 
 
-                @if (null !== $product->product_variation)
-                  @foreach( $product->product_variation->product_variation_values  as $v)
-                      {{ $v->attribute->name .','}}
-                  @endforeach
+                @if (!empty( $variants))
+                    {{ implode(',' array_values($variants))}}
                 @else
                   -----
                 @endif
