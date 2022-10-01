@@ -3,13 +3,12 @@
 @section('content')
 
 <form action="/admin/products/sku/{{$product->id}}" method="get">
-    
-    <div class="variable-products   {{ $product->product_type == 'simple' ? 'hide' : '' }}">
+    <?php print_r(request()->query()) ?>
+       <div class="variable-products   {{ $product->product_type == 'simple' ? 'hide' : '' }}">
         @if ($product->variants->count())
             @foreach($variants as $variant)
             <div style="" class="row p-attr variation-panel">
                 <div class="col-md-9 col-xs-9 col-sm-9">
-                <input name="edit_variation"  value="1"   class="" type="hidden">
                     <div class="row">
                         @foreach($product_attributes as $product_attribute)
                             <?php  $variantion_value = $product_attribute
