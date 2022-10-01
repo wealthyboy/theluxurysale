@@ -3,7 +3,7 @@
 @section('content')
 
 <form action="/admin/products/sku/{{$product->id}}" method="get">
-    <?php print_r(request()->query()) ?>
+   
        <div class="variable-products   {{ $product->product_type == 'simple' ? 'hide' : '' }}">
         @if ($product->variants->count())
             @foreach($variants as $variant)
