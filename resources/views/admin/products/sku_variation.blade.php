@@ -36,14 +36,14 @@
                                             @endif
 
                                             <option 
-                                                value="{{ optional($variantion_value)->attribute_id  ?? '' }}" selected>
+                                                value="{{ optional($variantion_value)->name  ?? '' }}" selected>
                                                 {{ optional($variantion_value)->name  ?? 'Choose one' }}
                                             </option>
                                         @foreach($product_attribute->children as $pA)
                                         @if (in_array($pA->id,$variant->product_variation_values->pluck('attribute_id')->toarray() ))
                                             @continue;
                                         @endif
-                                            <option   value="{{ $pA->id }}">&nbsp;&nbsp;&nbsp;{{ $pA->name }} </option>
+                                            <option   value="{{ $pA->name }}">&nbsp;&nbsp;&nbsp;{{ $pA->name }} </option>
                                         @endforeach
                                     </select>
                                 </div>
