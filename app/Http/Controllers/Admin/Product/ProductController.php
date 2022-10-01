@@ -456,7 +456,7 @@ class ProductController extends Controller
         $categories = Category::parents()->get();
         $product = Product::find($id);
         $variants = $product->variants;
-        dd($variants);
+        //dd($variants);
         $product_attributes = Attribute::parents()->where('type','both')->orderBy('sort_order','asc')->get();
         $meta_attributes = Attribute::parents()->where('type','!=','both')->orderBy('sort_order','asc')->get();
         
