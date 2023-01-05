@@ -54,7 +54,6 @@
                                 @foreach($currencies as $currency)
 
                                 <option value="{{ $currency->id }}">{{ $currency->country }}({{ $currency->symbol }})</option>
-                                @endif
                                 @endforeach
                             </select>
                         </div>
