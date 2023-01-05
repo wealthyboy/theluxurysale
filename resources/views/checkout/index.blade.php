@@ -12,5 +12,6 @@
         </div>
     </div>
 
+    <checkout-index :csrf="{{ $csrf }}" />
 </section>
 @endsection
