@@ -291,6 +291,8 @@
                 </p>
               </div>
 
+              {{  meta.isAdmin }}
+
               <p class="form-field-wrapper   col-sm-12 mb-3">
                 <template v-if="!meta.isAdmin">
                   <template v-if="$root.settings.shipping_is_free == 0 && amount > 1">
