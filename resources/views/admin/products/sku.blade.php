@@ -53,10 +53,10 @@
       <strong>Name: </strong> <span class="tx">&nbsp {{ $product->product_name }}</span><br />
       <strong>Price: </strong> <span class="tx">&nbsp
         @if( $product->default_discounted_price)
-        <span class="old-price tx">{{ $product->currency }}{{ number_format($product->converted_price * optional($currency->rate)->rate)   }}</span> &nbsp;
-        <span class="product-price tx">{{ $product->currency }}{{ number_format($product->default_discounted_price * optional($currency->rate)->rate)  }}</span>
+        <span class="old-price tx">{{ $currency->symbol  }}{{ number_format($product->converted_price * optional($currency->rate)->rate)   }}</span> &nbsp;
+        <span class="product-price tx">{{ $currency->symbol  }}{{ number_format($product->default_discounted_price * optional($currency->rate)->rate)  }}</span>
         @else
-        <span class="product-price tx">{{ $product->currency }}{{ number_format($product->converted_price * optional($currency->rate)->rate) }}</span>
+        <span class="product-price tx">{{ $currency->symbol }}{{ number_format($product->converted_price * optional($currency->rate)->rate) }}</span>
         @endif
       </span><br />
 
@@ -71,7 +71,6 @@
         @endif
 
         &nbsp;</span><br />
-      <strong>Date: </strong> <span class="tx">&nbsp{{ $product->created_at->format('d/m/y') }}</span>
     </div>
     @else
     <div> No data </div>
