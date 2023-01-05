@@ -74,8 +74,6 @@ class ProductController extends Controller
     public function printSku($id)
     {
         $product = Product::find($id);
-        dd(true);
-
         $variants = request()->query();
         $currency = Currency::find(request()->currency);
         return view('admin.products.sku', compact('variants', 'product', 'currency'));
