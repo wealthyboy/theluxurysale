@@ -75,7 +75,8 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $variants = request()->query();
-        return view('admin.products.sku', compact('variants', 'product'));
+        $currency = Currency::find(request()->currency);
+        return view('admin.products.sku', compact('variants', 'product', 'currency'));
     }
 
 
