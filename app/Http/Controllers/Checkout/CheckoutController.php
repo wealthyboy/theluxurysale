@@ -52,7 +52,6 @@ class CheckoutController extends Controller
 	public function  index()
 	{
 		$carts =  Cart::all_items_in_cart();
-		dd(true);
 		if (!$carts->count()) {
 			return redirect()->to('/cart');
 		}
