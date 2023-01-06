@@ -3098,6 +3098,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -24302,6 +24303,7 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
+                    _c("p", { staticClass: "col-sm-12" }),
                     _c(
                       "div",
                       { staticClass: "d-flex justify-content-betwwen" },
@@ -24383,7 +24385,9 @@ var render = function() {
                           : _vm._e()
                       ],
                       2
-                    )
+                    ),
+                    _vm._v(" "),
+                    _c("p")
                   ]
                 )
               ]

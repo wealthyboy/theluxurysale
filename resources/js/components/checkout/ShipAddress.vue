@@ -202,7 +202,7 @@
               <strong class="text-danger"> Please select your state</strong>
             </span>
           </p>
-
+          <p class="col-sm-12">
           <div class="d-flex justify-content-betwwen">
             <a
               v-if="addresses.length"
@@ -244,6 +244,7 @@
             </template>
 
           </div>
+          </p>
 
         </div>
       </form>
