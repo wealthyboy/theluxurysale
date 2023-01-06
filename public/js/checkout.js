@@ -24495,9 +24495,7 @@ var render = function() {
                             " "
                         )
                       ]),
-                      _vm._v(
-                        "\n            " + _vm._s(_vm.meta) + "\n            "
-                      ),
+                      _vm._v(" "),
                       _c("p", { staticClass: "mt-3 mb-3" }, [
                         _c(
                           "a",
