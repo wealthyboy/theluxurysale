@@ -106,7 +106,7 @@
                            {{ $order->phone_number }} &nbsp;&nbsp; <br />
                            {{ $order->email }} <br />
                            {{ $order->address }}<br /> {{ $order->city }} &nbsp;
-                           <br /> {{ optional(optional($order->state }},{{ $order->country }}&nbsp;
+                           <br /> {{ $order->state }},{{ $order->country }}&nbsp;
                         </td>
                      </tr>
 
