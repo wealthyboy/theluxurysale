@@ -202,17 +202,17 @@
               <strong class="text-danger"> Please select your state</strong>
             </span>
           </p>
-          <p class="reduce-gutters col-sm-12">
+          <p class="reduce-gutters col-sm-12 d-flex justify-content-between">
             <a
               v-if="addresses.length"
               @click.prevent="cancelForm"
-              class="cancel-form bold color--primary pull-right"
+              class="cancel-form btn   bold  btn--primary btn-round btn-lg"
               href="#"
             >Cancel</a>
             <button
               v-if="!addresses.length"
               type="submit"
-              class="btn bold  btn--lg btn--primary btn--full"
+              class=" btn   bold  btn--primary btn-round btn-lg"
               name="checkout_place_order"
               id="place_order"
               value="Place order"
@@ -229,7 +229,7 @@
             <button
               v-if="addresses.length"
               type="submit"
-              class="btn btn--lg btn--white bold color--primary"
+              class="btn   bold  btn--primary btn-round btn-lg "
               value="Submit"
             >
               <span

@@ -45520,81 +45520,88 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c("p", { staticClass: "reduce-gutters col-sm-12" }, [
-                      _vm.addresses.length
-                        ? _c(
-                            "a",
-                            {
-                              staticClass:
-                                "cancel-form bold color--primary pull-right",
-                              attrs: { href: "#" },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.cancelForm($event)
+                    _c(
+                      "p",
+                      {
+                        staticClass:
+                          "reduce-gutters col-sm-12 d-flex justify-content-between"
+                      },
+                      [
+                        _vm.addresses.length
+                          ? _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "cancel-form btn   bold  btn--primary btn-round btn-lg",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.cancelForm($event)
+                                  }
                                 }
-                              }
-                            },
-                            [_vm._v("Cancel")]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      !_vm.addresses.length
-                        ? _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn bold  btn--lg btn--primary btn--full",
-                              attrs: {
-                                type: "submit",
-                                name: "checkout_place_order",
-                                id: "place_order",
-                                value: "Place order",
-                                "data-value": "Place Order"
-                              }
-                            },
-                            [
-                              _vm.submiting
-                                ? _c("span", {
-                                    staticClass:
-                                      "spinner-border spinner-border-sm",
-                                    attrs: {
-                                      role: "status",
-                                      "aria-hidden": "true"
-                                    }
-                                  })
-                                : _vm._e(),
-                              _vm._v(
-                                "\n            Save & Continue\n          "
-                              )
-                            ]
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.addresses.length
-                        ? _c(
-                            "button",
-                            {
-                              staticClass:
-                                "btn btn--lg btn--white bold color--primary",
-                              attrs: { type: "submit", value: "Submit" }
-                            },
-                            [
-                              _vm.submiting
-                                ? _c("span", {
-                                    staticClass:
-                                      "spinner-border spinner-border-sm",
-                                    attrs: {
-                                      role: "status",
-                                      "aria-hidden": "true"
-                                    }
-                                  })
-                                : _vm._e(),
-                              _vm._v("\n            Save\n          ")
-                            ]
-                          )
-                        : _vm._e()
-                    ])
+                              },
+                              [_vm._v("Cancel")]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        !_vm.addresses.length
+                          ? _c(
+                              "button",
+                              {
+                                staticClass:
+                                  " btn   bold  btn--primary btn-round btn-lg",
+                                attrs: {
+                                  type: "submit",
+                                  name: "checkout_place_order",
+                                  id: "place_order",
+                                  value: "Place order",
+                                  "data-value": "Place Order"
+                                }
+                              },
+                              [
+                                _vm.submiting
+                                  ? _c("span", {
+                                      staticClass:
+                                        "spinner-border spinner-border-sm",
+                                      attrs: {
+                                        role: "status",
+                                        "aria-hidden": "true"
+                                      }
+                                    })
+                                  : _vm._e(),
+                                _vm._v(
+                                  "\n            Save & Continue\n          "
+                                )
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm.addresses.length
+                          ? _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "btn   bold  btn--primary btn-round btn-lg ",
+                                attrs: { type: "submit", value: "Submit" }
+                              },
+                              [
+                                _vm.submiting
+                                  ? _c("span", {
+                                      staticClass:
+                                        "spinner-border spinner-border-sm",
+                                      attrs: {
+                                        role: "status",
+                                        "aria-hidden": "true"
+                                      }
+                                    })
+                                  : _vm._e(),
+                                _vm._v("\n            Save\n          ")
+                              ]
+                            )
+                          : _vm._e()
+                      ]
+                    )
                   ]
                 )
               ]
