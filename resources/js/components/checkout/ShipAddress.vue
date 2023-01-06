@@ -473,6 +473,8 @@ export default {
       this.form.city = address.city;
       this.form.postal_code = address.postal_code;
       this.form.country_id = address.country_id;
+      this.form.email = address.email;
+      this.form.phone_number = address.phone_number;
       let state = [];
       let ship_prices = [];
       this.getState(address.country_id);

@@ -3266,6 +3266,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.city = address.city;
       this.form.postal_code = address.postal_code;
       this.form.country_id = address.country_id;
+      this.form.email = address.email;
+      this.form.phone_number = address.phone_number;
       var state = [];
       var ship_prices = [];
       this.getState(address.country_id);
