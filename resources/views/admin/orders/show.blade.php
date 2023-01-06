@@ -3,7 +3,7 @@
 <div class="row">
    <div class="col-md-12">
       <div class="text-right">
-        
+
       </div>
    </div>
    <div class="col-md-4">
@@ -17,7 +17,7 @@
                   <tbody>
                      <tr>
                         <td style="width: 1%;"><button data-toggle="tooltip" title="" class="btn btn-info btn-xs" data-original-title="Store"><i class="fa fa-shopping-cart fa-fw"></i></button></td>
-                        <td><a href="" target="_blank">{{  Config('app.name') }}</a></td>
+                        <td><a href="" target="_blank">{{ Config('app.name') }}</a></td>
                      </tr>
                      <tr>
                         <td><button data-toggle="tooltip" title="Date Added" class="btn btn-info btn-xs"><i class="fa fa-calendar fa-fw"></i></button></td>
@@ -101,116 +101,122 @@
                   </thead>
                   <tbody>
                      <tr>
-                     <td  class="text-left" data-link-style="text-decoration:none; color:#67bffd;"> {{ optional(optional($order)->address)->first_name }} {{ optional(optional($order)->address)->last_name }}  <br />{{ optional($order->address)->address }}<br /> {{ optional($order->address)->city }} &nbsp;<br /> {{ optional(optional($order->address)->address_state)->name }},{{ optional(optional($order->address)->address_country)->name }}&nbsp;</td>
-
+                        <td class="text-left" data-link-style="text-decoration:none; color:#67bffd;">
+                           {{ $order->first_name }} {{ $order->last_name }} <br />
+                           {{ $order->phone_number }} &nbsp;&nbsp; <br />
+                           {{ $order->email }} <br />
+                           {{ $order->address }}<br /> {{ $order->city }} &nbsp;
+                           <br /> {{ optional(optional($order->state }},{{ $order->country }}&nbsp;
+                        </td>
                      </tr>
+
+
                   </tbody>
                </table>
                <div>
-               <h2>Items</h2>
-               <table class="table table-shopping">
-                  <thead>
-                     <tr>
-                        <th class="text-center"></th>
-                        <th>Product</th>
-                        <th class="th-description">Variations</th>
-                        <th class="text-right">Price</th>
-                        <th class="text-right">Qty</th>
-                        <th class="text-right">Amount</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     @foreach ( $order->ordered_products as $order_product )
-                     <tr>
-                        <td>
-                           <div class="img-container">
-                              <img src="{{ optional($order_product->product_variation)->image  }} " alt="...">
-                           </div>
-                           <div class="form-group label-floating">
-                             <input type="hidden" class="p-v-id" value="{{ $order_product->id }}" />
-                              <select  class="form-control mt-3 update_status" name="order_status[{{ $order_product->id }}]" id="">
-                                 <option value="" >Choose Status</option>
-                                 @foreach($statuses as $status)
-                                   @if ($status == $order_product->status)
-                                       <option value="{{ $status }}" selected>{{ $status }}</option>
+                  <h2>Items</h2>
+                  <table class="table table-shopping">
+                     <thead>
+                        <tr>
+                           <th class="text-center"></th>
+                           <th>Product</th>
+                           <th class="th-description">Variations</th>
+                           <th class="text-right">Price</th>
+                           <th class="text-right">Qty</th>
+                           <th class="text-right">Amount</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        @foreach ( $order->ordered_products as $order_product )
+                        <tr>
+                           <td>
+                              <div class="img-container">
+                                 <img src="{{ optional($order_product->product_variation)->image  }} " alt="...">
+                              </div>
+                              <div class="form-group label-floating">
+                                 <input type="hidden" class="p-v-id" value="{{ $order_product->id }}" />
+                                 <select class="form-control mt-3 update_status" name="order_status[{{ $order_product->id }}]" id="">
+                                    <option value="">Choose Status</option>
+                                    @foreach($statuses as $status)
+                                    @if ($status == $order_product->status)
+                                    <option value="{{ $status }}" selected>{{ $status }}</option>
                                     @else
-                                      <option value="{{ $status }}">{{ $status }}</option>
+                                    <option value="{{ $status }}">{{ $status }}</option>
                                     @endif
-                                 @endforeach
-                              </select>
-                           </div>
-                        </td>
-                        <td class="td-name">
-                           <a href="">{{  optional(optional($order_product->product_variation)->product)->product_name }}</a>
-                           <br><small></small>
-                        </td>
-                        <td>
-                           @if (null !== $order_product->product_variation)
-                              @foreach( $order_product->product_variation->product_variation_values  as $v)
-                                 {{ $v->attribute->name .','}}
+                                    @endforeach
+                                 </select>
+                              </div>
+                           </td>
+                           <td class="td-name">
+                              <a href="">{{ optional(optional($order_product->product_variation)->product)->product_name }}</a>
+                              <br><small></small>
+                           </td>
+                           <td>
+                              @if (null !== $order_product->product_variation)
+                              @foreach( $order_product->product_variation->product_variation_values as $v)
+                              {{ $v->attribute->name .','}}
                               @endforeach
-                           @else
+                              @else
                               -----
-                           @endif
+                              @endif
 
-                        </td>
-                      
-                        <td class="td-number text-right">
-                           {{  $order->currency }}{{  $order_product->order_price   }}
-                        </td>
-                        <td class="td-number">
-                           {{ $order_product->quantity }}
-                        </td>
-                        <td class="td-number">
-                           <small>{{  $order->currency }}</small>{{ $order_product->total   }}
-                        </td>
-                        
-                     </tr>
-                     @endforeach                               
-                  </tbody>
-               </table>
-               <table class="table ">
-                  <tfoot>
-                     <tr>
-                        <td colspan="6" class="text-right">Sub-Total</td>
-                        <td class="text-right"><small>{{ $order->currency }}</small>{{ number_format($sub_total)  }}</td>
-                     </tr>
-                     <tr>
-                        <td colspan="6" class="text-right">Coupon</td>
-                        <td class="text-right"> {{ $order->isCouponForAmb() }}  &nbsp; {{  $order->coupon ?  $order->coupon.'  -%'.$order->voucher()->amount . 'off'  : '---' }}</td>
-                     </tr>
-                     <tr>
-                        <td colspan="6" class="text-right">Shipping</td>
-                        <td class="text-right"><small>{{ $order->currency }}</small>{{ optional($order->shipping)->price }}</td>
-                     </tr>
-                     <tr>
-                        <td colspan="6" class="text-right">Total</td>
-                        <td class="text-right">{{ $order->currency }}{{  $order->get_total() }}</td>
-                     </tr>
-                  </tfoot>
-               </table>
+                           </td>
+
+                           <td class="td-number text-right">
+                              {{ $order->currency }}{{ $order_product->order_price   }}
+                           </td>
+                           <td class="td-number">
+                              {{ $order_product->quantity }}
+                           </td>
+                           <td class="td-number">
+                              <small>{{ $order->currency }}</small>{{ $order_product->total   }}
+                           </td>
+
+                        </tr>
+                        @endforeach
+                     </tbody>
+                  </table>
+                  <table class="table ">
+                     <tfoot>
+                        <tr>
+                           <td colspan="6" class="text-right">Sub-Total</td>
+                           <td class="text-right"><small>{{ $order->currency }}</small>{{ number_format($sub_total)  }}</td>
+                        </tr>
+                        <tr>
+                           <td colspan="6" class="text-right">Coupon</td>
+                           <td class="text-right"> {{ $order->isCouponForAmb() }} &nbsp; {{ $order->coupon ?  $order->coupon.'  -%'.$order->voucher()->amount . 'off'  : '---' }}</td>
+                        </tr>
+                        <tr>
+                           <td colspan="6" class="text-right">Shipping</td>
+                           <td class="text-right"><small>{{ $order->currency }}</small>{{ optional($order->shipping)->price }}</td>
+                        </tr>
+                        <tr>
+                           <td colspan="6" class="text-right">Total</td>
+                           <td class="text-right">{{ $order->currency }}{{ $order->get_total() }}</td>
+                        </tr>
+                     </tfoot>
+                  </table>
+               </div>
             </div>
          </div>
       </div>
    </div>
-</div>
-<!-- end row -->
-@endsection
-@section('inline-scripts')
+   <!-- end row -->
+   @endsection
+   @section('inline-scripts')
 
-$(".update_status").on('change',function(e){
-      let self = $(this)
-      if(self.val() == '') return;
+   $(".update_status").on('change',function(e){
+   let self = $(this)
+   if(self.val() == '') return;
 
-      let value = self.parent().find(".p-v-id").val()
-      var payLoad = { ordered_product_id: value,status: self.val()}
-      $.ajax({
-         type: "POST",
-         url: "/admin/update/ordered_product/status",
-         data: payLoad,
-      }).done(function(response){
-         console.log(response)
-      })
-})
-@stop
-
+   let value = self.parent().find(".p-v-id").val()
+   var payLoad = { ordered_product_id: value,status: self.val()}
+   $.ajax({
+   type: "POST",
+   url: "/admin/update/ordered_product/status",
+   data: payLoad,
+   }).done(function(response){
+   console.log(response)
+   })
+   })
+   @stop
