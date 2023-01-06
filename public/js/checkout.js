@@ -3127,7 +3127,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         city: "",
         postal_code: "",
         country_id: "",
-        state_id: ""
+        state_id: "",
+        email: "",
+        phone_number: ""
       }
     };
   },

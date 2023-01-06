@@ -359,6 +359,8 @@ export default {
         postal_code: "",
         country_id: "",
         state_id: "",
+        email: "",
+        phone_number: "",
       },
     };
   },
