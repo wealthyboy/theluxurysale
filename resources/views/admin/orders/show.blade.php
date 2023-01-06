@@ -103,8 +103,8 @@
                      <tr>
                         <td class="text-left" data-link-style="text-decoration:none; color:#67bffd;">
                            {{ $order->first_name }} {{ $order->last_name }} <br />
-                           {{ $order->phone_number }} &nbsp;&nbsp; <br />
                            {{ $order->email }} <br />
+                           {{ $order->phone_number }} <br />
                            {{ $order->address }}<br /> {{ $order->city }} &nbsp;
                            <br /> {{ $order->state }},{{ $order->country }}&nbsp;
                         </td>
