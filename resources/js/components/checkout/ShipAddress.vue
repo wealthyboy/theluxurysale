@@ -202,8 +202,7 @@
               <strong class="text-danger"> Please select your state</strong>
             </span>
           </p>
-          <p class="col-sm-12">
-          <div class="d-flex justify-content-betwwen">
+          <p class="reduce-gutters col-sm-12">
             <a
               v-if="addresses.length"
               @click.prevent="cancelForm"
@@ -227,23 +226,20 @@
               ></span>
               Save & Continue
             </button>
-            <template v-if="addresses.length">
-              <button
-                type="submit"
-                class="btn btn--lg btn--white bold color--primary"
-                value="Submit"
-              >
-                <span
-                  v-if="submiting"
-                  class="spinner-border spinner-border-sm"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-                Save
-              </button>
-            </template>
-
-          </div>
+            <button
+              v-if="addresses.length"
+              type="submit"
+              class="btn btn--lg btn--white bold color--primary"
+              value="Submit"
+            >
+              <span
+                v-if="submiting"
+                class="spinner-border spinner-border-sm"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              Save
+            </button>
           </p>
 
         </div>
