@@ -54,7 +54,10 @@
             </span>
           </p>
 
-          <p class="form-group reduce-gutters col-lg-6">
+          <p
+            v-if="meta.isAdmin"
+            class="form-group reduce-gutters col-lg-6"
+          >
             <label for="email">Email</label>
             <input
               id="email"
@@ -65,7 +68,10 @@
             >
 
           </p>
-          <p class="form-group reduce-gutters col-lg-6">
+          <p
+            v-if="meta.isAdmin"
+            class="form-group reduce-gutters col-lg-6"
+          >
             <label for="phone_number">Phone Number</label>
             <input
               id="phone_number"

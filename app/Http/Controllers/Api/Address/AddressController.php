@@ -92,6 +92,8 @@ class AddressController extends Controller
         $address->city = $request->city;
         $address->country_id = $request->country_id;
         $address->state_id = $request->state_id;
+        $address->email = $request->email;
+        $address->phone_number = $request->phone_number;
         $address->save();
         $addresses =  Address::where('user_id', \Auth::id())->get();
         if ($addresses->count()  == 1) {
@@ -165,6 +167,8 @@ class AddressController extends Controller
         $address->city       =  $request->city;
         $address->state_id   =  $request->state_id;
         $address->country_id =  $request->country_id;
+        $address->email = $request->email;
+        $address->phone_number = $request->phone_number;
         $address->save();
         //Get The Address
         return $this->allAddress();
