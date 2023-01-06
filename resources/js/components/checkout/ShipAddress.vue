@@ -278,6 +278,7 @@
               <p v-if="meta.isAdmin"> {{ location.email }} {{ location.phone_number }} </p>
               <p> {{ location.city }} , {{ location.zip }}</p>
               <p> {{ location.state}} ,{{ location.country }} </p>
+              {{  meta  }}
               <p class="mt-3 mb-3">
                 <a
                   @click.prevent="editAddress(index)"
@@ -378,6 +379,7 @@ export default {
       default_shipping: "default_shipping",
       errors: "errors",
       showForm: "showForm",
+      meta: "meta",
     }),
   },
   created() {
