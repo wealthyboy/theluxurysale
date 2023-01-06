@@ -3859,14 +3859,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -45533,11 +45525,26 @@ var render = function() {
                     _vm._v(" "),
                     _c(
                       "div",
-                      {
-                        staticClass:
-                          "form-group reduce-gutters text-right col-lg-12 "
-                      },
+                      { staticClass: "d-flex justify-content-betwwen" },
                       [
+                        _vm.addresses.length
+                          ? _c(
+                              "a",
+                              {
+                                staticClass:
+                                  "cancel-form bold color--primary pull-right",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.cancelForm($event)
+                                  }
+                                }
+                              },
+                              [_vm._v("Cancel")]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
                         !_vm.addresses.length
                           ? _c(
                               "button",
@@ -45571,65 +45578,32 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         _vm.addresses.length
-                          ? _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "form-group col-6  col-md-6 text-right"
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    staticClass:
-                                      "cancel-form bold color--primary pull-right",
-                                    attrs: { href: "#" },
-                                    on: {
-                                      click: function($event) {
-                                        $event.preventDefault()
-                                        return _vm.cancelForm($event)
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("Cancel")]
-                                )
-                              ]
-                            )
-                          : _vm._e(),
-                        _vm._v(" "),
-                        _vm.addresses.length
-                          ? _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "form-group col-6 col-md-6 text-left"
-                              },
-                              [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass:
-                                      "btn btn--lg btn--white bold color--primary",
-                                    attrs: { type: "submit", value: "Submit" }
-                                  },
-                                  [
-                                    _vm.submiting
-                                      ? _c("span", {
-                                          staticClass:
-                                            "spinner-border spinner-border-sm",
-                                          attrs: {
-                                            role: "status",
-                                            "aria-hidden": "true"
-                                          }
-                                        })
-                                      : _vm._e(),
-                                    _vm._v("\n              Save\n            ")
-                                  ]
-                                )
-                              ]
-                            )
+                          ? [
+                              _c(
+                                "button",
+                                {
+                                  staticClass:
+                                    "btn btn--lg btn--white bold color--primary",
+                                  attrs: { type: "submit", value: "Submit" }
+                                },
+                                [
+                                  _vm.submiting
+                                    ? _c("span", {
+                                        staticClass:
+                                          "spinner-border spinner-border-sm",
+                                        attrs: {
+                                          role: "status",
+                                          "aria-hidden": "true"
+                                        }
+                                      })
+                                    : _vm._e(),
+                                  _vm._v("\n              Save\n            ")
+                                ]
+                              )
+                            ]
                           : _vm._e()
-                      ]
+                      ],
+                      2
                     )
                   ]
                 )

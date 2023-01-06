@@ -203,7 +203,13 @@
             </span>
           </p>
 
-          <div class="form-group reduce-gutters text-right col-lg-12 ">
+          <div class="d-flex justify-content-betwwen">
+            <a
+              v-if="addresses.length"
+              @click.prevent="cancelForm"
+              class="cancel-form bold color--primary pull-right"
+              href="#"
+            >Cancel</a>
             <button
               v-if="!addresses.length"
               type="submit"
@@ -221,22 +227,7 @@
               ></span>
               Save & Continue
             </button>
-
-            <div
-              v-if="addresses.length"
-              class="form-group col-6  col-md-6 text-right"
-            >
-              <a
-                @click.prevent="cancelForm"
-                class="cancel-form bold color--primary pull-right"
-                href="#"
-              >Cancel</a>
-            </div>
-
-            <div
-              v-if="addresses.length"
-              class="form-group col-6 col-md-6 text-left"
-            >
+            <template v-if="addresses.length">
               <button
                 type="submit"
                 class="btn btn--lg btn--white bold color--primary"
@@ -250,9 +241,10 @@
                 ></span>
                 Save
               </button>
-            </div>
+            </template>
 
           </div>
+
         </div>
       </form>
     </div>
