@@ -19,7 +19,7 @@ class ActivityController extends Controller
 	public function index()
 	{
 		$activity = Activity::all();
-		return view('administration.auth.activity', compact('activity'));
+		return view('admin.auth.activity', compact('activity'));
 	}
 
 	protected function delete($id)
