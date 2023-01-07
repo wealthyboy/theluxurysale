@@ -27,14 +27,15 @@ class OrdersController extends Controller
 
 	public function index()
 	{
-		$orders = Order::orderBy('created_at', 'desc')->get();
+		$orders = Order::orderBy('created_at', 'desc')->paginate(2);
+		dd($orders);
 		return view('admin.orders.index', compact('orders'));
 	}
 
 
 	public function invoice($id)
 	{
-		$order     =  Order::find($id);
+		$order = Order::find($id);
 		$system_settings = SystemSetting::first();
 		$sub_total = $order->ordered_products[0]->sum_items($order->id)->items_total;
 		if (request()->inv) {
