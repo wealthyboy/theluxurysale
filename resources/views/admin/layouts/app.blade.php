@@ -230,12 +230,6 @@
                         </a>
                     </li>
 
-                    <li class="{{ $helper->active_link(['ambassadors']) }} ">
-                        <a href="{{ route('ambassadors.index') }}">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>
-                            <p> Ambassador</p>
-                        </a>
-                    </li>
                     <li class="{{ $helper->active_link(['media']) }} ">
                         <a href="{{ route('media.index') }}">
                             <i class="fa fa-info-circle" aria-hidden="true"></i>

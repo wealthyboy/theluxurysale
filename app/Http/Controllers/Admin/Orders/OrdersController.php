@@ -21,14 +21,12 @@ class OrdersController extends Controller
 
 	public function __construct()
 	{
-
 		$this->middleware('admin');
 		$this->settings =  \DB::table('system_settings')->first();
 	}
 
 	public function index()
 	{
-
 		$orders = Order::orderBy('created_at', 'desc')->get();
 		return view('admin.orders.index', compact('orders'));
 	}
@@ -57,9 +55,9 @@ class OrdersController extends Controller
 
 	public function show($id)
 	{
-		$order       =  Order::find($id);
-		$sub_total   =  $order->ordered_products[0]->sum_items($order->id)->items_total;
-		$statuses    =  static::order_status();
+		$order = Order::find($id);
+		$sub_total = $order->ordered_products[0]->sum_items($order->id)->items_total;
+		$statuses = static::order_status();
 		return view('admin.orders.show', compact('statuses', 'order', 'sub_total'));
 	}
 
@@ -75,7 +73,7 @@ class OrdersController extends Controller
 	public function dispatchNote(Request $request, $id)
 	{
 		$page_title = 'Dispatch Note';
-		$order =  Order::find($id);
+		$order = Order::find($id);
 		return view('admin.dispatch.index', compact('order', 'page_title'));
 	}
 }
