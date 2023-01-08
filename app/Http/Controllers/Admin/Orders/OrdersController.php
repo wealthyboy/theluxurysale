@@ -87,9 +87,9 @@ class OrdersController extends Table
 			'right' => false,
 			'edit' => false,
 			'search' => true,
-			'add' => true,
+			'add' => false,
 			'delete' => false,
-			'export' => true,
+			'export' => false,
 			'order' => true
 		];
 	}
