@@ -25,10 +25,7 @@ class OrdersController extends Table
 
 	public $deleted_specific = 'locations';
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
+
 
 	public function builder()
 	{
