@@ -101,7 +101,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        User::canTakeAction(2);
+        User::canTakeAction(User::canCreate);
         $brands = Brand::all();
         $categories = Category::parents()->get();
         $product_attributes = Attribute::parents()->where('type', 'both')->orderBy('sort_order', 'asc')->get();

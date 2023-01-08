@@ -101,7 +101,7 @@
 
                                         @else
 
-                                        <h6 class="mb-0 text-xs">{{ $v }}</h6>
+                                        <div class="mb-0 text-xs ">{{ $v }}</div>
 
                                         @endif
                                     </select>
