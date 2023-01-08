@@ -38,19 +38,19 @@
             <form action="{{ route($models['routes']['destroy'][0], [ $models['routes']['destroy'][1] => 1 ]) }}" method="post" enctype="multipart/form-data" id="form-table" class="is-filled">
                 @csrf
                 @method('DELETE')
-                <table class="table table-flush dataTable-table  align-items-center mb-0">
+                <table class="table table-striped table-shopping table-no-bordered table-hover">
                     <thead>
                         <tr>
                             @if( isset($models['meta']['show_checkbox']) && $models['meta']['show_checkbox'])
 
-                            <th data-sortable="" class="">
+                            <th data-sortable="" class="sorting">
                                 <div class="form-check ">
                                     <input onclick="$('input[name*=\'selected[]\']').prop('checked', this.checked)" class="form-check-input" type="checkbox" id="customCheck5">
                                 </div>
                             </th>
                             @endif
                             @foreach($models['items'][0][0] as $key => $value)
-                            <th data-sortable="" class="{{ isset($models['meta']['sort']) ?  $models['meta']['sort'] : 'desc' }}">
+                            <th data-sortable="" class="{{ isset($models['meta']['sort']) ?  $models['meta']['sort'] : 'sorting' }}">
                                 <a href="{{ request()->url() }}?key={{ $key }}&sort={{ $models['meta']['sort'] }}{{ $models['meta']['q'] }}" class="dataTable-sorter">
                                     <h6 class="mb-0 text-xs">
                                         {{ $key }}
@@ -114,7 +114,7 @@
                             @if (isset($models['unique']['show']) && $models['unique']['show'])
                             <td>
                                 <a href="{{ $models['meta']['urls'][$key]['url'] }}" data-bs-toggle="tooltip" data-bs-original-title="View">
-                                    <i class="material-symbols-outlined text-secondary position-relative text-lg">preview</i>
+                                    <i class="fa fa-eye"></i>
                                 </a>
                             </td>
                             @endif
@@ -123,17 +123,13 @@
 
                             <td class="text-xs font-weight-normal">
                                 <a target="_blank" href="/admin/orders/invoice/{{  isset($models['items'][0][$key]['Id']) ?  $models['items'][0][$key]['Id'] : null }}" rel="tooltip" data-bs-toggle="tooltip" data-bs-original-title="Invoice">
-                                    <i class="material-symbols-outlined text-secondary position-relative text-lg">receipt</i>
+                                    <i class="material-icons">print</i>
                                 </a>
                             </td>
 
-
-
-
-
                             <td class="text-xs font-weight-normal">
-                                <a href="{{  route($models['routes']['edit'][0], [ $models['routes']['edit'][1] => isset($models['items'][0][$key]['Id']) ?  $models['items'][0][$key]['Id'] : null  ]) }}" rel="tooltip" class="" data-original-title="" title="Edit">
-                                    <span class="material-symbols-outlined text-secondary position-relative text-lg">redo</span>
+                                <a target="_blank" href="/admin/orders/dispatch/{{  isset($models['items'][0][$key]['Id']) ?  $models['items'][0][$key]['Id'] : null }}" rel="tooltip" data-bs-toggle="tooltip" data-bs-original-title="Invoice">
+                                    <i class="material-icons">dispatch</i>
                                 </a>
                             </td>
 
