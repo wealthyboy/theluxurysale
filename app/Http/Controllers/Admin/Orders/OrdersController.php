@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Orders;
 
+use App\DataTable\Table;
 use Illuminate\Http\Request;
 
 use App\Order;
@@ -14,20 +15,38 @@ use App\Http\Helper;
 
 
 
-class OrdersController extends Controller
+class OrdersController extends Table
 {
 
+
+	public $link = '/admin/orders';
+
+	public $deleted_names = 'name';
+
+	public $deleted_specific = 'locations';
+
+	public function __construct()
+	{
+		parent::__construct();
+	}
+
+	public function builder()
+	{
+		return Order::query();
+	}
 
 
 	public function __construct()
 	{
 		$this->middleware('admin');
 		$this->settings =  \DB::table('system_settings')->first();
+		parent::__construct();
 	}
 
 	public function index()
 	{
-		$orders = Order::orderBy('created_at', 'desc')->get();
+		$orders = Order::has('ordered_products')->orderBy('created_at', 'desc')->paginate(450);
+		$orders = $this->getColumnListings(request(), $orders);
 		return view('admin.orders.index', compact('orders'));
 	}
 
@@ -42,6 +61,43 @@ class OrdersController extends Controller
 		}
 		return view('admin.orders.invoice', compact('sub_total', 'order', 'system_settings'));
 	}
+
+
+	public function routes()
+	{
+		return [
+			'edit' =>  [
+				'admin.orders.edit',
+				'order'
+			],
+			'update' => null,
+			'show' => null,
+			'destroy' =>  [
+				'admin.orders.destroy',
+				'order'
+			],
+			'create' => [
+				'admin.orders.create'
+			],
+			'index' => null
+		];
+	}
+
+	public function unique()
+	{
+		return [
+			'show'  => true,
+			'right' => false,
+			'edit' => false,
+			'search' => true,
+			'add' => true,
+			'delete' => false,
+			'export' => true,
+			'order' => true
+		];
+	}
+
+
 
 	public static function order_status()
 	{
