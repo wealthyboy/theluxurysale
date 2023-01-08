@@ -113,7 +113,7 @@
 
                             @if (isset($models['unique']['show']) && $models['unique']['show'])
                             <td>
-                                <a href="{{ $models['meta']['urls'][$key]['url'] }}" data-bs-toggle="tooltip" data-bs-original-title="View">
+                                <a href="{{ $models['meta']['urls'][$key]['url'] }}" data-toggle="tooltip" data-original-title="View">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </td>
@@ -122,13 +122,13 @@
                             @if (isset($models['unique']['order']) && $models['unique']['order'])
 
                             <td class="text-xs font-weight-normal">
-                                <a target="_blank" href="/admin/orders/invoice/{{  isset($models['items'][0][$key]['Id']) ?  $models['items'][0][$key]['Id'] : null }}" rel="tooltip" data-bs-toggle="tooltip" data-bs-original-title="Invoice">
+                                <a target="_blank" href="/admin/orders/invoice/{{ isset($models['items'][0][$key]['Id']) ?  $models['items'][0][$key]['Id'] : null }}" rel="tooltip" data-bs-toggle="tooltip" data-original-title="Invoice">
                                     <i class="material-icons">print</i>
                                 </a>
                             </td>
 
                             <td class="text-xs font-weight-normal">
-                                <a target="_blank" href="/admin/orders/dispatch/{{  isset($models['items'][0][$key]['Id']) ?  $models['items'][0][$key]['Id'] : null }}" rel="tooltip" data-bs-toggle="tooltip" data-bs-original-title="Invoice">
+                                <a target="_blank" href="/admin/orders/dispatch/{{  isset($models['items'][0][$key]['Id']) ?  $models['items'][0][$key]['Id'] : null }}" rel="tooltip" data-bs-toggle="tooltip" data-original-title="Invoice">
                                     <i class="material-icons">dispatch</i>
                                 </a>
                             </td>
