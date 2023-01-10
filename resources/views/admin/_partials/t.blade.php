@@ -113,7 +113,7 @@
 
                             @if (isset($models['unique']['show']) && $models['unique']['show'])
                             <td>
-                                <a href="{{ $models['meta']['urls'][$key]['url'] }}" data-toggle="tooltip" data-original-title="View">
+                                <a href="{{ $models['meta']['urls'][$key]['url'] }}" rel="tooltip" data-bs-toggle="tooltip" data-original-title="View">
                                     <i class="fa fa-eye"></i>
                                 </a>
                             </td>
