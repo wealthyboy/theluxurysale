@@ -11,70 +11,65 @@ use App\User;
 
 class BrandsController extends Controller
 {
-    //
+	//
 
-    
-    
-    
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-    }
-    public function index()
-    {    
-        $brands =  Brand::orderBy('brand_name','asc')->get();
-        return view('admin.brands.index',compact('brands'));
+
+
+
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
 	}
-	
+	public function index()
+	{
+		$brands =  Brand::orderBy('brand_name', 'asc')->get();
+		return view('admin.brands.index', compact('brands'));
+	}
 
-	 public function create()
-    {   
-		User::canTakeAction(2);
+
+	public function create()
+	{
+		User::canTakeAction(User::canCreate);
 		return view('admin.brands.create');
-    }
-	
+	}
+
 	public function store(Request $request)
-    {   
+	{
 		$this->validate($request, [
 			'brand_name' => 'required|unique:brands',
 		]);
 		Brand::Insert($request->except('_token'));
 		$flash = app('App\Http\Flash');
-		$flash->success("Success","Created");
-		return redirect()->route('brands.index') ; 
+		$flash->success("Success", "Created");
+		return redirect()->route('brands.index');
 	}
-	
-	
-	public function edit(Request $request ,$id)
-    {   
+
+
+	public function edit(Request $request, $id)
+	{
 	}
-	
-	
-	public function destroy(Request $request,$id)
-    {     
-		User::canTakeAction(5);
+
+
+	public function destroy(Request $request, $id)
+	{
+		User::canTakeAction(User::canDelete);
 		$rules = array(
-				'_token' => 'required',
+			'_token' => 'required',
 		);
-		$validator = \Validator::make($request->all(),$rules);
-		if ( empty ( $request->selected)) {
+		$validator = \Validator::make($request->all(), $rules);
+		if (empty($request->selected)) {
 			$validator->getMessageBag()->add('Selected', 'Nothing to Delete');
 			return \Redirect::back()
-			->withErrors($validator)
-			->withInput();
+				->withErrors($validator)
+				->withInput();
 		}
-		Brand::destroy($request->selected);  	
+		Brand::destroy($request->selected);
 		$flash = app('App\Http\Flash');
-		$flash->success("Success","Deleted");
+		$flash->success("Success", "Deleted");
 		return redirect()->back();
-    		 
 	}
-	
-	
 }
-
-

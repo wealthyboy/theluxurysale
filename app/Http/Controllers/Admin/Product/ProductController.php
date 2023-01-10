@@ -334,6 +334,8 @@ class ProductController extends Controller
         }
 
         (new Activity)->Log("Created a new product {$request->product_name}");
+
+
         return \Redirect::to('/admin/products');
     }
 

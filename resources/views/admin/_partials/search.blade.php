@@ -14,7 +14,7 @@
                 <div class="col-md-10">
                     <div class="form-group label-floating is-empty">
                         <label class="control-label">Search Products</label>
-                        <input required="" type="text" value="" name="q" class="form-control">
+                        <input required="" type="text" value="" name="gq" class="form-control">
                         <span class="material-input"></span>
                     </div>
                 </div>
