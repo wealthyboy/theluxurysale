@@ -61,7 +61,9 @@
       </span><br />
 
       <strong>Sku: </strong> <span class="tx"> {{ $product->sku  }} </span><br />
+      @if( null !== $product->brand )
       <strong>Brand: </strong> <span class="tx"> {{ optional($product->brand)->name  }} </span><br />
+      @endif
       <span class="tx">
 
 
