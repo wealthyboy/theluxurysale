@@ -50,7 +50,7 @@
     @if($product)
 
     <div class="content">
-      <span class="tx">&nbsp {{ $product->product_name }}</span><br />
+      <span class="tx">{{ $product->product_name }}</span><br />
       <strong>Price: </strong> <span class="tx">
         @if( $product->default_discounted_price)
         <span class="old-price tx">{{ $currency->symbol  }}{{ number_format($product->converted_price * optional($currency->rate)->rate)   }}</span> &nbsp;
@@ -60,9 +60,8 @@
         @endif
       </span><br />
 
-      <strong>Sku: </strong> <span class="tx">&nbsp {{ $product->sku  }} </span><br />
-      <strong>Brand: </strong> <span class="tx">&nbsp {{ optional($product->brand)->name  }} </span><br />
-
+      <strong>Sku: </strong> <span class="tx"> {{ $product->sku  }} </span><br />
+      <strong>Brand: </strong> <span class="tx"> {{ optional($product->brand)->name  }} </span><br />
       <span class="tx">
 
 
