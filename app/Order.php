@@ -93,7 +93,7 @@ class Order extends Model
 				"Type" => $order->order_type,
 				"Payment Type" => $order->payment_type,
 				"Status" => $order->status,
-				"Total" => $order->currency . $order->total,
+				"Total" => $order->currency . number_format($order->total),
 				"Date Added" => $order->created_at->format('d-m-y'),
 			];
 		});
