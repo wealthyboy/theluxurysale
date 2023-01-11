@@ -85,13 +85,13 @@
                   </td>
 
                   <td class="td-number text-right">
-                     {{ $order->currency }}{{ $order_product->price   }}
+                     {{ $order->currency }}{{ number_format($order_product->price)   }}
                   </td>
                   <td class="td-number">
                      {{ $order_product->quantity }}
                   </td>
                   <td class="td-number">
-                     <small>{{ $order->currency }}</small>{{ $order_product->total   }}
+                     <small>{{ $order->currency }}</small>{{ number_format($order_product->total)   }}
                   </td>
 
                </tr>
