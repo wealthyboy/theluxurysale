@@ -25,7 +25,7 @@
 
                     <div class="checkbox">
                         <label>
-                            <input {{ str_contains($permission->code, $value) ? 'checked' : ''}} value="{{ $value }}" id="{{ $value }}" type="checkbox" name="code[]" checked="checked">
+                            <input {{ str_contains($permission->code, $value) ? 'checked' : ''}} value="{{ $value }}" id="{{ $value }}" type="checkbox" name="code[]">
                             {{ $key }}
                         </label>
                     </div>
