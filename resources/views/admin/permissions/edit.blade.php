@@ -19,45 +19,13 @@
                         <input class="form-control" name="name" type="text" value="{{ $permission->name }}" required="true" />
                     </div>
 
-                    <div class="checkbox ">
-                        <label>
-                            <input value="1" {{ str_contains($permission->code, 1) ? 'checked' : ''}} type="checkbox" name="code[]">
-                            Activity
-                        </label>
-                    </div>
 
-                    <div class="checkbox ">
-                        <label>
-                            <input value="2" {{ str_contains($permission->code, 2) ? 'checked' : ''}} type="checkbox" name="code[]">
-                            Create
-
-                        </label>
-                    </div>
-
-                    <div class="checkbox">
-                        <label>
-                            <input value="3" type="checkbox" {{ str_contains($permission->code, 5) ? 'checked' : ''}} name="code[]" checked="checked">
-                            Read
-                        </label>
-                    </div>
-                    <div class="checkbox ">
-                        <label>
-                            <input value="4" {{ str_contains($permission->code, 4) ? 'checked' : ''}} type="checkbox" name="code[]">
-                            Update
-                        </label>
-                    </div>
-                    <div class="checkbox ">
-                        <label>
-                            <input value="5" {{ str_contains($permission->code, 5) ? 'checked' : ''}} type="checkbox" name="code[]">
-                            Delete
-                        </label>
-                    </div>
 
                     @foreach($permissions as $key => $value)
 
                     <div class="checkbox">
                         <label>
-                            <input value="{{ $value }}" id="{{ $value }}" type="checkbox" name="code[]" checked="checked">
+                            <input {{ str_contains($permission->code, $value) ? 'checked' : ''}} value="{{ $value }}" id="{{ $value }}" type="checkbox" name="code[]" checked="checked">
                             {{ $key }}
                         </label>
                     </div>
