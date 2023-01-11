@@ -34,7 +34,8 @@
                <tr>
                   <td>
                      <address>
-                        <strong>{{ Config('app.name') }}</strong><br />
+                        <strong>{{ Config('app.name') }}</strong>
+                        <br />
                         {{ $system_settings->address }}
                      </address>
                      <b>Telephone:</b> &nbsp;{{ $system_settings->store_phone }}<br />
@@ -84,7 +85,7 @@
                   </td>
 
                   <td class="td-number text-right">
-                     {{ $order->currency }}{{ optional($order_product->product_variation)->discounted_price ??  optional($order_product->product_variation)->converted_price  }}
+                     {{ $order->currency }}{{ number_format(optional($order_product->product_variation)->discounted_price) ??  number_format(optional($order_product->product_variation)->converted_price)  }}
                   </td>
                   <td class="td-number">
                      {{ $order_product->quantity }}
@@ -110,7 +111,7 @@
                </tr>
                <tr>
                   <td colspan="6" class="text-right">Shipping</td>
-                  <td class="text-right"><small>{{ optional($order_product->product_variation)->currency }}</small>{{ optional($order->shipping)->price }}</td>
+                  <td class="text-right"><small>{{ optional($order_product->product_variation)->currency }}</small>{{ optional($order->shipping)->price ?? '0.00' }}</td>
                </tr>
                <tr>
                   <td colspan="6" class="text-right">Total</td>
