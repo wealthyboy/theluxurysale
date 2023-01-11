@@ -109,6 +109,11 @@
                                         <hr />
                                         @endforeach
 
+                                        @if (null !== $product->product_variation)
+                                        @foreach( $order_product->product_variation->product_variation_values as $v)
+                                        {{ $v->attribute->name .','}}
+                                        @endforeach
+
                                     </td>
 
                                     <td>
