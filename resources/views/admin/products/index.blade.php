@@ -105,12 +105,12 @@
                                     <td>
                                         @foreach($product->variations as $variation)
                                         Variant: {{ $variation->name }} <br />
-                                        Qty: {{ variation->quantity  }} <br />
+                                        Qty: {{ $variation->quantity  }} <br />
                                         <hr />
                                         @endforeach
 
                                         @if (null !== $product->product_variation)
-                                        @foreach( $order_product->product_variation->product_variation_values as $v)
+                                        @foreach( $product->product_variation->product_variation_values as $v)
                                         {{ $v->attribute->name .','}}
                                         @endforeach
                                         @endif
