@@ -40,7 +40,7 @@ class PermissionsController extends Controller
     {
 
         //Check if user has Permission 2 code for create
-        //User::canTakeAction(2);
+        User::canTakeAction(2);
         $permissions = Permission::$types;
         return view('admin.permissions.create', compact('permissions'));
     }
@@ -91,7 +91,8 @@ class PermissionsController extends Controller
         //
         User::canTakeAction(3);
         $permission = Permission::find($id);
-        return view('admin.permissions.edit', compact('permission'));
+        $permissions = Permission::$types;
+        return view('admin.permissions.edit', compact('permissions', 'permission'));
     }
 
     /**
