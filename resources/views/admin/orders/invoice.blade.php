@@ -13,6 +13,13 @@
 
    </head>
 
+   <style>
+      .table th,
+      .table td {
+         vertical-align: middle;
+      }
+   </style>
+
 <body>
    <div class="container">
       <div style="page-break-after: always;">
