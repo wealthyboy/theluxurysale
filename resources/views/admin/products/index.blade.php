@@ -103,7 +103,7 @@
                                     <td><a target="_blank" href="/product/{{ isset($product->categories[0]) ?  $product->categories[0]->slug : '' }}/{{ $product->slug }}">{{ $product->product_name }}</a></td>
                                     <td>{{ $product->allow == 1 ? 'Live' : 'Offline' }}</td>
                                     <td>
-                                        @foreach($product->variations as $variation)
+                                        @foreach($product->product_variations as $variation)
                                         Variant: {{ $variation->name }} <br />
                                         Qty: {{ $variation->quantity  }} <br />
                                         <hr />
