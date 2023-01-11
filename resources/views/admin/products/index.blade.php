@@ -104,7 +104,9 @@
                                     <td>{{ $product->allow == 1 ? 'Live' : 'Offline' }}</td>
                                     <td>
                                         @foreach($product->product_variations as $variation)
-                                        Variant: $variation->product_variation_values as $v)
+                                        Variant:
+
+                                        @foreach( $variation->product_variation_values as $v)
                                         {{ $v->attribute->name .','}}
                                         @endforeach <br />
                                         Qty: {{ $variation->quantity  }} <br />
