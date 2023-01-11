@@ -85,7 +85,7 @@
                   </td>
 
                   <td class="td-number text-right">
-                     {{ $order->currency }}{{ number_format(optional($order_product->product_variation)->discounted_price) ??  number_format(optional($order_product->product_variation)->converted_price)  }}
+                     {{ $order->currency }}{{ optional($order_product->product_variation)->discounted_price ??  optional($order_product->product_variation)->converted_price  }}
                   </td>
                   <td class="td-number">
                      {{ $order_product->quantity }}
