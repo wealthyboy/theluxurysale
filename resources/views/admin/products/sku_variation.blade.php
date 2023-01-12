@@ -42,32 +42,41 @@
                         </div>
                     </div>
                     @endforeach
-                    <div class="col-md-3 col-xs-6 col-sm-6">
-                        <div class="form-group label-floating">
-                            <label style="
+
+                </div>
+            </div>
+
+
+            @endforeach
+
+            @else
+
+
+
+            @endif
+
+            <div class="col-md-3 col-xs-6 col-sm-6">
+                <div class="form-group label-floating">
+                    <label style="
                                             top: -28px;
                                             left: 0;
                                             font-size: 11px;
                                             line-height: 1.0714285718;" class="control-label"> Currency</label>
-                            <select name="currency" class="form-control">
+                    <select name="currency" class="form-control">
 
-                                @foreach($currencies as $currency)
+                        @foreach($currencies as $currency)
 
-                                <option value="{{ $currency->id }}">{{ $currency->country }}({{ $currency->symbol }})</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
+                        <option value="{{ $currency->id }}">{{ $currency->country }}({{ $currency->symbol }})</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
+
             <div class="col-md-3 col-xs-12 text-right col-sm-12">
                 <button rel="tooltip" class="btn btn-success btn-simple" type="submit">
                     <i class="material-icons">print</i>
                 </button>
             </div>
-
-            @endforeach
-            @endif
         </div>
 </form>
 
