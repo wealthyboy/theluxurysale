@@ -2668,8 +2668,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.payment_method = "admin";
       this.order_text = "Please wait. We are almost done......";
-      var form = document.getElementById("checkout-form-2");
-      form.submit();
+      this.checkout();
     },
     addShippingPrice: function addShippingPrice(evt) {
       if (evt.target.value == "") {
@@ -23246,7 +23245,7 @@ var render = function() {
                                           "button",
                                           {
                                             staticClass:
-                                              "btn   bold  btn--primary btn-round btn-lg btn-block",
+                                              "btn bold btn--primary btn-round btn-lg btn-block",
                                             class: {
                                               disabled:
                                                 _vm.payment_is_processing
@@ -23288,14 +23287,14 @@ var render = function() {
                                     "button",
                                     {
                                       staticClass:
-                                        "btn   bold  btn--primary btn-round btn-lg btn-block",
+                                        "btn bold  btn--primary btn-round btn-lg btn-block",
                                       class: {
                                         disabled: _vm.payment_is_processing
                                       },
                                       attrs: {
                                         type: "button",
                                         name: "checkout_place_order",
-                                        id: "p lace_order",
+                                        id: "place_order",
                                         value: "Place order",
                                         "data-value": "Place Order"
                                       },

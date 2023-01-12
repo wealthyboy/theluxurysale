@@ -332,7 +332,7 @@
                       @click="makePayemnt"
                       type="button"
                       :class="{'disabled': payment_is_processing}"
-                      class="btn   bold  btn--primary btn-round btn-lg btn-block"
+                      class="btn bold btn--primary btn-round btn-lg btn-block"
                       name="checkout_place_order"
                       id="p lace_order"
                       value="Place order"
@@ -354,9 +354,9 @@
                     @click="payAsAdmin"
                     type="button"
                     :class="{'disabled': payment_is_processing}"
-                    class="btn   bold  btn--primary btn-round btn-lg btn-block"
+                    class="btn bold  btn--primary btn-round btn-lg btn-block"
                     name="checkout_place_order"
-                    id="p lace_order"
+                    id="place_order"
                     value="Place order"
                     data-value="Place Order"
                   >
@@ -647,8 +647,7 @@ export default {
       this.payment_method = "admin";
 
       this.order_text = "Please wait. We are almost done......";
-      let form = document.getElementById("checkout-form-2");
-      form.submit();
+      this.checkout();
     },
     addShippingPrice: function (evt) {
       if (evt.target.value == "") {
