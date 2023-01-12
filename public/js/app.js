@@ -5352,6 +5352,215 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5372,30 +5581,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       attributesData: [],
-      color: '',
+      color: "",
       isActive: false,
       canNotAddToCart: false,
-      image: '',
+      image: "",
       cText: "Add To Cart",
       images: [],
       variant_images: [],
       noRating: false,
       user: Window.auth,
       file: null,
-      quantity: '',
+      quantity: "",
       useUrl: false,
       price: null,
       discounted_price: null,
-      percentage_off: '',
-      product_variation_id: '',
+      percentage_off: "",
+      product_variation_id: "",
       product_variation: [],
       prodAttributes: null,
-      category: '',
+      category: "",
       cartSideBarOpen: false,
       loading: false,
       is_loggeIn: false,
       is_wishlist: null,
-      image_m: '',
+      image_m: "",
       image_tn: null,
       profile_photo: null,
       errorsBag: [],
@@ -5411,7 +5620,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat"
       },
-      allowedFileTypes: ['image/jpeg', 'image/png', 'image/gif'],
+      allowedFileTypes: ["image/jpeg", "image/png", "image/gif"],
       form: {
         description: null,
         rating: null,
@@ -5422,23 +5631,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapGetters"])({
-    cart: 'cart',
-    loggedIn: 'loggedIn',
-    wishlist: 'wishlist',
-    reviews: 'reviews',
-    meta: 'reviewsMeta',
-    errors: 'errors'
+    cart: "cart",
+    loggedIn: "loggedIn",
+    wishlist: "wishlist",
+    reviews: "reviews",
+    meta: "reviewsMeta",
+    errors: "errors"
   })), {}, {
     activeObject: function activeObject() {
       return {
-        'active-attributes': this.isActive
+        "active-attributes": this.isActive
       };
     },
     cartText: function cartText() {
       return this.cText;
     },
     canAddToCart: function canAddToCart() {
-      return [this.quantity == null ? 'disabled' : ''];
+      return [this.quantity == null ? "disabled" : "", this.product.qty < 1 ? "disabled" : ""];
     },
     loggedIn: function loggedIn() {
       return [this.user ? true : false];
@@ -5452,7 +5661,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.product_variation_id = this.product.default_variation_id;
     this.percentage_off = this.product.default_percentage_off;
     this.quantity = this.product.qty;
-    this.cText = this.product.qty < 1 ? 'Item is sold out' : " Add To Cart";
+    this.cText = this.product.qty < 1 ? "Item is sold out" : " Add To Cart";
     this.price = this.product.converted_price;
     this.discounted_price = this.product.default_discounted_price;
     this.is_wishlist = this.product.is_wishlist;
@@ -5487,21 +5696,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getStarRating: function getStarRating(e, rating) {
       this.form.rating = rating;
       this.noRating = false;
-      var ratings = document.querySelectorAll('.rating');
+      var ratings = document.querySelectorAll(".rating");
       ratings.forEach(function (elm) {
-        elm.classList.remove('active');
+        elm.classList.remove("active");
       });
       e.target.classList.add("active");
     },
     productReviews: function productReviews() {
       var _this2 = this;
 
-      return axios.get('/reviews/' + this.product_slug).then(function (response) {
+      return axios.get("/reviews/" + this.product_slug).then(function (response) {
         _this2.loading = false;
 
-        _this2.$store.commit('setReviews', response.data.data);
+        _this2.$store.commit("setReviews", response.data.data);
 
-        _this2.$store.commit('setReviewsMeta', response.data.meta);
+        _this2.$store.commit("setReviewsMeta", response.data.meta);
       })["catch"](function (error) {
         _this2.loading = false;
       });
@@ -5509,7 +5718,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getProduct: function getProduct() {
       var _this3 = this;
 
-      axios.get('/api' + this.$route.path).then(function (response) {
+      axios.get("/api" + this.$route.path).then(function (response) {
         var obj = response.data.data;
         _this3.product_variation = _this3.product.product_variation;
         window.Stock = JSON.parse(obj.stock);
@@ -5535,25 +5744,25 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           f = false,
           af = false,
           cA;
-      attr = document.querySelector('.active-attribute');
-      fA = document.querySelectorAll('.first-attribute');
-      oA = document.querySelectorAll('.other-attribute');
-      oAv = document.querySelector('.o-a');
+      attr = document.querySelector(".active-attribute");
+      fA = document.querySelectorAll(".first-attribute");
+      oA = document.querySelectorAll(".other-attribute");
+      oAv = document.querySelector(".o-a");
 
-      if (evt.target.classList.contains('first-attribute')) {
+      if (evt.target.classList.contains("first-attribute")) {
         fA.forEach(function (elm, key) {
-          elm.classList.remove('active-attribute');
+          elm.classList.remove("active-attribute");
         });
         af = true;
-        evt.target.classList.add('active-attribute');
+        evt.target.classList.add("active-attribute");
       }
 
-      if (evt.target.classList.contains('other-attribute')) {
+      if (evt.target.classList.contains("other-attribute")) {
         oA.forEach(function (elm, key) {
-          elm.classList.remove('active-other-attribute');
+          elm.classList.remove("active-other-attribute");
         });
         f = true;
-        evt.target.classList.add('active-other-attribute');
+        evt.target.classList.add("active-other-attribute");
       }
 
       try {
@@ -5561,7 +5770,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var s = JSON.parse(this.product.stock);
         var variation;
 
-        if (typeof i[0].length === 'undefined') {
+        if (typeof i[0].length === "undefined") {
           var v = i[0][evt.target.dataset.value];
 
           for (var _i in v) {
@@ -5582,14 +5791,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             ooA = this.attributesData[0];
           }
 
-          variation = cA + '_' + ooA;
+          variation = cA + "_" + ooA;
         } else {
           variation = evt.target.dataset.value;
         }
 
         var vTs = s[0][variation];
 
-        if (key == 'Colors') {
+        if (key == "Colors") {
           this.image = vTs.image;
           this.image_m = vTs.image_m;
           this.images = vTs.images.length ? vTs.images : this.product.default_variation.images;
@@ -5611,7 +5820,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     owlCarousels: function owlCarousels() {},
     selectProductAttributes: function selectProductAttributes() {
       var values = [];
-      var attributes = document.querySelectorAll('select.vs');
+      var attributes = document.querySelectorAll("select.vs");
       attributes.forEach(function (elm, key) {
         values.push(elm.value);
       });
@@ -5621,9 +5830,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return Array.isArray(error) ? error[0] : error;
     },
     removeError: function removeError(e) {
-      var input = document.querySelectorAll('.rating_required');
+      var input = document.querySelectorAll(".rating_required");
 
-      if (typeof input !== 'undefined') {
+      if (typeof input !== "undefined") {
         this.clearErrors({
           context: this,
           input: input
@@ -5631,9 +5840,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }
     },
     vInput: function vInput(e) {
-      var input = document.querySelectorAll('.rating_required');
+      var input = document.querySelectorAll(".rating_required");
 
-      if (typeof input !== 'undefined') {
+      if (typeof input !== "undefined") {
         this.checkInput({
           context: this,
           input: e
@@ -5644,16 +5853,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.color = color;
     },
     removeColor: function removeColor(color) {
-      this.color = '';
+      this.color = "";
     }
   }, Object(vuex__WEBPACK_IMPORTED_MODULE_3__["mapActions"])({
-    addProductToCart: 'addProductToCart',
-    addProductToWishList: 'addProductToWishList',
-    createReviews: 'createReviews',
-    validateForm: 'validateForm',
-    clearErrors: 'clearErrors',
-    checkInput: 'checkInput',
-    getReviews: 'getReviews'
+    addProductToCart: "addProductToCart",
+    addProductToWishList: "addProductToWishList",
+    createReviews: "createReviews",
+    validateForm: "validateForm",
+    clearErrors: "clearErrors",
+    checkInput: "checkInput",
+    getReviews: "getReviews"
   })), {}, {
     addToCart: function addToCart() {
       var _this5 = this;
@@ -5693,7 +5902,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       });
     },
     submit: function submit() {
-      var input = document.querySelectorAll('.rating_required');
+      var input = document.querySelectorAll(".rating_required");
       this.validateForm({
         context: this,
         input: input
@@ -5709,10 +5918,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       this.submiting = true;
       var form = new FormData();
-      form.append('image', this.file);
-      form.append('description', this.form.description);
-      form.append('rating', this.form.rating);
-      form.append('product_id', this.form.product_id);
+      form.append("image", this.file);
+      form.append("description", this.form.description);
+      form.append("rating", this.form.rating);
+      form.append("product_id", this.form.product_id);
       this.createReviews({
         context: this,
         form: form
@@ -47833,7 +48042,7 @@ var render = function() {
                             _vm._l(_vm.attributes, function(map, key) {
                               return _c("div", { key: key }, [
                                 _c("label", { staticClass: "d-block" }, [
-                                  _vm._v(_vm._s(key) + ":  "),
+                                  _vm._v(_vm._s(key) + ": "),
                                   key == "Colors"
                                     ? _c("span", [_vm._v(_vm._s(_vm.color))])
                                     : _vm._e()
@@ -47988,9 +48197,9 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n                                " +
+                                "\n                " +
                                   _vm._s(_vm.cartText) +
-                                  "\n                                "
+                                  "\n                "
                               ),
                               _vm.loading
                                 ? _c("span", {
@@ -48240,11 +48449,11 @@ var staticRenderFns = [
           [
             _c("h4", [_vm._v("WARRANTY")]),
             _vm._v(
-              " \n                                We offer a lifetime 100% authenticity guarantee for all of our items."
+              "\n                We offer a lifetime 100% authenticity guarantee for all of our items."
             ),
             _c("br"),
             _vm._v(
-              "\n                                In the improbable scenario of a sale of an inauthentic item, you will receive a 100% refund, including the cost of return."
+              "\n                In the improbable scenario of a sale of an inauthentic item, you will receive a 100% refund, including the cost of return."
             ),
             _c("br"),
             _vm._v(" "),
@@ -48252,19 +48461,19 @@ var staticRenderFns = [
               _vm._v("RETURNS")
             ]),
             _vm._v(
-              "\n                                You can return a purchased item within 3 days of receipt."
+              "\n                You can return a purchased item within 3 days of receipt."
             ),
             _c("br"),
             _vm._v(
-              " \n                                No return fee is charged for returns within the Nigeria."
+              "\n                No return fee is charged for returns within the Nigeria."
             ),
             _c("br"),
             _vm._v(
-              "  \n                                However, based on the destination country a shipping fees is charged for returns made outside of Nigeria."
+              "\n                However, based on the destination country a shipping fees is charged for returns made outside of Nigeria."
             ),
             _c("br"),
             _vm._v(
-              "\n                                Customs duties and taxes are applicable and borne by the customer."
+              "\n                Customs duties and taxes are applicable and borne by the customer."
             ),
             _c("br")
           ]
