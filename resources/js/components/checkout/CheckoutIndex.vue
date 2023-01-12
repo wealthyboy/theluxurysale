@@ -718,7 +718,7 @@ export default {
 
       axios
         .post("/checkout/confirm?ee=3", {
-          shipping_id: Window.CartMeta.shipping_id,
+          shipping_id: null,
           payment_type: this.meta.isAdmin ? "admin" : "card",
           admin: this.meta.isAdmin ? "admin" : "online",
           pending: false,
