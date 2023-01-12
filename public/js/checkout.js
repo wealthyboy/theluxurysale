@@ -2483,6 +2483,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -22476,7 +22487,74 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _vm.paymentIsComplete
-      ? _c("div", { staticClass: "page-contaiter vh--100" }, [_vm._m(0)])
+      ? _c("div", { staticClass: "page-contaiter vh--100" }, [
+          _c("section", { staticClass: "sec-padding--lg " }, [
+            _c("div", { staticClass: "container" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-8 offset-md-2" }, [
+                  _c(
+                    "div",
+                    { staticClass: "error-page text-center" },
+                    [
+                      _c("h1", [_vm._v("Thank you for shopping with us")]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "large" }, [
+                        _vm._v("Your order has been received .")
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "large" }, [
+                        _vm._v(
+                          "Buying from THELUXURYSALE means supporting charity."
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _vm.meta.isAdmin
+                        ? [
+                            _c(
+                              "a",
+                              {
+                                staticClass: "btn btn--primary space-t--2",
+                                attrs: { href: "/" }
+                              },
+                              [_vm._v("Print Reciept")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "a",
+                              {
+                                staticClass: "btn btn--primary space-t--2",
+                                attrs: { href: "/orders" }
+                              },
+                              [_vm._v("Print Dispatch")]
+                            )
+                          ]
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn--primary space-t--2",
+                          attrs: { href: "/" }
+                        },
+                        [_vm._v("Continue")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn--primary space-t--2",
+                          attrs: { href: "/orders" }
+                        },
+                        [_vm._v("View order history")]
+                      )
+                    ],
+                    2
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
       : _vm._e(),
     _vm._v(" "),
     !_vm.pageIsLoading && !_vm.paymentIsComplete
@@ -22500,12 +22578,12 @@ var render = function() {
                 {
                   staticClass: "col-md-12 m7 bg--light border border-gray mb-2"
                 },
-                [_vm._m(1), _vm._v(" "), _c("ship-address")],
+                [_vm._m(0), _vm._v(" "), _c("ship-address")],
                 1
               ),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-12 bg--light " }, [
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _vm.addresses.length
                   ? _c(
@@ -22796,7 +22874,7 @@ var render = function() {
                               [
                                 _vm.$root.settings.shipping_is_free == 0
                                   ? _c("div", { staticClass: "shipping" }, [
-                                      _vm._m(3),
+                                      _vm._m(2),
                                       _vm._v(" "),
                                       _c(
                                         "select",
@@ -23252,7 +23330,7 @@ var render = function() {
                       "div",
                       { staticClass: "cart_totalse" },
                       [
-                        _vm._m(4),
+                        _vm._m(3),
                         _vm._v(" "),
                         _vm._l(_vm.carts, function(cart) {
                           return _c(
@@ -23546,48 +23624,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "sec-padding--lg " }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-8 offset-md-2" }, [
-            _c("div", { staticClass: "error-page text-center" }, [
-              _c("h1", [_vm._v("Thank you for shopping with us")]),
-              _vm._v(" "),
-              _c("p", { staticClass: "large" }, [
-                _vm._v("Your order has been received .")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "large" }, [
-                _vm._v("Buying from THELUXURYSALE means supporting charity.")
-              ]),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn--primary space-t--2",
-                  attrs: { href: "/" }
-                },
-                [_vm._v("Continue")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn--primary space-t--2",
-                  attrs: { href: "/orders" }
-                },
-                [_vm._v("View order history")]
-              )
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

@@ -14,6 +14,16 @@
                 <h1>Thank you for shopping with us</h1>
                 <p class="large">Your order has been received .</p>
                 <p class="large">Buying from THELUXURYSALE means supporting charity.</p>
+                <template v-if="meta.isAdmin">
+                  <a
+                    href="/"
+                    class="btn btn--primary space-t--2"
+                  >Print Reciept</a>
+                  <a
+                    href="/orders"
+                    class="btn btn--primary space-t--2"
+                  >Print Dispatch</a>
+                </template>
                 <a
                   href="/"
                   class="btn btn--primary space-t--2"
@@ -22,6 +32,7 @@
                   href="/orders"
                   class="btn btn--primary space-t--2"
                 >View order history</a>
+
               </div>
             </div>
 
