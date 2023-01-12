@@ -3,10 +3,11 @@
 @section('content')
 
 <form action="/admin/products/sku/{{$product->id}}" method="get">
-    <div class="variable-products   {{ $product->product_type == 'simple' ? 'hide' : '' }}">
+    <div class="variable-products ">
+
         @if ($product->variants->count())
         @foreach($variants as $variant)
-        <div style="" class="row p-attr variation-panel">
+        <div class="row ">
             <div class="col-md-9 col-xs-9 col-sm-9">
                 <div class="row">
                     @foreach($product_attributes as $product_attribute)
