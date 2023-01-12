@@ -2741,7 +2741,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.order_text = "Please wait. We are almost done......";
       this.checkingout = true;
       this.coupon_error = null;
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/checkout/confirm", {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.post("/checkout/confirm?ee=3", {
         shipping_id: Window.CartMeta.shipping_id,
         payment_type: this.meta.isAdmin ? "admin" : "card",
         admin: this.meta.isAdmin ? "admin" : "online",

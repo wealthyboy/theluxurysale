@@ -718,7 +718,7 @@ export default {
       this.coupon_error = null;
 
       axios
-        .post("/checkout/confirm", {
+        .post("/checkout/confirm?ee=3", {
           shipping_id: Window.CartMeta.shipping_id,
           payment_type: this.meta.isAdmin ? "admin" : "card",
           admin: this.meta.isAdmin ? "admin" : "online",
