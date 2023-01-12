@@ -725,8 +725,9 @@ export default {
           pending: false,
         })
         .then((response) => {
-          this.payment_is_processing = false;
-          this.paymentIsComplete = true;
+          console.log(response);
+          // this.payment_is_processing = false;
+          // this.paymentIsComplete = true;
         })
         .catch((error) => {
           this.order_text = "Place Order";
