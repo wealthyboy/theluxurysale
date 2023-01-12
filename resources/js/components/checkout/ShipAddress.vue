@@ -396,7 +396,7 @@ export default {
       checkInput: "checkInput",
     }),
     getState: function (evt) {
-      console.log(evt, "Im 2");
+      console.log(evt, "Im 1");
       let value = typeof evt !== null ? evt.target.value : null;
       let input = document.querySelectorAll(".required");
       this.clearErrors({ context: this, input: input });
