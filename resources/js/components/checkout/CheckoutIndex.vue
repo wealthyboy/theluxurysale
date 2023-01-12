@@ -725,6 +725,7 @@ export default {
         })
         .then((response) => {
           this.orders = response.data.orders;
+          console.log(this.orders);
           this.payment_is_processing = false;
           this.paymentIsComplete = true;
         })

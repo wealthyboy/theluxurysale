@@ -2747,6 +2747,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         pending: false
       }).then(function (response) {
         _this4.orders = response.data.orders;
+        console.log(_this4.orders);
         _this4.payment_is_processing = false;
         _this4.paymentIsComplete = true;
       })["catch"](function (error) {
