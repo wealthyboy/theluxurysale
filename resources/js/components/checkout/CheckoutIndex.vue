@@ -724,16 +724,15 @@ export default {
           pending: false,
         })
         .then((response) => {
-          if (response.data == 1) {
-            location.href = "/thankyou";
-          }
+          this.payment_is_processing = false;
+          this.paymentIsComplete = true;
         })
         .catch((error) => {
           this.order_text = "Place Order";
           this.payment_is_processing = false;
           this.checkingout = false;
           this.error =
-            "We could not complete your order .Please send a mail to info@ohram.org";
+            "We could not complete your order .Please send a mail to info@theluxusale.com";
         });
     },
     updateCartTotal: function (obj) {

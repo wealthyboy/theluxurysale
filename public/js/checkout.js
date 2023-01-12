@@ -2746,14 +2746,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         admin: this.meta.isAdmin ? "admin" : "online",
         pending: false
       }).then(function (response) {
-        if (response.data == 1) {
-          location.href = "/thankyou";
-        }
+        _this4.payment_is_processing = false;
+        _this4.paymentIsComplete = true;
       })["catch"](function (error) {
         _this4.order_text = "Place Order";
         _this4.payment_is_processing = false;
         _this4.checkingout = false;
-        _this4.error = "We could not complete your order .Please send a mail to info@ohram.org";
+        _this4.error = "We could not complete your order .Please send a mail to info@theluxusale.com";
       });
     },
     updateCartTotal: function updateCartTotal(obj) {
