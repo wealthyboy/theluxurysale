@@ -482,6 +482,7 @@ class ProductController extends Controller
         $selected_meta  = [];
         $metas  = [];
         $product = Product::find($id);
+        dd($product);
         $variants = $product->variants;
         $currencies = Currency::get();
         $product_attributes = Attribute::parents()->where('type', 'both')->orderBy('sort_order', 'asc')->get();
