@@ -17,11 +17,11 @@
                 <template v-if="meta.isAdmin">
                   <div class="mb-4">
                     <a
-                      href="/"
+                      :href="'/admin/orders/invoice/' + order.id"
                       class="btn btn--primary space-t--2"
                     >Print Reciept</a>
                     <a
-                      href="/orders"
+                      :href="'/admin/orders/invoice/' + order.id"
                       class="btn btn--primary space-t--2"
                     >Print Dispatch</a>
                   </div>
@@ -32,7 +32,7 @@
                   class="btn btn--primary space-t--2"
                 >Continue</a>
                 <a
-                  href="/orders"
+                  :href="'admin/orders/dispatch/' + order.id"
                   class="btn btn--primary space-t--2"
                 >View order history</a>
 
@@ -511,6 +511,7 @@ export default {
       loading: false,
       pageIsLoading: true,
       paymentIsComplete: false,
+      order: null,
     };
   },
   computed: {
