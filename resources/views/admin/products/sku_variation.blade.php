@@ -49,7 +49,7 @@
 
             @endforeach
 
-            @else
+
 
 
 
@@ -57,11 +57,7 @@
 
             <div class="col-md-3 col-xs-6 col-sm-6">
                 <div class="form-group label-floating">
-                    <label style="
-                                            top: -28px;
-                                            left: 0;
-                                            font-size: 11px;
-                                            line-height: 1.0714285718;" class="control-label"> Currency</label>
+                    <label style="top: -28px;left: 0;font-size: 11px; line-height: 1.0714285718;" class="control-label"> Currency</label>
                     <select name="currency" class="form-control">
 
                         @foreach($currencies as $currency)
