@@ -396,7 +396,8 @@ export default {
       checkInput: "checkInput",
     }),
     getState: function (evt) {
-      let value = typeof evt.target !== null ? evt.target.value : null;
+      console.log(evt);
+      let value = typeof evt !== null ? evt.target.value : null;
       let input = document.querySelectorAll(".required");
       this.clearErrors({ context: this, input: input });
       let state = [];
@@ -409,6 +410,7 @@ export default {
       this.states = state[0];
     },
     getShipping: function (e) {
+      console.log(e);
       let value = typeof e.target !== null ? e.target.value : null;
       let shipping = this.shipping[value];
       this.$store.commit("setDefaultShipping", shipping);
