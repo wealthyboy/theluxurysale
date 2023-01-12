@@ -15,14 +15,17 @@
                 <p class="large">Your order has been received .</p>
                 <p class="large">Buying from THELUXURYSALE means supporting charity.</p>
                 <template v-if="meta.isAdmin">
-                  <a
-                    href="/"
-                    class="btn btn--primary space-t--2"
-                  >Print Reciept</a>
-                  <a
-                    href="/orders"
-                    class="btn btn--primary space-t--2"
-                  >Print Dispatch</a>
+                  <div class="mb-4">
+                    <a
+                      href="/"
+                      class="btn btn--primary space-t--2"
+                    >Print Reciept</a>
+                    <a
+                      href="/orders"
+                      class="btn btn--primary space-t--2"
+                    >Print Dispatch</a>
+                  </div>
+
                 </template>
                 <a
                   href="/"

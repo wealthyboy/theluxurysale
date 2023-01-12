@@ -2494,6 +2494,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 
 
@@ -22508,27 +22511,7 @@ var render = function() {
                         )
                       ]),
                       _vm._v(" "),
-                      _vm.meta.isAdmin
-                        ? [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "btn btn--primary space-t--2",
-                                attrs: { href: "/" }
-                              },
-                              [_vm._v("Print Reciept")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "btn btn--primary space-t--2",
-                                attrs: { href: "/orders" }
-                              },
-                              [_vm._v("Print Dispatch")]
-                            )
-                          ]
-                        : _vm._e(),
+                      _vm.meta.isAdmin ? [_vm._m(0)] : _vm._e(),
                       _vm._v(" "),
                       _c(
                         "a",
@@ -22578,12 +22561,12 @@ var render = function() {
                 {
                   staticClass: "col-md-12 m7 bg--light border border-gray mb-2"
                 },
-                [_vm._m(0), _vm._v(" "), _c("ship-address")],
+                [_vm._m(1), _vm._v(" "), _c("ship-address")],
                 1
               ),
               _vm._v(" "),
               _c("div", { staticClass: "col-md-12 bg--light " }, [
-                _vm._m(1),
+                _vm._m(2),
                 _vm._v(" "),
                 _vm.addresses.length
                   ? _c(
@@ -22874,7 +22857,7 @@ var render = function() {
                               [
                                 _vm.$root.settings.shipping_is_free == 0
                                   ? _c("div", { staticClass: "shipping" }, [
-                                      _vm._m(2),
+                                      _vm._m(3),
                                       _vm._v(" "),
                                       _c(
                                         "select",
@@ -23330,7 +23313,7 @@ var render = function() {
                       "div",
                       { staticClass: "cart_totalse" },
                       [
-                        _vm._m(3),
+                        _vm._m(4),
                         _vm._v(" "),
                         _vm._l(_vm.carts, function(cart) {
                           return _c(
@@ -23624,6 +23607,27 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "mb-4" }, [
+      _c(
+        "a",
+        { staticClass: "btn btn--primary space-t--2", attrs: { href: "/" } },
+        [_vm._v("Print Reciept")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        {
+          staticClass: "btn btn--primary space-t--2",
+          attrs: { href: "/orders" }
+        },
+        [_vm._v("Print Dispatch")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
