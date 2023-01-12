@@ -2746,8 +2746,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         admin: this.meta.isAdmin ? "admin" : "online",
         pending: false
       }).then(function (response) {
-        console.log(response); // this.payment_is_processing = false;
-        // this.paymentIsComplete = true;
+        _this4.orders = response.data.orders;
+        _this4.payment_is_processing = false;
+        _this4.paymentIsComplete = true;
       })["catch"](function (error) {
         _this4.order_text = "Place Order";
         _this4.payment_is_processing = false;
