@@ -112,7 +112,7 @@
                                     <option value="">Select Permission</option>
 
                                     @foreach($permissions as $permission )
-                                    @if(null !== $user->users_permission && $permission->id == $user->users_permission->permission->id)
+                                    @if(null !== $user->users_permission && $permission->id == optional(optional($user->users_permission)->permission)->id)
                                     <option value="{{ $permission->id }}" selected>{{ $permission->name }}</option>
                                     @else
                                     <option value="{{ $permission->id }}">{{ $permission->name }}</option>
