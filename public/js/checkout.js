@@ -3176,8 +3176,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     checkInput: "checkInput"
   })), {}, {
     getState: function getState(evt) {
-      console.log(evt, "Im 1");
-      var value = evt;
+      var value = typeof evt.target !== "undefined" ? evt.target.value : evt;
       var input = document.querySelectorAll(".required");
       this.clearErrors({
         context: this,
@@ -3193,7 +3192,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.states = state[0];
     },
     getShipping: function getShipping(e) {
-      console.log(e, "Im 2");
       var value = typeof e.target !== null ? e.target.value : null;
       var shipping = this.shipping[value];
       this.$store.commit("setDefaultShipping", shipping);
