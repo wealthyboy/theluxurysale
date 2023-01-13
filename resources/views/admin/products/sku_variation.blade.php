@@ -49,11 +49,6 @@
 
 
             @endforeach
-
-
-
-
-
             @endif
 
             <div class="col-md-3 col-xs-6 col-sm-6">

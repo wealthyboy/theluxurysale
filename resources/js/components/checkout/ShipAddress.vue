@@ -479,7 +479,7 @@ export default {
       this.form.phone_number = address.phone_number;
       let state = [];
       let ship_prices = [];
-      this.getState(address.country_id);
+      // this.getState(address.country_id);
       this.form.state_id = address.state_id;
       this.edit = true;
       this.address_id = address.id;

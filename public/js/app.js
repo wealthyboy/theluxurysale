@@ -4032,8 +4032,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.email = address.email;
       this.form.phone_number = address.phone_number;
       var state = [];
-      var ship_prices = [];
-      this.getState(address.country_id);
+      var ship_prices = []; // this.getState(address.country_id);
+
       this.form.state_id = address.state_id;
       this.edit = true;
       this.address_id = address.id;
