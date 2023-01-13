@@ -3176,20 +3176,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     checkInput: "checkInput"
   })), {}, {
     getState: function getState(evt) {
-      console.log(evt, "Im 1");
-      var value = typeof evt !== null ? evt.target.value : null;
-      var input = document.querySelectorAll(".required");
-      this.clearErrors({
-        context: this,
-        input: input
-      });
-      var state = []; //loop through all countries and pluck out their states
+      console.log(evt, "Im 1"); // let value = typeof evt !== null ? evt.target.value : null;
+      // let input = document.querySelectorAll(".required");
+      // this.clearErrors({ context: this, input: input });
+      // let state = [];
+      // //loop through all countries and pluck out their states
+      // this.locations.forEach((element) => {
+      //   if (value == element.id) {
+      //     state.push(element.states);
+      //   }
+      // });
 
-      this.locations.forEach(function (element) {
-        if (value == element.id) {
-          state.push(element.states);
-        }
-      });
       this.states = state[0];
     },
     getShipping: function getShipping(e) {
@@ -3285,8 +3282,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.email = address.email;
       this.form.phone_number = address.phone_number;
       var state = [];
-      var ship_prices = []; // this.getState(address.country_id);
-
+      var ship_prices = [];
+      this.getState(address.country_id);
       this.form.state_id = address.state_id;
       this.edit = true;
       this.address_id = address.id;

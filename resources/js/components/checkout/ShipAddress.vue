@@ -397,16 +397,16 @@ export default {
     }),
     getState: function (evt) {
       console.log(evt, "Im 1");
-      let value = typeof evt !== null ? evt.target.value : null;
-      let input = document.querySelectorAll(".required");
-      this.clearErrors({ context: this, input: input });
-      let state = [];
-      //loop through all countries and pluck out their states
-      this.locations.forEach((element) => {
-        if (value == element.id) {
-          state.push(element.states);
-        }
-      });
+      // let value = typeof evt !== null ? evt.target.value : null;
+      // let input = document.querySelectorAll(".required");
+      // this.clearErrors({ context: this, input: input });
+      // let state = [];
+      // //loop through all countries and pluck out their states
+      // this.locations.forEach((element) => {
+      //   if (value == element.id) {
+      //     state.push(element.states);
+      //   }
+      // });
       this.states = state[0];
     },
     getShipping: function (e) {
@@ -479,7 +479,7 @@ export default {
       this.form.phone_number = address.phone_number;
       let state = [];
       let ship_prices = [];
-      // this.getState(address.country_id);
+      this.getState(address.country_id);
       this.form.state_id = address.state_id;
       this.edit = true;
       this.address_id = address.id;
