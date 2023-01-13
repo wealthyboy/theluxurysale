@@ -3177,7 +3177,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })), {}, {
     getState: function getState(evt) {
       console.log(evt, "Im 1");
-      var value = typeof evt !== null ? evt.target.value : evt;
+      var value = evt;
       var input = document.querySelectorAll(".required");
       this.clearErrors({
         context: this,

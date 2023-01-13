@@ -397,7 +397,7 @@ export default {
     }),
     getState: function (evt) {
       console.log(evt, "Im 1");
-      let value = typeof evt !== null ? evt.target.value : evt;
+      let value = evt;
       let input = document.querySelectorAll(".required");
       this.clearErrors({ context: this, input: input });
       let state = [];
