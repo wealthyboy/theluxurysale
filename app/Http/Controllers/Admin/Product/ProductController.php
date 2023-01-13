@@ -514,28 +514,26 @@ class ProductController extends Controller
         $names  = [];
         $cA = [];
         $product_attributes = [];
-
-
         $sale_price = $request->has('sale_price') ? $request->sale_price : null;
         $product->product_name = $request->product_name;
         $product->price = $request->price;
         $product->sale_price = $sale_price;
         $product->sale_price_expires = Helper::getFormatedDate($request->sale_price_expires);
-        $product->slug        =  str_slug($request->product_name);
-        $product->weight      = $request->weight;
-        $product->height      = $request->height;
-        $product->image       = $request->image;
-        $product->width       = $request->width;
+        $product->slug = str_slug($request->product_name);
+        $product->weight = $request->weight;
+        $product->height = $request->height;
+        $product->image  = $request->image;
+        $product->width  = $request->width;
         $product->description = $request->description;
-        $product->allow       = $request->allow ? $request->allow : 0;
-        $product->brand_id    = $request->brand_id;
-        $product->total       = 2;
+        $product->allow  = $request->allow ? $request->allow : 0;
+        $product->brand_id = $request->brand_id;
+        $product->total = 2;
         $product->product_type = $request->type;
-        $product->featured    =  $request->featured_product ? 1 : 0;
-        $product->pending     = 0;
-        $product->quantity    = $request->quantity;
-        $product->sku         = str_random(6);
-        $product->attributes  = $this->attributes($request);
+        $product->featured = $request->featured_product ? 1 : 0;
+        $product->pending = 0;
+        $product->quantity = $request->quantity;
+        $product->sku = str_random(6);
+        $product->attributes = $this->attributes($request);
         $product->save();
         $categories = Category::find($request->category_id);
 
