@@ -396,7 +396,10 @@ export default {
       checkInput: "checkInput",
     }),
     getState: function (evt) {
-      let value = typeof evt.target !== "undefined" ? evt.target.value : evt;
+      let value =
+        typeof evt !== "undefined" && typeof evt.target !== "undefined"
+          ? evt.target.value
+          : evt;
       let input = document.querySelectorAll(".required");
       this.clearErrors({ context: this, input: input });
       let state = [];
@@ -481,7 +484,7 @@ export default {
       this.form.state_id = address.state_id;
       this.edit = true;
       this.address_id = address.id;
-      this.$store.commit("setShowForm", true);
+      this.$store.commit("setShowForm", (this.showForm = !this.showForm));
     },
     removeAddress: function (e, id) {
       this.submiting = true;

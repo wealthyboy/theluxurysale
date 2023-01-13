@@ -3176,7 +3176,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     checkInput: "checkInput"
   })), {}, {
     getState: function getState(evt) {
-      var value = typeof evt.target !== "undefined" ? evt.target.value : evt;
+      var value = typeof evt !== "undefined" && typeof evt.target !== "undefined" ? evt.target.value : evt;
       var input = document.querySelectorAll(".required");
       this.clearErrors({
         context: this,
@@ -3288,7 +3288,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.form.state_id = address.state_id;
       this.edit = true;
       this.address_id = address.id;
-      this.$store.commit("setShowForm", true);
+      this.$store.commit("setShowForm", this.showForm = !this.showForm);
     },
     removeAddress: function removeAddress(e, id) {
       var _this2 = this;
