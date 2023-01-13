@@ -3923,17 +3923,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     checkInput: "checkInput"
   })), {}, {
     getState: function getState(evt) {
-      console.log(evt, "Im 1"); // let value = typeof evt !== null ? evt.target.value : null;
-      // let input = document.querySelectorAll(".required");
-      // this.clearErrors({ context: this, input: input });
-      // let state = [];
-      // //loop through all countries and pluck out their states
-      // this.locations.forEach((element) => {
-      //   if (value == element.id) {
-      //     state.push(element.states);
-      //   }
-      // });
+      console.log(evt, "Im 1");
+      var value = typeof evt !== null ? evt.target.value : evt;
+      var input = document.querySelectorAll(".required");
+      this.clearErrors({
+        context: this,
+        input: input
+      });
+      var state = []; //loop through all countries and pluck out their states
 
+      this.locations.forEach(function (element) {
+        if (value == element.id) {
+          state.push(element.states);
+        }
+      });
       this.states = state[0];
     },
     getShipping: function getShipping(e) {
