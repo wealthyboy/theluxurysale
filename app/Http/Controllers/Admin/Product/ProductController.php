@@ -412,6 +412,7 @@ class ProductController extends Controller
         if (empty($filtered_array['q'])) {
             return redirect('/errors');
         }
+
         if ($request->has('q')) {
             $filtered_array = array_filter($filtered_array);
             $query = Product::whereHas('categories', function ($query) use ($filtered_array) {
