@@ -29,7 +29,7 @@
 
     <div class="widget">
         <h3 class="widget-title ">
-            <a data-toggle="collapse" href="#widget-prices" role="button" class="bold" aria-expanded="true" aria-controls="widget-body-2">Prices</a>
+            <a data-toggle="collapse" href="#widget-prices" role="button" class="bold" aria-expanded="true" aria-controls="widget-prices">Prices</a>
         </h3>
         <div class="collapsed" id="widget-prices">
             <div class="widget-body">
