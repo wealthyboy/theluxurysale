@@ -3,9 +3,9 @@
 
     <div class="widget">
         <h3 class="widget-title">
-            <a data-toggle="collapse" class="bold" href="#widget-body-4brand" role="button" aria-expanded="true" aria-controls="widget-body-4brand">BRAND</a>
+            <a data-toggle="collapse" class="collapsed bold " href="#widget-brand" role="button" aria-expanded="true" aria-controls="widget-brand">BRAND</a>
         </h3>
-        <div class="collapse" id="widget-body-4brand">
+        <div class="collapse" id="widget-brand">
             <div class="widget-body">
                 <ul class="cat-list  {{$category->brands->count() > 6  ?  'widget-scroll' : '' }}">
                     @foreach($category->brands as $brand)
@@ -29,9 +29,9 @@
 
     <div class="widget">
         <h3 class="widget-title ">
-            <a data-toggle="collapse" href="#widget-prices" role="button" class="bold" aria-expanded="true" aria-controls="widget-prices">Prices</a>
+            <a data-toggle="collapse" href="#widget-prices" role="button" class="collapsed bold " aria-expanded="true" aria-controls="widget-prices">Prices</a>
         </h3>
-        <div class="collapsed" id="widget-prices">
+        <div class="collapse" id="widget-prices">
             <div class="widget-body">
                 <ul class="cat-list">
 
