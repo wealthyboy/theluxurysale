@@ -38,7 +38,9 @@ class UsersController extends Controller
 
 		$states = State::all();
 		$permissions = \DB::table('permissions')->get();
-		dd($permissions);
+
+		Permission::whereIn('id', [2, 3])->delete();
+
 		return view('admin.users.edit', compact('states', 'permissions', 'user'));
 	}
 
