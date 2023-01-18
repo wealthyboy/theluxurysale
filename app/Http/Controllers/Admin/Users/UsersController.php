@@ -37,9 +37,7 @@ class UsersController extends Controller
 		$user = User::find($id);
 
 		$states = State::all();
-		$permissions = \DB::table('permissions')->get();
-
-		dd(Permission::get());
+		$permissions = Permission::get();
 		return view('admin.users.edit', compact('states', 'permissions', 'user'));
 	}
 
