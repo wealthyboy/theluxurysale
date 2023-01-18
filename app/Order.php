@@ -88,7 +88,7 @@ class Order extends Model
 			return [
 				"Id" => $order->id,
 				"Invoice" => $order->invoice,
-				"Customer" => null !== $order->user ? $order->user->fullname() : $order->fullName(),
+				"Customer" =>  $order->first_name . ' ' . $order->last_name,
 				"Email" => $order->email,
 				"Type" => $order->order_type,
 				"Payment Type" => $order->payment_type,
