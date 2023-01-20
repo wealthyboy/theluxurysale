@@ -408,7 +408,6 @@ class ProductController extends Controller
 
     public function search(Request $request)
     {
-        dd(true);
         $filtered_array = $request->only(['q', 'field']);
         if (empty($filtered_array['q'])) {
             return redirect('/errors');
@@ -420,6 +419,8 @@ class ProductController extends Controller
                 $query->where('categories.name', 'like', '%' . $filtered_array['q'] . '%')
                     ->orWhere('products.product_name', 'like', '%' . $filtered_array['q'] . '%')
                     ->orWhere('products.sku', 'like', '%' . $filtered_array['q'] . '%');
+            })->orWhereHas('brand', function ($query) use ($value) {
+                $query->where('brand_name', 'like', '%' . $filtered_array['q'] . '%');
             });
         }
 
