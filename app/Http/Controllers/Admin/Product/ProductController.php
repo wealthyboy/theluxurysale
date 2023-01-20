@@ -424,7 +424,7 @@ class ProductController extends Controller
             });
         }
 
-        $products = $query->groupBy('products.id')->paginate(10);
+        $products = $query->groupBy('products.id')->latest()->paginate(10);
         $products->appends(request()->all());
 
         return view('admin.products.index', compact('products'));
