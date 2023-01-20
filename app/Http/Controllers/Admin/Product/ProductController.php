@@ -419,7 +419,7 @@ class ProductController extends Controller
                 $query->where('categories.name', 'like', '%' . $filtered_array['q'] . '%')
                     ->orWhere('products.product_name', 'like', '%' . $filtered_array['q'] . '%')
                     ->orWhere('products.sku', 'like', '%' . $filtered_array['q'] . '%');
-            })->orWhereHas('brand', function ($query) use ($value) {
+            })->orWhereHas('brand', function ($query) use ($filtered_array) {
                 $query->where('brand_name', 'like', '%' . $filtered_array['q'] . '%');
             });
         }
