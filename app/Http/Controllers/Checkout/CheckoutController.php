@@ -78,7 +78,7 @@ class CheckoutController extends Controller
 		$order->invoice =  "INV-" . date('Y') . "-" . rand(10000, 39999);
 		$order->payment_type = $request->payment_method;
 		$order->order_type = $request->admin;
-		$order->total = Cart::sum_items_in_cart();
+		$order->total = $request->total;
 		$order->ip = $request->ip();
 		$order->user_agent = $request->server('HTTP_USER_AGENT');
 		$order->first_name = optional($user->active_address)->first_name;
