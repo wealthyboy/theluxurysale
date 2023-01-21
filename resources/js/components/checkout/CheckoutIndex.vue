@@ -716,6 +716,10 @@ export default {
       this.checkingout = true;
       this.coupon_error = null;
 
+      if (!this.coupon) {
+        this.amount = this.meta.sub_total;
+      }
+
       axios
         .post("/checkout/confirm?ee=3", {
           shipping_id: null,
