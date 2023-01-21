@@ -722,6 +722,7 @@ export default {
           payment_type: this.meta.isAdmin ? "admin" : "card",
           admin: this.meta.isAdmin ? "admin" : "online",
           pending: false,
+          total: this.amount,
         })
         .then((response) => {
           this.order = response.data.order;
