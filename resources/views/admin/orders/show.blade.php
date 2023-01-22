@@ -192,7 +192,7 @@
                         </tr>
                         <tr>
                            <td colspan="6" class="text-right">Total</td>
-                           <td class="text-right">{{ $order->currency }}{{ $order->get_total() }}</td>
+                           <td class="text-right">{{ $order->currency }}{{ $order->total }}</td>
                         </tr>
                      </tfoot>
                   </table>
