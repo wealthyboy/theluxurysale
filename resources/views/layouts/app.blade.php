@@ -42,7 +42,7 @@
 	<meta name="twitter:description" content="Online sales of your best brands,buy gucci,versace. ">
 
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-436765320"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSC8YEE487"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -51,7 +51,7 @@
 		}
 		gtag('js', new Date());
 
-		gtag('config', 'AW-436765320');
+		gtag('config', 'G-FSC8YEE487');
 	</script>
 
 	<script>
