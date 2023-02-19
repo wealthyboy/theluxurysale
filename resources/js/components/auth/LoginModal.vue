@@ -81,7 +81,7 @@ export default {
             errors: 'errors'
         }),
         logo(){
-            return '/images/logo/'+this.$root.settings.store_logo
+            return 'https://theluxurysale.com/images/logo/1606878412LUXURY-SALE-LOGO.png'
         }
     },
     methods:{

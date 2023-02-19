@@ -6,7 +6,9 @@
         <div class="modal-content ">
           <div class="modal-header">
             <div class="modal-title">
-              <img :src="'/images/logo/' + $root.settings.store_logo" />
+              <img
+                src="https://theluxurysale.com/images/logo/1606878412LUXURY-SALE-LOGO.png"
+              />
             </div>
             <span class="bold text-large "
               ><button
