@@ -4,7 +4,7 @@
    <div class="modal-dialog" style="">        <!-- Modal content-->
         <div class="modal-content ">
             <div class="modal-header">
-                <div class="modal-title"><img width="100" height="100" :src="logo" /></div>
+                <div class="modal-title"><img width="100" height="100"  src="https://theluxurysale.com/images/logo/1606878412LUXURY-SALE-LOGO.png" /></div>
                  <span class="bold text-large "><button type="button" class="close" id="login_modal" data-dismiss="modal"><i class="fas fa-times "></i></button></span>
             </div>
             <div class="modal-body">
