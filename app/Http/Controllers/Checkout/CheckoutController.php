@@ -64,8 +64,8 @@ class CheckoutController extends Controller
 	{
 
 		$rate = Helper::rate();
-		$user  =  \Auth::user();
-		$carts =  Cart::all_items_in_cart();
+		$user  = \Auth::user();
+		$carts = Cart::all_items_in_cart();
 		$cart = new Cart();
 
 		$order->user_id = $user->id;
@@ -109,11 +109,13 @@ class CheckoutController extends Controller
 		$admin_emails = explode(',', $this->settings->alert_email);
 		$symbol = Helper::getCurrency();
 		try {
-			$when = now()->addMinutes(5);
-			\Mail::to($user->email)
-				->cc('ikuomola.olajuwon@gmail.com')
-				->bcc($admin_emails[0])
-				->send(new OrderReceipt($order, $this->settings, $symbol));
+			foreach ($admin_emails as $admin_email) {
+				$when = now()->addMinutes(5);
+				\Mail::to($user->email)
+					->cc('ikuomola.olajuwon@gmail.com')
+					->bcc($admin_email)
+					->send(new OrderReceipt($order, $this->settings, $symbol));
+			}
 		} catch (\Throwable $th) {
 			//throw $th;
 		}
