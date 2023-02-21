@@ -15,23 +15,23 @@ use App\User;
 use App\SystemSetting;
 use App\ProductVariation;
 
-class AccountsController extends Controller 
+class AccountsController extends Controller
 {
-    
+
     public $settings;
 
     public function __construct()
     {
         $this->settings = SystemSetting::first();
     }
-    
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    { 
+    {
 
         //
         User::canTakeAction(1);
@@ -70,21 +70,21 @@ class AccountsController extends Controller
         // //     return Carbon::parse($date->created_at)->format('m'); // grouping by months
         // // });
 
-        $todays_orders = OrderedProduct::select(\DB::raw('SUM(quantity) as qty'))
-                                 ->whereDate('created_at', Carbon::today())->get();
+        $todays_orders = OrderedProduct::where('status', '!=', 'Refunded')->select(\DB::raw('SUM(quantity) as qty'))
+            ->whereDate('created_at', Carbon::today())->get();
         $todays_sales = Order::select(\DB::raw('SUM(total) as items_total'))
-                               ->whereDate('created_at', Carbon::today())->get();
+            ->whereDate('created_at', Carbon::today())->get();
         $currency = $this->settings->default_currency->symbol;
         $todays_sales = null !== $todays_sales ? $todays_sales[0] : null;
         $todays_orders = null !== $todays_orders ? $todays_orders[0] : null;
 
         $all_sales_value = Order::select(\DB::raw('SUM(total) as items_total'))->get();
         $all_sales_value = null !== $all_sales_value ? $all_sales_value[0] : null;
-        $all_sales = OrderedProduct::select(\DB::raw('SUM(quantity) as qty'))->get();
+        $all_sales = OrderedProduct::where('status', '!=', 'Refunded')->select(\DB::raw('SUM(quantity) as qty'))->get();
         $all_sales = null !== $all_sales ? $all_sales[0] : null;
 
         //products quantities left
-    
+
         $products = Product::get();
 
         $remaining_products = [];
@@ -95,29 +95,32 @@ class AccountsController extends Controller
 
                 //Counts the remaining products
                 array_push($remaining_products, $product->variants()->select(\DB::raw('SUM(quantity) as quantity'))
-                ->where('quantity','>', 0)
-                ->Where('quantity','!=', null)
-                ->pluck('quantity')->first());
+                    ->where('quantity', '>', 0)
+                    ->Where('quantity', '!=', null)
+                    ->pluck('quantity')->first());
                 array_push($total_value, $product->variants()->select(\DB::raw('SUM(quantity * price) as total'))->pluck('total')->first());
-            }  else {
+            } else {
                 //
                 //Counts the remaining products
-                array_push($remaining_products, 
-                           $product->default_variation()
-                           ->select(\DB::raw('SUM(quantity) as quantity')
+                array_push(
+                    $remaining_products,
+                    $product->default_variation()
+                        ->select(
+                            \DB::raw('SUM(quantity) as quantity')
                         )
-                ->where('quantity','>', 0)
-                ->Where('quantity','!=', null)
-                ->pluck('quantity')->first());
+                        ->where('quantity', '>', 0)
+                        ->Where('quantity', '!=', null)
+                        ->pluck('quantity')->first()
+                );
                 array_push($total_value, $product->default_variation()->select(\DB::raw('SUM(quantity * price) as total'))->pluck('total')->first());
-            } 
+            }
         }
 
         $total_value = array_sum($total_value);
 
         $remaining_products = array_sum($remaining_products);
 
-        return view('admin.account.index',compact(
+        return view('admin.account.index', compact(
             'todays_orders',
             'todays_sales',
             'currency',
@@ -126,17 +129,5 @@ class AccountsController extends Controller
             'all_sales',
             'remaining_products'
         ));
-
-
-
-       
-    
     }
-
-   
-
-   
-
-
-  
 }
