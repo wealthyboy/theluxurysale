@@ -92,7 +92,6 @@ class Order extends Model
 				"Email" => $order->email,
 				"Type" => $order->order_type,
 				"Payment Type" => $order->payment_type,
-				"Status" => $order->status,
 				"Agent" => null !== $order->user ? $order->user->fullname() : $order->fullName(),
 				"Total" => $order->currency . number_format($order->total),
 				"Date Added" => $order->created_at->format('d-m-y'),
