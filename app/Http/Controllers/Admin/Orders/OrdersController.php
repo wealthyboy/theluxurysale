@@ -120,7 +120,6 @@ class OrdersController extends Table
 	{
 		$ordered_product = OrderedProduct::findOrFail($request->ordered_product_id);
 		$ordered_product->status = $request->status;
-		$ordered_product->is_refunded = $request->status == 'Refunded' ? 1 : 0;
 		$ordered_product->save();
 		return $ordered_product;
 	}
