@@ -43,7 +43,7 @@
                      <b>Web Site:</b> <a href="{{ Config('app.url') }}">{{ Config('app.url') }}</a>
                   </td>
                   <td style="width: 50%;">
-                     <b>Name: </b> {{ $order->first_name .' ' .  $order->last_name}}<br />
+                     <b>Name: </b> {{ ucfirst($order->first_name) .' ' .  ucfirst($order->last_name) }}<br />
                      <b>Phone Number: </b> {{ $order->phone_number }}<br />
                      <b>Date Added: </b> {{ $order->created_at}}<br />
                      <b>Order ID:</b> #{{ $order->id }}<br />
