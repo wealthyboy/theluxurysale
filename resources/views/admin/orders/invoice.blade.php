@@ -42,7 +42,10 @@
                      <b>E-Mail:</b> {{ $system_settings->store_email }}<br />
                      <b>Web Site:</b> <a href="{{ Config('app.url') }}">{{ Config('app.url') }}</a>
                   </td>
-                  <td style="width: 50%;"><b>Date Added</b> {{ $order->created_at}}<br />
+                  <td style="width: 50%;">
+                     <b>Name: </b> {{ $order->first_name .' ' .  $order->last_name}}<br />
+                     <b>Phone Number: </b> {{ $order->phone_number }}<br />
+                     <b>Date Added: </b> {{ $order->created_at}}<br />
                      <b>Order ID:</b> #{{ $order->id }}<br />
                   </td>
                </tr>
