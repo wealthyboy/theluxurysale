@@ -5,11 +5,7 @@
       id="stored_address"
       class="billing-fields__field-wrapper "
     >
-      <form
-        @submit.prevent="submit"
-        method="POST"
-        class=""
-      >
+      <form @submit.prevent="submit" method="POST" class="">
         <div
           class="row reduce-gutters"
           id="add-new-address-form"
@@ -18,7 +14,7 @@
           <p class="form-group reduce-gutters col-lg-6">
             <label for="first_name">First Name</label>
             <input
-              :class="{'has-danger': errors.first_name}"
+              :class="{ 'has-danger': errors.first_name }"
               id="firstname"
               v-model="form.first_name"
               @input="removeError($event)"
@@ -26,12 +22,14 @@
               type="text"
               class="form-control required"
               name="first_name"
-            >
+            />
             <span
               class="help-block error  text-danger text-sm-left"
               v-if="errors.first_name"
             >
-              <strong class="text-danger">{{ formatError(errors.first_name) }}</strong>
+              <strong class="text-danger">{{
+                formatError(errors.first_name)
+              }}</strong>
             </span>
           </p>
           <p class="form-group reduce-gutters col-lg-6">
@@ -39,25 +37,24 @@
             <input
               id="lastname"
               v-model="form.last_name"
-              :class="{'has-danger': errors.first_name}"
+              :class="{ 'has-danger': errors.first_name }"
               type="text"
               @input="removeError($event)"
               @blur="vInput($event)"
               class="form-control required"
               name="last_name"
-            >
+            />
             <span
               class="help-block error  text-danger text-sm-left"
               v-if="errors.last_name"
             >
-              <strong class="text-danger">{{ formatError(errors.last_name) }}</strong>
+              <strong class="text-danger">{{
+                formatError(errors.last_name)
+              }}</strong>
             </span>
           </p>
 
-          <p
-            v-if="meta.isAdmin"
-            class="form-group reduce-gutters col-lg-6"
-          >
+          <p v-if="meta.isAdmin" class="form-group reduce-gutters col-lg-6">
             <label for="email">Email</label>
             <input
               id="email"
@@ -65,29 +62,27 @@
               type="text"
               class="form-control"
               name="email"
-            >
-
+            />
           </p>
-          <p
-            v-if="meta.isAdmin"
-            class="form-group reduce-gutters col-lg-6"
-          >
+          <p v-if="meta.isAdmin" class="form-group reduce-gutters col-lg-6">
             <label for="phone_number">Phone Number</label>
             <input
               id="phone_number"
               v-model="form.phone_number"
-              :class="{'has-danger': errors.phone_number}"
+              :class="{ 'has-danger': errors.phone_number }"
               type="text"
               @input="removeError($event)"
               @blur="vInput($event)"
               class="form-control required"
               name="phone_number"
-            >
+            />
             <span
               class="help-block error  text-danger text-sm-left"
               v-if="errors.phone_number"
             >
-              <strong class="text-danger">{{ formatError(errors.phone_number) }}</strong>
+              <strong class="text-danger">{{
+                formatError(errors.phone_number)
+              }}</strong>
             </span>
           </p>
           <p class="form-group reduce-gutters col-md-12">
@@ -97,13 +92,15 @@
               v-model="form.address"
               @input="removeError($event)"
               @blur="vInput($event)"
-              :class="{'has-danger': errors.address}"
+              :class="{ 'has-danger': errors.address }"
               type="text"
               class="form-control required"
               name="address"
-            >
+            />
             <span v-if="errors.address">
-              <span class="text-danger bold help-block">{{ formatError(errors.address) }}</span>
+              <span class="text-danger bold help-block">{{
+                formatError(errors.address)
+              }}</span>
             </span>
           </p>
           <p class="form-group reduce-gutters col-lg-12">
@@ -116,7 +113,7 @@
               name="address_2"
               autofocus
               autocomplete="off"
-            >
+            />
           </p>
           <p class="form-group  reduce-gutters col-lg-6">
             <label for="locality">City</label>
@@ -125,13 +122,15 @@
               v-model="form.city"
               @input="removeError($event)"
               @blur="vInput($event)"
-              :class="{'has-danger': errors.city}"
+              :class="{ 'has-danger': errors.city }"
               type="text"
               class="form-control required"
               name="city"
-            >
+            />
             <span v-if="errors.city">
-              <strong class="text-danger">{{ formatError(errors.city) }}</strong>
+              <strong class="text-danger">{{
+                formatError(errors.city)
+              }}</strong>
             </span>
           </p>
           <p class="form-group  reduce-gutters col-lg-6">
@@ -142,13 +141,14 @@
               type="text"
               class="form-control"
               name="postal_code"
-            >
+            />
           </p>
           <p class="form-group reduce-gutters  col-sm-6 select-custom">
-            <label for="shipping_country">Country &nbsp;<abbr
-                class="required"
-                title="required"
-              >*</abbr></label>
+            <label for="shipping_country"
+              >Country &nbsp;<abbr class="required" title="required"
+                >*</abbr
+              ></label
+            >
             <select
               @change="getState"
               v-model="form.country_id"
@@ -159,32 +159,26 @@
               tabindex="-1"
               aria-hidden="true"
             >
-              <option
-                value=""
-                selected="selected"
-              >Select a country…</option>
+              <option value="" selected="selected">Select a country…</option>
               <option
                 :value="country.id"
                 v-for="country in locations"
                 :key="country.id"
-              >{{ country.name }}</option>
+                >{{ country.name }}</option
+              >
             </select>
-            <span
-              class=""
-              role=""
-              v-if="errors.country_id"
-            >
-              <strong class="text-capitalize text-danger"> Please select your country</strong>
+            <span class="" role="" v-if="errors.country_id">
+              <strong class="text-capitalize text-danger">
+                Please select your country</strong
+              >
             </span>
           </p>
           <p class="form-group reduce-gutters col-sm-6 select-custom">
-            <label
-              for="state_id"
-              class=""
-            >State/Region &nbsp;<abbr
-                class="required "
-                title="required"
-              >*</abbr></label>
+            <label for="state_id" class=""
+              >State/Region &nbsp;<abbr class="required " title="required"
+                >*</abbr
+              ></label
+            >
             <select
               @change="getShipping"
               v-model="form.state_id"
@@ -195,16 +189,13 @@
               <option value="">Select a state</option>
               <option
                 :value="state.id"
-                v-for="(state,index) in states"
+                v-for="(state, index) in states"
                 :key="state.id"
-                :selected="[index ? 'selected': '']"
-              >{{ state.name }}</option>
+                :selected="[index ? 'selected' : '']"
+                >{{ state.name }}</option
+              >
             </select>
-            <span
-              class="text-danger"
-              role=""
-              v-if="errors.state_id"
-            >
+            <span class="text-danger" role="" v-if="errors.state_id">
               <strong class="text-danger"> Please select your state</strong>
             </span>
           </p>
@@ -214,7 +205,8 @@
               @click.prevent="cancelForm"
               class="cancel-form btn   bold  btn--primary btn-round btn-lg"
               href="#"
-            >Cancel</a>
+              >Cancel</a
+            >
             <button
               v-if="!addresses.length"
               type="submit"
@@ -247,21 +239,19 @@
               Save
             </button>
           </p>
-
         </div>
       </form>
     </div>
 
-    <div
-      v-if="addresses.length && !showForm"
-      class="address_details mt-2"
-    >
+    <div v-if="addresses.length && !showForm" class="address_details mt-2">
       <a
         href="#"
         class="btn btn--primary btn-round btn-lg btn-block mb-3 bold"
         @click.prevent="addNewAddress"
         id="enter-new-address"
-      > + Add Address </a>
+      >
+        + Add Address
+      </a>
       <ul class="">
         <li
           class="mb-3"
@@ -270,11 +260,13 @@
         >
           <div class="shipping-info border border-gray pr-3 pt-3 pl-3">
             <div class="shipping-address-info">
-              <p id="">{{ location.first_name }} {{ location.last_name }} </p>
-              <p> {{ location.address }} {{ location.address2}} </p>
-              <p v-if="meta.isAdmin"> {{ location.email }} {{ location.phone_number }} </p>
-              <p> {{ location.city }} , {{ location.zip }}</p>
-              <p> {{ location.state}} ,{{ location.country }} </p>
+              <p id="">{{ location.first_name }} {{ location.last_name }}</p>
+              <p>{{ location.address }} {{ location.address2 }}</p>
+              <p v-if="meta.isAdmin">
+                {{ location.email }} {{ location.phone_number }}
+              </p>
+              <p>{{ location.city }} , {{ location.zip }}</p>
+              <p>{{ location.state }} ,{{ location.country }}</p>
 
               <p class="mt-3 mb-3">
                 <a
@@ -286,7 +278,7 @@
                   <i class="fa fa-edit"></i> Edit
                 </a>
                 <a
-                  @click.prevent="makeDefault($event,location.id)"
+                  @click.prevent="makeDefault($event, location.id)"
                   :id="location.id"
                   data-placement="left"
                   href="#"
@@ -299,25 +291,26 @@
                   <span v-else>
                     <span
                       v-if="id == location.id"
-                      class='spinner-border spinner-border-sm'
-                      role='status'
-                      aria-hidden='true'
+                      class="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
                     ></span>
                     Use this address
                   </span>
                 </a>
                 <a
-                  @click.prevent="removeAddress($event,location.id)"
+                  @click.prevent="removeAddress($event, location.id)"
                   :id="location.id"
                   data-placement="left"
                   href="#"
                   class="color--primary p-3  bg--gray  l-f1  ml-4"
-                > <i class="fa fa-trash"></i>
+                >
+                  <i class="fa fa-trash"></i>
                   <span
                     v-if="delete_id == location.id"
-                    class='spinner-border spinner-border-sm'
-                    role='status'
-                    aria-hidden='true'
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
                   ></span>
                   Delete
                 </a>
@@ -327,7 +320,6 @@
         </li>
       </ul>
     </div>
-
   </div>
 </template>
 <script>
@@ -395,7 +387,7 @@ export default {
       clearErrors: "clearErrors",
       checkInput: "checkInput",
     }),
-    getState: function (evt) {
+    getState: function(evt) {
       let value =
         typeof evt !== "undefined" && typeof evt.target !== "undefined"
           ? evt.target.value
@@ -411,7 +403,7 @@ export default {
       });
       this.states = state[0];
     },
-    getShipping: function (e) {
+    getShipping: function(e) {
       let value = typeof e.target !== null ? e.target.value : null;
       let shipping = this.shipping[value];
       this.$store.commit("setDefaultShipping", shipping);
@@ -437,7 +429,7 @@ export default {
         this.checkInput({ context: this, email: this.form.email, input: e });
       }
     },
-    submit: function () {
+    submit: function() {
       let input = document.querySelectorAll(".required");
       this.validateForm({ context: this, input: input });
       this.errorsBag = this.errors;
@@ -453,22 +445,22 @@ export default {
           context: this,
         }).then((response) => {
           this.showForm = false;
-          this.submiting = false;
+          this.submiting = true;
         });
         return;
       } else {
         this.createAddress({ form: this.form, context: this });
       }
     },
-    addNewAddress: function () {
+    addNewAddress: function() {
       this.edit = false;
       this.$store.commit("setShowForm", (this.showForm = !this.showForm));
     },
-    cancelForm: function () {
+    cancelForm: function() {
       this.$store.commit("setShowForm", (this.showForm = !this.showForm));
       this.edit = false;
     },
-    editAddress: function (index) {
+    editAddress: function(index) {
       let address = this.addresses[index];
       this.form.first_name = address.first_name;
       this.form.last_name = address.last_name;
@@ -486,7 +478,7 @@ export default {
       this.address_id = address.id;
       this.$store.commit("setShowForm", (this.showForm = !this.showForm));
     },
-    removeAddress: function (e, id) {
+    removeAddress: function(e, id) {
       this.submiting = true;
       this.delete_id = id;
       this.deleteAddress({
@@ -496,7 +488,7 @@ export default {
         this.submiting = false;
       });
     },
-    makeDefault: function (evt, id) {
+    makeDefault: function(evt, id) {
       this.id = id;
       axios
         .get("/api/addresses/active/" + id)

@@ -3856,14 +3856,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -4003,7 +3995,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           context: this
         }).then(function (response) {
           _this.showForm = false;
-          _this.submiting = false;
+          _this.submiting = true;
         });
         return;
       } else {
@@ -45681,7 +45673,11 @@ var render = function() {
                               _c(
                                 "strong",
                                 { staticClass: "text-capitalize text-danger" },
-                                [_vm._v(" Please select your country")]
+                                [
+                                  _vm._v(
+                                    "\n              Please select your country"
+                                  )
+                                ]
                               )
                             ])
                           : _vm._e()
@@ -45878,7 +45874,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v(" + Add Address ")]
+            [_vm._v("\n      + Add Address\n    ")]
           ),
           _vm._v(" "),
           _c(
@@ -45898,49 +45894,41 @@ var render = function() {
                         _vm._v(
                           _vm._s(location.first_name) +
                             " " +
-                            _vm._s(location.last_name) +
-                            " "
+                            _vm._s(location.last_name)
                         )
                       ]),
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          " " +
-                            _vm._s(location.address) +
+                          _vm._s(location.address) +
                             " " +
-                            _vm._s(location.address2) +
-                            " "
+                            _vm._s(location.address2)
                         )
                       ]),
                       _vm._v(" "),
                       _vm.meta.isAdmin
                         ? _c("p", [
                             _vm._v(
-                              " " +
+                              "\n              " +
                                 _vm._s(location.email) +
                                 " " +
                                 _vm._s(location.phone_number) +
-                                " "
+                                "\n            "
                             )
                           ])
                         : _vm._e(),
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          " " +
-                            _vm._s(location.city) +
-                            " , " +
-                            _vm._s(location.zip)
+                          _vm._s(location.city) + " , " + _vm._s(location.zip)
                         )
                       ]),
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          " " +
-                            _vm._s(location.state) +
+                          _vm._s(location.state) +
                             " ," +
-                            _vm._s(location.country) +
-                            " "
+                            _vm._s(location.country)
                         )
                       ]),
                       _vm._v(" "),
