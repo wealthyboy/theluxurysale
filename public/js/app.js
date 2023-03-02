@@ -3995,7 +3995,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           id: this.address_id,
           context: this
         }).then(function (response) {
-          _this.showForm = false;
+          _this.$store.commit("setShowForm", _this.showForm = !_this.showForm);
+
           _this.submiting = false;
         });
         return;

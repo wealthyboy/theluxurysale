@@ -445,7 +445,7 @@ export default {
           id: this.address_id,
           context: this,
         }).then((response) => {
-          this.showForm = false;
+          this.$store.commit("setShowForm", (this.showForm = !this.showForm));
           this.submiting = false;
         });
         return;
