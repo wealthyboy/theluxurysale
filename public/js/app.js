@@ -70443,6 +70443,8 @@ var updateAddresses = function updateAddresses(_ref24, _ref25) {
   return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('/api/addresses/' + id, {
     first_name: form.first_name,
     last_name: form.last_name,
+    phone_number: form.phone_number,
+    email: form.email,
     address: form.address,
     address_2: form.address_2,
     city: form.city,
