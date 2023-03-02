@@ -182,8 +182,6 @@ export default{
             form: {
                 first_name: '',
                 last_name: '',
-                email: '',
-                phone_number: '',
                 address: '',
                 address_2:'',
                 city:'',
@@ -205,8 +203,6 @@ export default{
     },
     created(){
         this.state = document.getElementById('state_id');
-        console.log(true);
-
     },
     methods:{
         ...mapActions({
