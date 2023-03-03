@@ -175,12 +175,15 @@ export const updateAddresses = ({ dispatch,commit },{form,id}) => {
     return  axios.put('/api/addresses/'+ id,{
         first_name: form.first_name,
         last_name: form.last_name,
+        email: form.email,
+        phone_number: form.phone_number,
         address: form.address,
         address_2: form.address_2,
         city: form.city,
         country_id: form.country_id,
         state_id: form.state_id,
         postal_code: form.postal_code,
+        t: null,
     }).then((response) => {
         dispatch('setADl',response)
         if(response.data.data.length){commit('setShowForm',false)}

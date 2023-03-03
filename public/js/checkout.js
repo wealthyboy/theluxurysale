@@ -38728,12 +38728,15 @@ var updateAddresses = function updateAddresses(_ref24, _ref25) {
   return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('/api/addresses/' + id, {
     first_name: form.first_name,
     last_name: form.last_name,
+    email: form.email,
+    phone_number: form.phone_number,
     address: form.address,
     address_2: form.address_2,
     city: form.city,
     country_id: form.country_id,
     state_id: form.state_id,
-    postal_code: form.postal_code
+    postal_code: form.postal_code,
+    t: null
   }).then(function (response) {
     dispatch('setADl', response);
 
