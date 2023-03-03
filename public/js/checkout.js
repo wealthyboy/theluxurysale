@@ -2689,7 +2689,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         currency: this.meta.currency,
         user: this.meta.user,
         shipping_id: this.shipping_id,
-        isAdmin: this.meta.isAdmin
+        isAdmin: this.meta.isAdmin,
+        e: null
       };
       Window.CartMeta = obj;
       this.updateCartTotal(obj);
@@ -2789,14 +2790,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -24290,7 +24283,11 @@ var render = function() {
                               _c(
                                 "strong",
                                 { staticClass: "text-capitalize text-danger" },
-                                [_vm._v(" Please select your country")]
+                                [
+                                  _vm._v(
+                                    "\n              Please select your country"
+                                  )
+                                ]
                               )
                             ])
                           : _vm._e()
@@ -24487,7 +24484,7 @@ var render = function() {
                 }
               }
             },
-            [_vm._v(" + Add Address ")]
+            [_vm._v("\n      + Add Address\n    ")]
           ),
           _vm._v(" "),
           _c(
@@ -24507,49 +24504,41 @@ var render = function() {
                         _vm._v(
                           _vm._s(location.first_name) +
                             " " +
-                            _vm._s(location.last_name) +
-                            " "
+                            _vm._s(location.last_name)
                         )
                       ]),
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          " " +
-                            _vm._s(location.address) +
+                          _vm._s(location.address) +
                             " " +
-                            _vm._s(location.address2) +
-                            " "
+                            _vm._s(location.address2)
                         )
                       ]),
                       _vm._v(" "),
                       _vm.meta.isAdmin
                         ? _c("p", [
                             _vm._v(
-                              " " +
+                              "\n              " +
                                 _vm._s(location.email) +
                                 " " +
                                 _vm._s(location.phone_number) +
-                                " "
+                                "\n            "
                             )
                           ])
                         : _vm._e(),
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          " " +
-                            _vm._s(location.city) +
-                            " , " +
-                            _vm._s(location.zip)
+                          _vm._s(location.city) + " , " + _vm._s(location.zip)
                         )
                       ]),
                       _vm._v(" "),
                       _c("p", [
                         _vm._v(
-                          " " +
-                            _vm._s(location.state) +
+                          _vm._s(location.state) +
                             " ," +
-                            _vm._s(location.country) +
-                            " "
+                            _vm._s(location.country)
                         )
                       ]),
                       _vm._v(" "),
@@ -38728,6 +38717,8 @@ var updateAddresses = function updateAddresses(_ref24, _ref25) {
   return axios__WEBPACK_IMPORTED_MODULE_0___default.a.put('/api/addresses/' + id, {
     first_name: form.first_name,
     last_name: form.last_name,
+    email: form.email,
+    phone_number: form.phone_number,
     address: form.address,
     address_2: form.address_2,
     city: form.city,
