@@ -68386,8 +68386,6 @@ Vue.filter("priceFormat", function (value) {
 });
 var app = new Vue({
   el: "#app",
-  router: router,
-  store: _store__WEBPACK_IMPORTED_MODULE_1__["default"],
   data: Window.user
 });
 

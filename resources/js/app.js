@@ -53,8 +53,6 @@ Vue.filter("priceFormat", function(value) {
 
 const app = new Vue({
   el: "#app",
-  router,
-  store,
   data: Window.user,
  
 });
