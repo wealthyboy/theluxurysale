@@ -68383,34 +68383,16 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
 });
 Vue.filter("priceFormat", function (value) {
   return new Intl.NumberFormat().format(value);
-}); // const app = new Vue({
-//   el: "#app",
-//   router,
-//   store,
-//   data: Window.user,
-//   components: {
-//     TopCart,
-//     CartSideBarMenu,
-//     ProductsIndex,
-//     SideBar,
-//     ProductShow,
-//     NavIcon,
-//     LoginModal,
-//     RegisterModal,
-//     CartSummary,
-//     NewsLetter,
-//     FavoriteIndex,
-//     Messages,
-//     Addresses,
-//     ShipAddress,
-//     ForgotPassword,
-//     ResetPassword,
-//     ChangePassword,
-//     Comments,
-//     SignUp,
-//     Images,
-//   },
-// });
+});
+var app = new Vue({
+  el: "#app",
+  router: router,
+  store: _store__WEBPACK_IMPORTED_MODULE_1__["default"],
+  data: Window.user,
+  components: {
+    TopCart: TopCart
+  }
+});
 
 /***/ }),
 
