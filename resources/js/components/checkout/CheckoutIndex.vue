@@ -671,6 +671,7 @@ export default {
         user: this.meta.user,
         shipping_id: this.shipping_id,
         isAdmin: this.meta.isAdmin,
+        e: null
       };
       Window.CartMeta = obj;
       this.updateCartTotal(obj);

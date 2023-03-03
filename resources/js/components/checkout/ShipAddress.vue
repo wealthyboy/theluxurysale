@@ -434,11 +434,14 @@ export default {
       let input = document.querySelectorAll(".required");
       this.validateForm({ context: this, input: input });
       this.errorsBag = this.errors;
+
       if (Object.keys(this.errorsBag).length !== 0) {
         this.error = "Please check for errors";
         return false;
       }
+
       this.submiting = true;
+
       if (this.edit) {
         this.updateAddresses({
           form: this.form,
