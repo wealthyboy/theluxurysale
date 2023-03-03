@@ -51,33 +51,32 @@ Vue.filter("priceFormat", function(value) {
   return new Intl.NumberFormat().format(value);
 });
 
-const app = new Vue({
-  el: "#app",
-  router,
-  store,
-  data: Window.user,
-  components: {
-    TopCart,
-    CartSideBarMenu,
-    ProductsIndex,
-    SideBar,
-    ProductShow,
-    NavIcon,
-    LoginModal,
-    RegisterModal,
-    CartSummary,
-    NewsLetter,
-    FavoriteIndex,
-    Messages,
-    Addresses,
-    ShipAddress,
-    ForgotPassword,
-    ResetPassword,
-    ChangePassword,
-    Comments,
-    SignUp,
-    Images,
-  },
-});
+// const app = new Vue({
+//   el: "#app",
+//   router,
+//   store,
+//   data: Window.user,
+//   components: {
+//     TopCart,
+//     CartSideBarMenu,
+//     ProductsIndex,
+//     SideBar,
+//     ProductShow,
+//     NavIcon,
+//     LoginModal,
+//     RegisterModal,
+//     CartSummary,
+//     NewsLetter,
+//     FavoriteIndex,
+//     Messages,
+//     Addresses,
+//     ShipAddress,
+//     ForgotPassword,
+//     ResetPassword,
+//     ChangePassword,
+//     Comments,
+//     SignUp,
+//     Images,
+//   },
+// });
 
-console.log(Window.user);
