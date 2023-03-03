@@ -3163,7 +3163,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })),
   created: function created() {
     this.state = document.getElementById("state_id");
-    console.log(true, "im here");
   },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     createAddress: "createAddress",

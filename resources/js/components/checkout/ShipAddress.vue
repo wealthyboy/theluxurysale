@@ -375,7 +375,6 @@ export default {
   },
   created() {
     this.state = document.getElementById("state_id");
-    console.log(true, "im here");
   },
   methods: {
     ...mapActions({
