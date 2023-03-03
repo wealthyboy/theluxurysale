@@ -175,8 +175,8 @@ export const updateAddresses = ({ dispatch,commit },{form,id}) => {
     return  axios.put('/api/addresses/'+ id,{
         first_name: form.first_name,
         last_name: form.last_name,
-        phone_number: form.phone_number,
         email: form.email,
+        phone_number: form.phone_number,
         address: form.address,
         address_2: form.address_2,
         city: form.city,
