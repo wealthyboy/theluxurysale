@@ -635,6 +635,7 @@ export default {
       handler.openIframe();
     },
     payAsAdmin: function () {
+
       if (!this.addresses.length) {
         this.error = "You need to save your address before placing your order";
         return false;
@@ -644,10 +645,11 @@ export default {
         this.error = "Please select your shipping method";
         return false;
       }
-      this.payment_method = "admin";
 
+      this.payment_method = "admin";
       this.order_text = "Please wait. We are almost done......";
       this.checkout();
+
     },
     addShippingPrice: function (evt) {
       if (evt.target.value == "") {
