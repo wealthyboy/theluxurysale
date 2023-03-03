@@ -56,8 +56,6 @@ const app = new Vue({
   router,
   store,
   data: Window.user,
-  components: {
-    TopCart,
-  },
+ 
 });
 

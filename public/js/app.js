@@ -68388,10 +68388,7 @@ var app = new Vue({
   el: "#app",
   router: router,
   store: _store__WEBPACK_IMPORTED_MODULE_1__["default"],
-  data: Window.user,
-  components: {
-    TopCart: TopCart
-  }
+  data: Window.user
 });
 
 /***/ }),
